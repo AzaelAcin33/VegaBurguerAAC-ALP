@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Fri Nov 14 13:56:57 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-019a-8270-bcaa-00000ea89e88 
+on database directory C:\Users\user\Desktop\VegaBurguer\composeApp\bbdd\vegaburguer with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@1a93a7ca 
+Loaded from file:/C:/Users/user/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar
+java.vendor=JetBrains s.r.o.
+java.runtime.version=21.0.7+-13880790-b1038.58
+user.dir=C:\Users\user\Desktop\VegaBurguer\composeApp
+os.name=Windows 11
+os.arch=amd64
+os.version=10.0
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
