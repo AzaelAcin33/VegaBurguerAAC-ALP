@@ -1,7 +1,9 @@
 package ies.sequeros.com.dam.pmdm.administrador.modelo
+
 import kotlinx.serialization.Serializable
+
 @Serializable
-data class Dependiente(
+data class Categoria (
     val id:String,
     val name:String,
     val email:String,
@@ -10,4 +12,3 @@ data class Dependiente(
     val enabled: Boolean,
     val isAdmin:Boolean
 )
-
