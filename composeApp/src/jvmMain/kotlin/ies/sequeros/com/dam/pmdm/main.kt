@@ -8,9 +8,23 @@ import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import java.io.FileInputStream
 import java.util.logging.LogManager
+import ies.sequeros.com.dam.pmdm.commons.infraestructura.DataBaseConnection
+
 fun main() = application {
+
+    //nueva configuracion de acceso
+
+    val connection = DataBaseConnection()
+    connection.setConfig_path("/app.properties")
+    connection.open()
+    val dependienteRepositorioJava=BBDDRepositorioDependientesJava(connection)
+    val dependienteRepositorio: IDependienteRepositorio = BBDDDependienteRepository(dependienteRepositorioJava )
+
+/* vieja config
     val dependienteRepositorioJava=BBDDRepositorioDependientesJava("/app.properties")
     val dependienteRepositorio: IDependienteRepositorio = BBDDDependienteRepository(dependienteRepositorioJava )
+*/
+    //esto se queda igual
     configureExternalLogging("./logging.properties")
     Window(
         onCloseRequest = {

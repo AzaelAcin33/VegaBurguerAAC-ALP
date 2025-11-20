@@ -6,6 +6,6 @@ interface ICategoriaRepositorio {
     suspend fun remove(id:String): Boolean
     suspend fun update(item:Categoria): Boolean
     suspend fun getAll():List<Categoria>
-    //suspend fun findByName(name:String): Categoria?
+    suspend fun findByName(name:String): Categoria?
     suspend fun getById(id:String):Categoria?
 }

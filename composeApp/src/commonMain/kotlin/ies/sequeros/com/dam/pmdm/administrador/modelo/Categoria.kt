@@ -1,14 +1,13 @@
 package ies.sequeros.com.dam.pmdm.administrador.modelo
 
+import jdk.jfr.Description
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class Categoria (
     val id:String,
     val name:String,
-    val email:String,
-    val password:String,
     val imagePath:String,
-    val enabled: Boolean,
-    val isAdmin:Boolean
+    val description: String,
+    val enabled: Boolean
 )

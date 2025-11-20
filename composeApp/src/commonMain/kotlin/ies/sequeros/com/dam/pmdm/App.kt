@@ -41,7 +41,8 @@ import vegaburguer.composeapp.generated.resources.compose_multiplatform
 @Suppress("ViewModelConstructorInComposable")
 @Composable
 
-fun App( dependienteRepositorio : IDependienteRepositorio,almacenImagenes:AlmacenDatos) {
+fun App( dependienteRepositorio : IDependienteRepositorio,
+         almacenImagenes:AlmacenDatos) {
 
     //view model
     val appViewModel= viewModel {  AppViewModel() }
@@ -50,6 +51,11 @@ fun App( dependienteRepositorio : IDependienteRepositorio,almacenImagenes:Almace
     val dependientesViewModel = viewModel{ DependientesViewModel(
         dependienteRepositorio, almacenImagenes
     )}
+    //val categoriasViewModel= viewModel { CategoriasViewModel(categoriaRepositorio,
+    //    almacenImagenes) }
+
+    //val productosViewModel= viewModel { ProductosViewModel(productoRepositorio,
+    //    almacenImagenes) }
 
     appViewModel.setWindowsAdatativeInfo( currentWindowAdaptiveInfo())
     val navController= rememberNavController()
