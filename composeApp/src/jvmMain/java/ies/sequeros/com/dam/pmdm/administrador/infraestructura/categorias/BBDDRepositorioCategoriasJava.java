@@ -10,7 +10,7 @@ public class BBDDRepositorioCategoriasJava {
     private final DataBaseConnection db;
     private CategoriaDao dao;
 
-    public BBDDRepositorioCategoriasJava(DataBaseConnection connection) {
+    public BBDDRepositorioCategoriasJava(DataBaseConnection connection) throws Exception {
         super();
         this.db = connection;
         dao = new CategoriaDao();
