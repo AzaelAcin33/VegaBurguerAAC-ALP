@@ -1,10 +1,9 @@
-package ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias;
+package ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos;
 
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Categoria;
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Pedido;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.DataBaseConnection;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.IDao;
 
-import javax.smartcardio.CardTerminal;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -14,8 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class CategoriaDao implements IDao<Categoria> {
-
+public class PedidoDao implements IDao<Pedido> {
     private DataBaseConnection conn;
     private final String table_name = "CATEGORIA";
     private final String selectall = "select * from " + table_name;
@@ -25,7 +23,7 @@ public class CategoriaDao implements IDao<Categoria> {
     private final String insert = "INSERT INTO " + table_name + "(id,name,imagePath,description,enabled) VALUES (?,?,?,?,?)";
     private final String update = "UPDATE " + table_name + " SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=?";
 
-    public CategoriaDao() {
+    public PedidoDao() {
     }
 
     public DataBaseConnection getConn() {
@@ -36,8 +34,8 @@ public class CategoriaDao implements IDao<Categoria> {
     }
 
     @Override
-    public Categoria getById(String id) {
-        Categoria cat = null;
+    public Pedido getById(String id) {
+        Pedido cat = null;
         try{
             final PreparedStatement pst = conn.getConnection().prepareStatement(selectbyid);
             pst.setString(1,id);
@@ -46,18 +44,18 @@ public class CategoriaDao implements IDao<Categoria> {
                 cat = registerToObject(rs);
             }
             pst.close();
-            Logger logger = Logger.getLogger(CategoriaDao.class.getName());
+            Logger logger = Logger.getLogger(PedidoDao.class.getName());
             logger.info("Ejecutando SQL: " + selectbyid + " | Parametros: [id=" + id + "]");
             return cat;
         } catch (final SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE,
                     null, ex);
         }
         return cat;
     }
 
-    public Categoria findByName(final String name) {
-        Categoria sp = null;
+    public Pedido findByName(final String name) {
+        Pedido sp = null;
         try {
             final PreparedStatement pst = conn.getConnection().prepareStatement(findbyname);
             pst.setString(1, name);
@@ -66,28 +64,28 @@ public class CategoriaDao implements IDao<Categoria> {
                 sp = registerToObject(rs);
             }
             pst.close();
-            Logger logger = Logger.getLogger(CategoriaDao.class.getName());
+            Logger logger = Logger.getLogger(PedidoDao.class.getName());
             logger.info("Ejecutando SQL: " + findbyname + " | Parametros: [name=" + name + "]");
 
             return sp;
         } catch (final SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE,
                     null, ex);
         }
         return sp;
     }
 
     @Override
-    public List<Categoria> getAll() {
-        final ArrayList<Categoria> listCat = new ArrayList<>();
-        Categoria tempo;
+    public List<Pedido> getAll() {
+        final ArrayList<Pedido> listCat = new ArrayList<>();
+        Pedido tempo;
         PreparedStatement pst = null;
         try {
             try {
                 pst = conn.getConnection().prepareStatement(selectall);
             }catch (SQLException ex){
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
-                    null, ex);
+                Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE,
+                        null, ex);
             }
             assert pst != null;
             final ResultSet res = pst.executeQuery();
@@ -96,105 +94,98 @@ public class CategoriaDao implements IDao<Categoria> {
                 listCat.add(tempo);
             }
             pst.close();
-            Logger logger = Logger.getLogger(CategoriaDao.class.getName());
+            Logger logger = Logger.getLogger(PedidoDao.class.getName());
             logger.info("Ejecutando SQL: " + selectall + " | Parametros: ");
         } catch (final SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE,
                     null, ex);
         }
         return  listCat;
     }
 
     @Override
-    public void update(final Categoria item) {
+    public void update(final Pedido item) {
         try{
             final PreparedStatement pst = conn.getConnection().prepareStatement(update);
             pst.setString(1,item.getId());
-            pst.setString(2,item.getDescription());
-            pst.setString(3,item.getName());
-            pst.setString(4,item.getImagePath());
-            pst.setString(5,item.getDescription());
-            pst.setBoolean(6,item.getEnabled());
+            pst.setString(2,item.getClienteName());
+            pst.setString(3,item.getEstado());
+            pst.setString(4,item.getFecha());
             pst.executeUpdate();
             pst.close();
-            Logger logger = Logger.getLogger(CategoriaDao.class.getName());
+            Logger logger = Logger.getLogger(PedidoDao.class.getName());
             logger.info(() ->
                     "Ejecutando SQL: " + update +
                             " | Params: [1]=" + item.getId() +
-                            ", [2]=" + item.getName()+
-                            ", [3]=" + item.getImagePath()+
-                            ", [4]=" + item.getDescription()+
-                            ", [5]=" + item.getEnabled()+
+                            ", [2]=" + item.getClienteName()+
+                            ", [3]=" + item.getEstado()+
+                            ", [4]=" + item.getFecha()+
                             "]"
             );
         }catch(final SQLException ex){
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE,
                     null, ex);
         }
     }
 
     @Override
-    public void delete(final Categoria item) {
+    public void delete(final Pedido item) {
         try {
             final PreparedStatement pst =
                     conn.getConnection().prepareStatement(deletebyid);
             pst.setString(1, item.getId());
             pst.executeUpdate();
             pst.close();
-            Logger logger = Logger.getLogger(CategoriaDao.class.getName());
+            Logger logger = Logger.getLogger(PedidoDao.class.getName());
             logger.info("Ejecutando SQL: " + deletebyid + " | Parametros: [id=" + item.getId() + "]");
 
         } catch (final SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE,
                     null, ex);
         }
     }
 
     @Override
-    public void insert(final Categoria item) {
+    public void insert(final Pedido item) {
         final PreparedStatement pst;
         try {
             pst = conn.getConnection().prepareStatement(insert,
                     Statement.RETURN_GENERATED_KEYS);
             pst.setString(1,item.getId());
-            pst.setString(2,item.getDescription());
-            pst.setString(3,item.getName());
-            pst.setString(4,item.getImagePath());
-            pst.setString(5,item.getDescription());
-            pst.setBoolean(6,item.getEnabled());
+            pst.setString(2,item.getClienteName());
+            pst.setString(3,item.getEstado());
+            pst.setString(4,item.getFecha());
 
             pst.executeUpdate();
             pst.close();
-            Logger logger = Logger.getLogger(CategoriaDao.class.getName());
+            Logger logger = Logger.getLogger(PedidoDao.class.getName());
             logger.info(() ->
-                    "Ejecutando SQL: " + insert +
+                    "Ejecutando SQL: " + update +
                             " | Params: [1]=" + item.getId() +
-                            ", [2]=" + item.getName()+
-                            ", [3]=" + item.getImagePath()+
-                            ", [4]=" + item.getDescription()+
-                            ", [5]=" + item.getEnabled()+
+                            ", [2]=" + item.getClienteName()+
+                            ", [3]=" + item.getEstado()+
+                            ", [4]=" + item.getFecha()+
                             "]"
             );
 
         } catch (final SQLException ex) {
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE,
                     null, ex);
         }
     }
 
-    private Categoria registerToObject(final ResultSet rs) {
-        Categoria cat = null;
+    private Pedido registerToObject(final ResultSet rs) {
+        Pedido cat = null;
         try{
-            cat=new Categoria(
+            cat=new Pedido(
                     rs.getString("ID"),
-                    rs.getString("NAME"),
-                    rs.getString("IMAGE_PATH"),
-                    rs.getString("DESCRIPTION"),
-                    rs.getBoolean("ENABLED")
+                    rs.getString("CLIENTE_NAME"),
+                    rs.getString("ESTADO"),
+                    rs.getString("FECHA")
             );
             return cat;
         }catch(final SQLException ex){
-            Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
+            Logger.getLogger(PedidoDao.class.getName()).log(Level.SEVERE,
                     null, ex);
         }
         return cat;
