@@ -48,3 +48,53 @@ nov 14, 2025 4:30:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestruct
 INFORMACIÓN: Ejecutando SQL: UPDATE DEPENDIENTE SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=897897lkopokpkopk, [2]=fdsfds@dfdsf, [3]=123456789P, [4]=c27f8f72-2ff9-45dc-a114-d7f942ee15a4.jpg, [5]=true, [6]=true, [7]=c27f8f72-2ff9-45dc-a114-d7f942ee15a4]
 nov 18, 2025 7:02:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
 INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE | Parametros: 
+nov 25, 2025 5:33:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE | Parametros: 
+nov 25, 2025 5:33:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=c27f8f72-2ff9-45dc-a114-d7f942ee15a4]
+nov 25, 2025 5:33:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE | Parametros: 
+nov 25, 2025 5:33:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=c27f8f72-2ff9-45dc-a114-d7f942ee15a4]
+nov 25, 2025 5:33:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao delete
+INFORMACIÓN: Ejecutando SQL: delete from DEPENDIENTE where id=? | Parametros: [id=c27f8f72-2ff9-45dc-a114-d7f942ee15a4]
+nov 25, 2025 5:33:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=164addcf-c622-4714-8b49-0ee82784847b]
+nov 25, 2025 5:33:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE | Parametros: 
+nov 25, 2025 5:33:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=164addcf-c622-4714-8b49-0ee82784847b]
+nov 25, 2025 5:33:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao delete
+INFORMACIÓN: Ejecutando SQL: delete from DEPENDIENTE where id=? | Parametros: [id=164addcf-c622-4714-8b49-0ee82784847b]
+nov 25, 2025 5:33:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE | Parametros: 
+nov 25, 2025 5:35:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where name=? | Parametros: [name=guts]
+nov 25, 2025 5:35:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where name=? | Parametros: [name=guts]
+nov 25, 2025 5:35:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao insert
+INFORMACIÓN: Ejecutando SQL: INSERT INTO DEPENDIENTE (id, name, email, password, image_path, enabled, is_admin) VALUES (?, ?, ?, ?, ?, ?, ?) | Params: [1]=adebf954-844b-46cc-9454-acca621146e4, [2]=guts, [3]=guts@berserk.com, [4]=1234567890Aa, [5]=adebf954-844b-46cc-9454-acca621146e4.jpg, [6]=true, [7]=true]
+nov 25, 2025 5:35:10 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:10 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE DEPENDIENTE SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=guts, [2]=guts@berserk.com, [3]=1234567890Aa, [4]=adebf954-844b-46cc-9454-acca621146e4.jpg, [5]=false, [6]=true, [7]=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:10 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:10 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE DEPENDIENTE SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=guts, [2]=guts@berserk.com, [3]=1234567890Aa, [4]=adebf954-844b-46cc-9454-acca621146e4.jpg, [5]=true, [6]=true, [7]=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE DEPENDIENTE SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=guts, [2]=guts@berserk.com, [3]=1234567890Aa, [4]=adebf954-844b-46cc-9454-acca621146e4.jpg, [5]=true, [6]=false, [7]=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE DEPENDIENTE SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=guts, [2]=guts@berserk.com, [3]=1234567890Aa, [4]=adebf954-844b-46cc-9454-acca621146e4.jpg, [5]=true, [6]=true, [7]=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:13 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE DEPENDIENTE SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=guts, [2]=guts@berserk.com, [3]=1234567890Aa, [4]=adebf954-844b-46cc-9454-acca621146e4.jpg, [5]=true, [6]=false, [7]=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from DEPENDIENTE where id=? | Parametros: [id=adebf954-844b-46cc-9454-acca621146e4]
+nov 25, 2025 5:35:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE DEPENDIENTE SET name = ?, email = ?, password = ?, image_path = ?, enabled = ?, is_admin = ? WHERE id = ? | Params: [1]=guts, [2]=guts@berserk.com, [3]=1234567890Aa, [4]=adebf954-844b-46cc-9454-acca621146e4.jpg, [5]=true, [6]=true, [7]=adebf954-844b-46cc-9454-acca621146e4]
