@@ -1,7 +1,7 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui.categorias
 
 import androidx.compose.runtime.Composable
-import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.CategoriaDTO
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.listar.CategoriaDTO
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
 
 @Composable

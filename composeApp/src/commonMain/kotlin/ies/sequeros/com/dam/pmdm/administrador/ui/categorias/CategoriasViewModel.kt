@@ -2,6 +2,15 @@ package ies.sequeros.com.dam.pmdm.administrador.ui.categorias
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.BorrarCategoriaUseCase
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.activar.ActivarCategoriaCommand
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.activar.ActivarCategoriaUseCase
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.actualizar.ActualizarCategoriaCommand
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.actualizar.ActualizarCategoriaUseCase
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.crear.CrearCategoriaCommand
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.crear.CrearCategoriaUseCase
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.listar.CategoriaDTO
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.listar.ListarCategoriaUseCase
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form.CategoriaFormState
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteFormState
@@ -21,7 +30,7 @@ class CategoriasViewModel (
 
     private val borrarCategoriaUseCase: BorrarCategoriaUseCase
     private val crearCategoriaUseCase: CrearCategoriaUseCase
-    private val listarCategoriasUseCase: ListarCategoriasUseCase
+    private val listarCategoriasUseCase: ListarCategoriaUseCase
 
     private val actualizarCategoriaUseCase: ActualizarCategoriaUseCase
     private val activarCategoriaUseCase: ActivarCategoriaUseCase
@@ -35,7 +44,7 @@ class CategoriasViewModel (
         actualizarCategoriaUseCase = ActualizarCategoriaUseCase(categoriaRepository,almacenDatos)
         borrarCategoriaUseCase = BorrarCategoriaUseCase(categoriaRepository,almacenDatos)
         crearCategoriaUseCase = CrearCategoriaUseCase(categoriaRepository,almacenDatos)
-        listarCategoriasUseCase = ListarCategoriasUseCase(categoriaRepository,almacenDatos)
+        listarCategoriasUseCase = ListarCategoriaUseCase(categoriaRepository,almacenDatos)
         activarCategoriaUseCase = ActivarCategoriaUseCase(categoriaRepository,almacenDatos)
         viewModelScope.launch {
             var items = listarCategoriasUseCase.invoke()
@@ -108,7 +117,7 @@ class CategoriasViewModel (
         }
     }
 
-    fun save(item: DependienteFormState) {
+    fun save(item: CategoriaFormState) {
         if (_selected.value == null)
             this.add(item)
         else
