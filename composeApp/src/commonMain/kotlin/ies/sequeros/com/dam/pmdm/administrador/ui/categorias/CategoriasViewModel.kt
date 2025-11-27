@@ -24,7 +24,7 @@ import kotlin.collections.mutableListOf
 
 
 class CategoriasViewModel (
-    private val categoriaRepository: ICategoriaRepositorio,
+    private val categoriaRepositorio: ICategoriaRepositorio,
     val almacenDatos: AlmacenDatos
 ): ViewModel(){
 
@@ -41,11 +41,11 @@ class CategoriasViewModel (
     val selected = _selected.asStateFlow()
 
     init {
-        actualizarCategoriaUseCase = ActualizarCategoriaUseCase(categoriaRepository,almacenDatos)
-        borrarCategoriaUseCase = BorrarCategoriaUseCase(categoriaRepository,almacenDatos)
-        crearCategoriaUseCase = CrearCategoriaUseCase(categoriaRepository,almacenDatos)
-        listarCategoriasUseCase = ListarCategoriaUseCase(categoriaRepository,almacenDatos)
-        activarCategoriaUseCase = ActivarCategoriaUseCase(categoriaRepository,almacenDatos)
+        actualizarCategoriaUseCase = ActualizarCategoriaUseCase(categoriaRepositorio,almacenDatos)
+        borrarCategoriaUseCase = BorrarCategoriaUseCase(categoriaRepositorio,almacenDatos)
+        crearCategoriaUseCase = CrearCategoriaUseCase(categoriaRepositorio,almacenDatos)
+        listarCategoriasUseCase = ListarCategoriaUseCase(categoriaRepositorio,almacenDatos)
+        activarCategoriaUseCase = ActivarCategoriaUseCase(categoriaRepositorio,almacenDatos)
         viewModelScope.launch {
             var items = listarCategoriasUseCase.invoke()
             _items.value.clear()
@@ -123,6 +123,4 @@ class CategoriasViewModel (
         else
             this.update(item)
     }
-
-
 }

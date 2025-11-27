@@ -1,10 +1,10 @@
 ----------------------------------------------------------------
-Tue Nov 25 17:33:52 CET 2025:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-019a-bbdd-4588-00003edfa1c0 
-on database directory /home/ryuk14/Escritorio/CLASES/PROGRAMACION_MULTIMEDIA_MOVILES/VegaBurguerAAC-ALP/composeApp/bbdd/vegaburguer with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@639fee48 
+Thu Nov 27 20:42:39 CET 2025:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.16.1.1 - (1901046): instance a816c00e-019a-c6d6-d5ed-000002dd8c28 
+on database directory /home/ryuk14/Escritorio/CLASES/PROGRAMACION_MULTIMEDIA_MOVILES/VegaBurguerAAC-ALP/composeApp/bbdd/vegaburguer with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5d6f64b1 
 Loaded from file:/home/ryuk14/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.16.1.1/f9ca2054b3e33ec3f3f19df4a7490352d82de54a/derby-10.16.1.1.jar
-java.vendor=Ubuntu
-java.runtime.version=21.0.9+10-Ubuntu-124.04
+java.vendor=JetBrains s.r.o.
+java.runtime.version=21.0.8+-14196175-b1038.72
 user.dir=/home/ryuk14/Escritorio/CLASES/PROGRAMACION_MULTIMEDIA_MOVILES/VegaBurguerAAC-ALP/composeApp
 os.name=Linux
 os.arch=amd64
@@ -12,5 +12,5 @@ os.version=6.14.0-36-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Tue Nov 25 17:35:25 CET 2025:
-Shutting down instance a816c00e-019a-bbdd-4588-00003edfa1c0 on database directory /home/ryuk14/Escritorio/CLASES/PROGRAMACION_MULTIMEDIA_MOVILES/VegaBurguerAAC-ALP/composeApp/bbdd/vegaburguer with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@639fee48 
+Thu Nov 27 20:42:54 CET 2025:
+Shutting down instance a816c00e-019a-c6d6-d5ed-000002dd8c28 on database directory /home/ryuk14/Escritorio/CLASES/PROGRAMACION_MULTIMEDIA_MOVILES/VegaBurguerAAC-ALP/composeApp/bbdd/vegaburguer with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5d6f64b1 
