@@ -1,4 +1,8 @@
 package ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.actualizar
 
-class ActualizarPedidoCommand {
-}
+data class ActualizarPedidoCommand(
+    val id:String,
+    val clienteName:String,
+    val estado:String,
+    val fecha: String
+)

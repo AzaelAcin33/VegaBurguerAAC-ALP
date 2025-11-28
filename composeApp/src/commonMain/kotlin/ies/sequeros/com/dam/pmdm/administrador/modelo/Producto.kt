@@ -4,7 +4,7 @@ import jdk.jfr.Enabled
 import kotlinx.serialization.Serializable
 
 @Serializable
-class Producto (
+data class Producto (
     val id:String,
     val name:String,
     val imagePath:String,
