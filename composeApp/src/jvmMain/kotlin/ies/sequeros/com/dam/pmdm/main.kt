@@ -2,8 +2,15 @@ package ies.sequeros.com.dam.pmdm
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDPedidoRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDProductoRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.BBDDRepositorioPedidosJava
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.BBDDRepositorioProductosJava
+import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import java.io.FileInputStream
@@ -18,12 +25,16 @@ fun main() = application {
     connection.setConfig_path("/app.properties")
     connection.open()
     val dependienteRepositorioJava=BBDDRepositorioDependientesJava(connection)
-    val dependienteRepositorio: IDependienteRepositorio = BBDDDependienteRepository(dependienteRepositorioJava )
+    val categoriaRepositorioJava= BBDDRepositorioCategoriasJava(connection)
+    val productoRepositorioJava= BBDDRepositorioProductosJava(connection)
+    val pedidoRepositorioJava= BBDDRepositorioPedidosJava(connection)
 
-/* vieja config
-    val dependienteRepositorioJava=BBDDRepositorioDependientesJava("/app.properties")
     val dependienteRepositorio: IDependienteRepositorio = BBDDDependienteRepository(dependienteRepositorioJava )
-*/
+    val categoriaRepositorio: ICategoriaRepositorio = BBDDCategoriaRepository(categoriaRepositorioJava)
+    val productoRepositorio: BBDDProductoRepository = BBDDProductoRepository(productoRepositorioJava)
+    val pedidoRepositorio: BBDDPedidoRepository = BBDDPedidoRepository(pedidoRepositorioJava)
+
+
     //esto se queda igual
     configureExternalLogging("./logging.properties")
     Window(
@@ -34,7 +45,8 @@ fun main() = application {
         title = "VegaBurguer",
     ) {
         //se envuelve el repositorio en java en uno que exista en Kotlin
-        App(dependienteRepositorio,AlmacenDatos())
+        //nueva configuracion de acceso categoria
+        App(AlmacenDatos(), dependienteRepositorio, categoriaRepositorio, productoRepositorio, pedidoRepositorio)
     }
 }
 fun configureExternalLogging(path: String) {

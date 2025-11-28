@@ -26,6 +26,7 @@ import androidx.compose.material3.NavigationDrawerItem
 import androidx.compose.material3.PermanentDrawerSheet
 import androidx.compose.material3.PermanentNavigationDrawer
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 
 
 import androidx.compose.runtime.getValue
@@ -42,10 +43,13 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowWidthSizeClass
 import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.Pedidos.PedidosViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteForm
+import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 
 
 @Suppress("ViewModelConstructorInComposable")
@@ -55,12 +59,14 @@ fun MainAdministrador(
     mainViewModel: MainAdministradorViewModel,
     administradorViewModel: AdministradorViewModel,
     dependientesViewModel: DependientesViewModel,
-
+    categoriasViewModel: CategoriasViewModel,
+    productosViewModel: ProductosViewModel,
+    pedidosViewModel: PedidosViewModel,
 
     onExit: () -> Unit
 ) {
     val navController = rememberNavController()
-    val options by mainViewModel.filteredItems.collectAsState() //
+    val options by mainViewModel.filteredItems.collectAsState()
 
     val wai by appViewModel.windowsAdaptativeInfo.collectAsState();
     mainViewModel.setOptions(
@@ -176,6 +182,17 @@ fun MainAdministrador(
                     }
                 )
             }
+            composable ( AdminRoutes.Categorias ){
+                Text("Categorias")
+            }
+
+            composable ( AdminRoutes.Productos ){
+                Text("Productos")
+            }
+            composable ( AdminRoutes.Pedido ){
+                Text("Pedido")
+            }
+
 
         }
     }
