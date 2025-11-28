@@ -43,8 +43,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowWidthSizeClass
 import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.AdminRoutes.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.Pedidos.PedidosViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form.CategoriaForm
 
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
@@ -145,7 +148,7 @@ fun MainAdministrador(
 
                 onExit()
             }, "Close", false)
-            )
+        )
     )
 
     //icono seleccionado
@@ -163,8 +166,8 @@ fun MainAdministrador(
 
                 PrincipalAdministrador()
             }
-            composable(AdminRoutes.Dependientes){
-                Dependientes(mainViewModel,dependientesViewModel,{
+            composable(AdminRoutes.Dependientes) {
+                Dependientes(mainViewModel, dependientesViewModel, {
                     dependientesViewModel.setSelectedDependiente(it)
                     navController.navigate(AdminRoutes.Dependiente) {
                         launchSingleTop = true
@@ -172,24 +175,40 @@ fun MainAdministrador(
                     }
                 })
             }
-            composable (AdminRoutes.Dependiente){
+            composable(AdminRoutes.Dependiente) {
                 DependienteForm(
-                    dependientesViewModel,{
+                    dependientesViewModel, {
                         navController.popBackStack()
-                    },{
+                    }, {
                         dependientesViewModel.save(it)
                         navController.popBackStack()
                     }
                 )
             }
-            composable ( AdminRoutes.Categorias ){
-                Text("Categorias")
+            composable(AdminRoutes.Categorias) {
+                Categorias(mainViewModel, categoriasViewModel, {
+                    categoriasViewModel.setSelectedCategoria(it)
+                    navController.navigate(AdminRoutes.Categoria) {
+                        launchSingleTop = true
+                    }
+                })
+            }
+            composable(AdminRoutes.Categoria) {
+                //Text("Categorias")
+                CategoriaForm(
+                    categoriasViewModel, {
+                        navController.popBackStack()
+                    }, {
+                        categoriasViewModel.save(it)
+                        navController.popBackStack()
+                    }
+                )
             }
 
-            composable ( AdminRoutes.Productos ){
+            composable(AdminRoutes.Productos) {
                 Text("Productos")
             }
-            composable ( AdminRoutes.Pedido ){
+            composable(AdminRoutes.Pedido) {
                 Text("Pedido")
             }
 
