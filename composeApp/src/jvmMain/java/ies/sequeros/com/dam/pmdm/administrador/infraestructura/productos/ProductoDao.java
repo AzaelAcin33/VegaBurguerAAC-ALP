@@ -119,6 +119,7 @@ public class ProductoDao implements IDao<Producto> {
             pst.setString(4, item.getDescription());
             pst.setBoolean(5, item.getEnabled());
             pst.setString(6, item.getId());
+            pst.setString(7, item.getCategoriaId());
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(ProductoDao.class.getName());
@@ -130,6 +131,7 @@ public class ProductoDao implements IDao<Producto> {
                             ", [4]=" + item.getDescription() +
                             ", [5]=" + item.getEnabled() +
                             ", [6]=" + item.getId() +
+                            ", [7]=" + item.getCategoriaId() +
                             "]"
             );
         } catch (final SQLException ex) {
@@ -169,6 +171,7 @@ public class ProductoDao implements IDao<Producto> {
             pst.setString(4, item.getDescription());
             pst.setBoolean(5, item.getEnabled());
             pst.setString(6, item.getId());
+            pst.setString(7, item.getCategoriaId());
 
             pst.executeUpdate();
             pst.close();
@@ -181,6 +184,7 @@ public class ProductoDao implements IDao<Producto> {
                             ", [4]=" + item.getDescription() +
                             ", [5]=" + item.getEnabled() +
                             ", [6]=" + item.getId() +
+                            ", [7]=" + item.getCategoriaId() +
                             "]"
             );
 
@@ -202,7 +206,9 @@ public class ProductoDao implements IDao<Producto> {
                     r.getString("IMAGE_PATH"),
                     r.getString("PRICE"),
                     r.getString("DESCRIPTION"),
-                    r.getBoolean("ENABLED"));
+                    r.getBoolean("ENABLED"),
+                    r.getString("CATEGORIA_ID")
+            );
             return sc;
         } catch (final SQLException ex) {
             Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE,

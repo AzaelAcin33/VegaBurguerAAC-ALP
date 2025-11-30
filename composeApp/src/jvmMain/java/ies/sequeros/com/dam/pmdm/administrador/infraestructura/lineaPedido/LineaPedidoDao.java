@@ -118,7 +118,9 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             pst.setInt(1, item.getCantidad());
             pst.setString(2, item.getPrecioUnitario());
             pst.setBoolean(3, item.getEntregado());
-            pst.setString(4, item.getId());
+            pst.setString(4, item.getPedidoId());
+            pst.setString(5, item.getProductoId());
+            pst.setString(6, item.getId());
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(LineaPedidoDao.class.getName());
@@ -127,7 +129,9 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
                             " | Params: [1]=" + item.getCantidad() +
                             ", [2]=" + item.getPrecioUnitario() +
                             ", [3]=" + item.getEntregado() +
-                            ", [4]=" + item.getId() +
+                            ", [4]=" + item.getPedidoId() +
+                            ", [5]=" + item.getProductoId() +
+                            ", [6]=" + item.getId() +
                             "]"
             );
         } catch (final SQLException ex) {
@@ -164,7 +168,9 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             pst.setInt(1, item.getCantidad());
             pst.setString(2, item.getPrecioUnitario());
             pst.setBoolean(3, item.getEntregado());
-            pst.setString(4, item.getId());
+            pst.setString(4, item.getPedidoId());
+            pst.setString(5, item.getProductoId());
+            pst.setString(6, item.getId());
 
             pst.executeUpdate();
             pst.close();
@@ -174,7 +180,9 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
                             " | Params: [1]=" + item.getCantidad() +
                             ", [2]=" + item.getPrecioUnitario() +
                             ", [3]=" + item.getEntregado() +
-                            ", [4]=" + item.getId() +
+                            ", [4]=" + item.getPedidoId() +
+                            ", [5]=" + item.getProductoId() +
+                            ", [6]=" + item.getId() +
                             "]"
             );
 
@@ -194,7 +202,10 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
                     r.getString("ID"),
                     r.getInt("CANTIDAD"),
                     r.getString("PRECIO_UNITARIO"),
-                    r.getBoolean("ENTREGADO"));
+                    r.getBoolean("ENTREGADO"),
+                    r.getString("PEDIDO_ID"),
+                    r.getString("PRODUCTO_ID")
+            );
             return sc;
         } catch (final SQLException ex) {
             Logger.getLogger(LineaPedidoDao.class.getName()).log(Level.SEVERE,

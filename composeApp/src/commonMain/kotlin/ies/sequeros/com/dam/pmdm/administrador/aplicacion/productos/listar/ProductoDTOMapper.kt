@@ -9,7 +9,8 @@ fun Producto.toDTO(path:String="") = ProductoDTO(
     imagePath=path+imagePath,
     price = price,
     description = description,
-    enabled
+    enabled,
+    categoriaId = categoriaId
 )
 fun ProductoDTO.toProducto()= Producto(
     id = id,
@@ -17,5 +18,6 @@ fun ProductoDTO.toProducto()= Producto(
     imagePath = imagePath,
     price = price,
     description = description,
-    enabled
+    enabled,
+    categoriaId = categoriaId
 )

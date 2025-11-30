@@ -7,11 +7,13 @@ fun Pedido.toDTO(path:String="") = PedidoDTO(
     id = id,
     clienteName = clienteName,
     estado = estado,
-    fecha = fecha
+    fecha = fecha,
+    dependienteId = dependienteId
 )
 fun PedidoDTO.toPedido()= Pedido(
     id = id,
     clienteName = clienteName,
     estado = estado,
-    fecha = fecha
+    fecha = fecha,
+    dependienteId = dependienteId
 )

@@ -22,7 +22,8 @@ class CrearProductoUseCase(private val repositorio: IProductoRepositorio,private
             imagePath = createUserCommand.imagePath,
             price = createUserCommand.price,
             description = createUserCommand.description,
-            enabled = createUserCommand.enabled
+            enabled = createUserCommand.enabled,
+            categoriaId = createUserCommand.categoriaId
         )
         val element=repositorio.findByName(item.name)
         if(element!=null)

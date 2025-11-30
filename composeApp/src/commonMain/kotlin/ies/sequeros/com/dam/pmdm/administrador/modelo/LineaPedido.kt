@@ -7,5 +7,7 @@ data class LineaPedido (
     val id:String,
     val cantidad: Int,
     val precioUnitario:String,
-    val entregado:Boolean
+    val entregado:Boolean,
+    val pedidoId: String,
+    val productoId: String
 )

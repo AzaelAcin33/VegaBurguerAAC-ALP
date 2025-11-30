@@ -111,6 +111,7 @@ public class PedidoDao implements IDao<Pedido> {
             pst.setString(2,item.getClienteName());
             pst.setString(3,item.getEstado());
             pst.setString(4,item.getFecha());
+            pst.setString(5,item.getDependienteId());
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(PedidoDao.class.getName());
@@ -120,6 +121,7 @@ public class PedidoDao implements IDao<Pedido> {
                             ", [2]=" + item.getClienteName()+
                             ", [3]=" + item.getEstado()+
                             ", [4]=" + item.getFecha()+
+                            ", [5]=" + item.getDependienteId()+
                             "]"
             );
         }catch(final SQLException ex){
@@ -155,6 +157,7 @@ public class PedidoDao implements IDao<Pedido> {
             pst.setString(2,item.getClienteName());
             pst.setString(3,item.getEstado());
             pst.setString(4,item.getFecha());
+            pst.setString(5,item.getDependienteId());
 
             pst.executeUpdate();
             pst.close();
@@ -165,6 +168,7 @@ public class PedidoDao implements IDao<Pedido> {
                             ", [2]=" + item.getClienteName()+
                             ", [3]=" + item.getEstado()+
                             ", [4]=" + item.getFecha()+
+                            ", [5]=" + item.getDependienteId()+
                             "]"
             );
 
@@ -181,7 +185,8 @@ public class PedidoDao implements IDao<Pedido> {
                     rs.getString("ID"),
                     rs.getString("CLIENTE_NAME"),
                     rs.getString("ESTADO"),
-                    rs.getString("FECHA")
+                    rs.getString("FECHA"),
+                    rs.getString("DEPENDIENTE_ID")
             );
             return cat;
         }catch(final SQLException ex){

@@ -8,5 +8,6 @@ data class Pedido (
     val id:String,
     val clienteName:String,
     val estado:String,
-    val fecha: String
+    val fecha: String,
+    val dependienteId: String
 )

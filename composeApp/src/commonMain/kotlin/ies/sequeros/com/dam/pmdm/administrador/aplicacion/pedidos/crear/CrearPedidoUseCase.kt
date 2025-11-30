@@ -19,7 +19,8 @@ class CrearPedidoUseCase(private val repositorio: IPedidoRepositorio,private val
             id = id,
             clienteName = createUserCommand.clienteName,
             estado = createUserCommand.estado,
-            fecha = createUserCommand.fecha
+            fecha = createUserCommand.fecha,
+            dependienteId = createUserCommand.dependienteId
         )
         val element=repositorio.findByName(item.clienteName)
         if(element!=null)
