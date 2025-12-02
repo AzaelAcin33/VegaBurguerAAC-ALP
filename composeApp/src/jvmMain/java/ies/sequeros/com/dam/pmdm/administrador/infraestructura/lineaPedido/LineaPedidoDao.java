@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 
 public class LineaPedidoDao implements IDao<LineaPedido> {
     private DataBaseConnection conn;
-    private final String table_name = "PRODUCTO";
+    private final String table_name = "linea_pedidos";
     private final String selectall = "select * from " + table_name;
     private final String selectbyid = "select * from " + table_name + " where id=?";
     private final String findbyname = "select * from " + table_name + " where name=?";
