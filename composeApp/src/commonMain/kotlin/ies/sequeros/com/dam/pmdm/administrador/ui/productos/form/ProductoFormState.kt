@@ -1,6 +1,6 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui.productos.form
 
-class ProductoFormState (
+data class ProductoFormState (
     val name: String="",
     val description:String="",
     val imagePath:String="default",
@@ -12,5 +12,7 @@ class ProductoFormState (
     val descriptionError:String?=null,
     val imagePathError:String?=null,
     val priceError:String?=null,
-    val categoriaIdError:String?=null
+    val categoriaIdError:String?=null,
+
+    val submitted: Boolean = false
 )
