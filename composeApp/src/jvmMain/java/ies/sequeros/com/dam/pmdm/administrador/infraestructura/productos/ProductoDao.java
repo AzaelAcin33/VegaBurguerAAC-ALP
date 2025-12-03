@@ -1,5 +1,6 @@
 package ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos;
 
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.ConsoleColors;
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.DataBaseConnection;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.IDao;
@@ -48,7 +49,7 @@ public class ProductoDao implements IDao<Producto> {
             }
             pst.close();
             Logger logger = Logger.getLogger(ProductoDao.class.getName());
-            logger.info("Ejecutando SQL: " + selectbyid + " | Parametros: [id=" + id + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + selectbyid + " | Parametros: [id=" + id + "]"+ConsoleColors.RESET);
             return sp;
         } catch (final SQLException ex) {
             Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE,
@@ -68,7 +69,7 @@ public class ProductoDao implements IDao<Producto> {
             }
             pst.close();
             Logger logger = Logger.getLogger(ProductoDao.class.getName());
-            logger.info("Ejecutando SQL: " + findbyname + " | Parametros: [name=" + name + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + findbyname + " | Parametros: [name=" + name + "]"+ConsoleColors.RESET);
 
             return sp;
         } catch (final SQLException ex) {
@@ -97,7 +98,7 @@ public class ProductoDao implements IDao<Producto> {
 
             pst.close();
             Logger logger = Logger.getLogger(ProductoDao.class.getName());
-            logger.info("Ejecutando SQL: " + selectall+ " | Parametros: ");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + selectall+ " | Parametros: "+ConsoleColors.RESET);
 
         } catch (final SQLException ex) {
             Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE,
@@ -123,7 +124,7 @@ public class ProductoDao implements IDao<Producto> {
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(ProductoDao.class.getName());
-            logger.info(() ->
+            logger.info(() ->ConsoleColors.GREEN+
                     "Ejecutando SQL: " + update +
                             " | Params: [1]=" + item.getName() +
                             ", [2]=" + item.getImagePath() +
@@ -132,7 +133,7 @@ public class ProductoDao implements IDao<Producto> {
                             ", [5]=" + item.getEnabled() +
                             ", [6]=" + item.getId() +
                             ", [7]=" + item.getCategoriaId() +
-                            "]"
+                            "]"+ConsoleColors.RESET
             );
         } catch (final SQLException ex) {
             Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE,
@@ -150,7 +151,7 @@ public class ProductoDao implements IDao<Producto> {
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(ProductoDao.class.getName());
-            logger.info("Ejecutando SQL: " + deletebyid + " | Parametros: [id=" + item.getId() + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + deletebyid + " | Parametros: [id=" + item.getId() + "]"+ConsoleColors.RESET);
 
         } catch (final SQLException ex) {
             Logger.getLogger(ProductoDao.class.getName()).log(Level.SEVERE,
@@ -176,7 +177,7 @@ public class ProductoDao implements IDao<Producto> {
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(ProductoDao.class.getName());
-            logger.info(() ->
+            logger.info(() ->ConsoleColors.GREEN+
                     "Ejecutando SQL: " + update +
                             " | Params: [1]=" + item.getName() +
                             ", [2]=" + item.getImagePath() +
@@ -185,7 +186,7 @@ public class ProductoDao implements IDao<Producto> {
                             ", [5]=" + item.getEnabled() +
                             ", [6]=" + item.getId() +
                             ", [7]=" + item.getCategoriaId() +
-                            "]"
+                            "]"+ConsoleColors.RESET
             );
 
         } catch (final SQLException ex) {

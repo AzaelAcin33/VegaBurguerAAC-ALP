@@ -1,5 +1,5 @@
 CREATE TABLE dependientes (
-	id VARCHAR(10) PRIMARY KEY,
+	id CHAR(64) PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(100) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE dependientes (
 );
 
 CREATE TABLE categorias (
-	id VARCHAR(10) PRIMARY KEY,
+	id CHAR(64) PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     description VARCHAR(250),
     imagePath VARCHAR(100),
@@ -17,7 +17,7 @@ CREATE TABLE categorias (
 );
 
 CREATE TABLE productos (
-	id VARCHAR(10) PRIMARY KEY,
+	id CHAR(64) PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
     imagePath VARCHAR(100),
     price DECIMAL(10,2) NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE productos (
 );
 
 CREATE TABLE pedidos (
-	id VARCHAR(10) PRIMARY KEY,
+	id CHAR(64) PRIMARY KEY,
     clienteName VARCHAR(100) NOT NULL,
     estado VARCHAR(50) NOT NULL,
     fecha VARCHAR(100) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE pedidos (
 );
 
 CREATE TABLE linea_pedido (
-	id VARCHAR(10) PRIMARY KEY,
+	id CHAR(64) PRIMARY KEY,
     cantidad INT NOT NULL,
     precioUnitario DECIMAL(10,2) NOT NULL,
     entregado TINYINT(1) DEFAULT 0,
@@ -45,4 +45,4 @@ CREATE TABLE linea_pedido (
     productoId VARCHAR(10),
     FOREIGN KEY (pedidoId) REFERENCES pedidos(id),
     FOREIGN KEY (productoId) REFERENCES productos(id)
-)
+);

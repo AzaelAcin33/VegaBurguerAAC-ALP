@@ -12336,3 +12336,1133 @@ com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
 	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
 
+dic 03, 2025 11:38:15 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 11:38:15 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 11:38:15 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 11:38:46 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where name=? | Parametros: [name=123]
+dic 03, 2025 11:38:46 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where name=? | Parametros: [name=123]
+dic 03, 2025 11:38:46 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao insert
+GRAVE: null
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Data too long for column 'id' at row 1
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao.insert(DependienteDao.java:178)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava.add(BBDDRepositorioDependientesJava.java:29)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository.add(BBDDDependienteRepository.kt:12)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.crear.CrearDependienteUseCase.invoke(CrearDependienteUseCase.kt:33)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.crear.CrearDependienteUseCase$invoke$1.invokeSuspend(CrearDependienteUseCase.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 11:56:32 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 11:56:32 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 11:56:32 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 11:56:54 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where name=? | Parametros: [name=123]
+dic 03, 2025 11:56:54 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where name=? | Parametros: [name=123]
+dic 03, 2025 11:56:54 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao insert
+INFORMACIÓN: Ejecutando SQL: INSERT INTO dependientes (id, name, email, password, imagePath, enabled, isAdmin) VALUES (?, ?, ?, ?, ?, ?, ?) | Params: [1]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c, [2]=123, [3]=123@123, [4]=123456789Aa, [5]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c.jpg, [6]=true, [7]=true]
+dic 03, 2025 11:57:46 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from categorias where name=? | Parametros: [name=categoria]
+dic 03, 2025 11:57:46 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from categorias where name=? | Parametros: [name=categoria]
+dic 03, 2025 11:57:46 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao insert
+GRAVE: null
+java.sql.SQLException: Parameter index out of range (6 > number of parameters, which is 5).
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1345)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1358)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.setBoolean(ClientPreparedStatement.java:1440)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.insert(CategoriaDao.java:164)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.add(BBDDRepositorioCategoriasJava.java:21)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.add(BBDDCategoriaRepository.kt:12)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.crear.CrearCategoriaUseCase.invoke(CrearCategoriaUseCase.kt:30)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.crear.CrearCategoriaUseCase$invoke$1.invokeSuspend(CrearCategoriaUseCase.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 11:58:38 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao registerToObject
+GRAVE: null
+java.sql.SQLException: Column 'IMAGE_PATH' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:584)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao.registerToObject(DependienteDao.java:211)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao.getAll(DependienteDao.java:96)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava.getAll(BBDDRepositorioDependientesJava.java:48)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository.getAll(BBDDDependienteRepository.kt:34)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase.invoke(ListarDependientesUseCase.kt:15)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel$1.invokeSuspend(DependientesViewModel.kt:60)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel.<init>(DependientesViewModel.kt:59)
+	at ies.sequeros.com.dam.pmdm.AppKt.App$lambda$3$0(App.kt:61)
+	at androidx.lifecycle.viewmodel.internal.ViewModelProviders.createViewModelFromInitializers$lifecycle_viewmodel(ViewModelProviders.kt:85)
+	at androidx.lifecycle.viewmodel.InitializerViewModelFactory.create(InitializerViewModelFactory.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl_desktopKt.createViewModel(ViewModelProviderImpl.desktop.kt:27)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel(ViewModelProviderImpl.kt:60)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel$default(ViewModelProviderImpl.kt:43)
+	at androidx.lifecycle.ViewModelProvider.get(ViewModelProvider.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.get(ViewModel.kt:172)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.get(ViewModel.kt:1)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.viewModel(ViewModel.kt:106)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.viewModel(ViewModel.kt:1)
+	at ies.sequeros.com.dam.pmdm.AppKt.App(App.kt:160)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:49)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:130)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:161)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:160)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.WindowContentLayout_desktopKt.WindowContentLayout(WindowContentLayout.desktop.kt:110)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:146)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:145)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:143)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:142)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:385)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:579)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.access$ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:383)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:596)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.layout.OverlayLayout_skikoKt.OverlayLayout(OverlayLayout.skiko.kt:81)
+	at androidx.compose.ui.viewinterop.InteropContainer_skikoKt.TrackInteropPlacementContainer(InteropContainer.skiko.kt:138)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:276)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:275)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer.invoke(SwingInteropContainer.desktop.kt:273)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:150)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.platform.CompositionLocalsKt.ProvideCommonCompositionLocals(CompositionLocals.kt:216)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:47)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:410)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.provide(Wrapper.skiko.kt:60)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.access$provide(Wrapper.skiko.kt:1)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:45)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.internal.Expect_jvmKt.invokeComposable(Expect.jvm.kt:24)
+	at androidx.compose.runtime.ComposerImpl.doCompose-aFTiNEg(Composer.kt:3843)
+	at androidx.compose.runtime.ComposerImpl.composeContent--ZbOJvo$runtime(Composer.kt:3747)
+	at androidx.compose.runtime.CompositionImpl.composeContent(Composition.kt:832)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1233)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.setContent(Wrapper.skiko.kt:45)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.createComposition(CanvasLayersComposeScene.skiko.kt:215)
+	at androidx.compose.ui.scene.BaseComposeScene.setContent(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.ui.scene.ComposeSceneMediator.setContent$lambda$14(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onComponentAttached(ComposeSceneMediator.desktop.kt:564)
+	at androidx.compose.ui.scene.ComposeContainer.addNotify(ComposeContainer.desktop.kt:324)
+	at androidx.compose.ui.awt.ComposeWindowPanel.addNotify(ComposeWindowPanel.desktop.kt:123)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JRootPane.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/java.awt.Window.addNotify(Unknown Source)
+	at java.desktop/java.awt.Frame.addNotify(Unknown Source)
+	at java.desktop/java.awt.Window.pack(Unknown Source)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeImpl-6HolHcs(Windows.desktop.kt:115)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeSafely-hQcJfNw(Windows.desktop.kt:54)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$37$lambda$36(SwingWindow.desktop.kt:294)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$12$lambda$11(SwingWindow.desktop.kt:130)
+	at androidx.compose.ui.awt.AwtWindow_desktopKt.AwtWindow$lambda$7$lambda$6(AwtWindow.desktop.kt:77)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate$lambda$4(UpdateEffect.desktop.kt:59)
+	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2495)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:464)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:248)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate(UpdateEffect.desktop.kt:55)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7(UpdateEffect.desktop.kt:64)
+	at androidx.compose.runtime.DisposableEffectImpl.onRemembered(Effects.kt:85)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberList(RememberEventDispatcher.kt:253)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberObservers(RememberEventDispatcher.kt:225)
+	at androidx.compose.runtime.CompositionImpl.applyChangesInLocked(Composition.kt:1122)
+	at androidx.compose.runtime.CompositionImpl.applyChanges(Composition.kt:1149)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1266)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.window.Application_desktopKt$awaitApplication$2$1$2.invokeSuspend(Application.desktop.kt:219)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 11:58:38 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 11:58:38 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 11:58:38 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 11:59:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao registerToObject
+GRAVE: null
+java.sql.SQLException: Column 'IMAGE_PATH' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:584)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao.registerToObject(DependienteDao.java:211)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao.getAll(DependienteDao.java:96)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava.getAll(BBDDRepositorioDependientesJava.java:48)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository.getAll(BBDDDependienteRepository.kt:34)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase.invoke(ListarDependientesUseCase.kt:15)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel$1.invokeSuspend(DependientesViewModel.kt:60)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel.<init>(DependientesViewModel.kt:59)
+	at ies.sequeros.com.dam.pmdm.AppKt.App$lambda$3$0(App.kt:61)
+	at androidx.lifecycle.viewmodel.internal.ViewModelProviders.createViewModelFromInitializers$lifecycle_viewmodel(ViewModelProviders.kt:85)
+	at androidx.lifecycle.viewmodel.InitializerViewModelFactory.create(InitializerViewModelFactory.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl_desktopKt.createViewModel(ViewModelProviderImpl.desktop.kt:27)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel(ViewModelProviderImpl.kt:60)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel$default(ViewModelProviderImpl.kt:43)
+	at androidx.lifecycle.ViewModelProvider.get(ViewModelProvider.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.get(ViewModel.kt:172)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.get(ViewModel.kt:1)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.viewModel(ViewModel.kt:106)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.viewModel(ViewModel.kt:1)
+	at ies.sequeros.com.dam.pmdm.AppKt.App(App.kt:160)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:49)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:130)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:161)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:160)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.WindowContentLayout_desktopKt.WindowContentLayout(WindowContentLayout.desktop.kt:110)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:146)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:145)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:143)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:142)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:385)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:579)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.access$ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:383)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:596)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.layout.OverlayLayout_skikoKt.OverlayLayout(OverlayLayout.skiko.kt:81)
+	at androidx.compose.ui.viewinterop.InteropContainer_skikoKt.TrackInteropPlacementContainer(InteropContainer.skiko.kt:138)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:276)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:275)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer.invoke(SwingInteropContainer.desktop.kt:273)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:150)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.platform.CompositionLocalsKt.ProvideCommonCompositionLocals(CompositionLocals.kt:216)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:47)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:410)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.provide(Wrapper.skiko.kt:60)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.access$provide(Wrapper.skiko.kt:1)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:45)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.internal.Expect_jvmKt.invokeComposable(Expect.jvm.kt:24)
+	at androidx.compose.runtime.ComposerImpl.doCompose-aFTiNEg(Composer.kt:3843)
+	at androidx.compose.runtime.ComposerImpl.composeContent--ZbOJvo$runtime(Composer.kt:3747)
+	at androidx.compose.runtime.CompositionImpl.composeContent(Composition.kt:832)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1233)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.setContent(Wrapper.skiko.kt:45)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.createComposition(CanvasLayersComposeScene.skiko.kt:215)
+	at androidx.compose.ui.scene.BaseComposeScene.setContent(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.ui.scene.ComposeSceneMediator.setContent$lambda$14(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onComponentAttached(ComposeSceneMediator.desktop.kt:564)
+	at androidx.compose.ui.scene.ComposeContainer.addNotify(ComposeContainer.desktop.kt:324)
+	at androidx.compose.ui.awt.ComposeWindowPanel.addNotify(ComposeWindowPanel.desktop.kt:123)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JRootPane.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/java.awt.Window.addNotify(Unknown Source)
+	at java.desktop/java.awt.Frame.addNotify(Unknown Source)
+	at java.desktop/java.awt.Window.pack(Unknown Source)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeImpl-6HolHcs(Windows.desktop.kt:115)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeSafely-hQcJfNw(Windows.desktop.kt:54)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$37$lambda$36(SwingWindow.desktop.kt:294)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$12$lambda$11(SwingWindow.desktop.kt:130)
+	at androidx.compose.ui.awt.AwtWindow_desktopKt.AwtWindow$lambda$7$lambda$6(AwtWindow.desktop.kt:77)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate$lambda$4(UpdateEffect.desktop.kt:59)
+	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2495)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:464)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:248)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate(UpdateEffect.desktop.kt:55)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7(UpdateEffect.desktop.kt:64)
+	at androidx.compose.runtime.DisposableEffectImpl.onRemembered(Effects.kt:85)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberList(RememberEventDispatcher.kt:253)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberObservers(RememberEventDispatcher.kt:225)
+	at androidx.compose.runtime.CompositionImpl.applyChangesInLocked(Composition.kt:1122)
+	at androidx.compose.runtime.CompositionImpl.applyChanges(Composition.kt:1149)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1266)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.window.Application_desktopKt$awaitApplication$2$1$2.invokeSuspend(Application.desktop.kt:219)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 11:59:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 11:59:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 11:59:14 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 11:59:43 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 11:59:43 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 11:59:43 A. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 12:00:11 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from categorias where name=? | Parametros: [name=123]
+dic 03, 2025 12:00:11 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from categorias where name=? | Parametros: [name=123]
+dic 03, 2025 12:00:11 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao insert
+GRAVE: null
+java.sql.SQLException: Parameter index out of range (6 > number of parameters, which is 5).
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.checkBounds(ClientPreparedStatement.java:1345)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.getCoreParameterIndex(ClientPreparedStatement.java:1358)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.setBoolean(ClientPreparedStatement.java:1440)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.insert(CategoriaDao.java:164)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.add(BBDDRepositorioCategoriasJava.java:21)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.add(BBDDCategoriaRepository.kt:12)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.crear.CrearCategoriaUseCase.invoke(CrearCategoriaUseCase.kt:30)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.crear.CrearCategoriaUseCase$invoke$1.invokeSuspend(CrearCategoriaUseCase.kt)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 12:02:17 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:02:17 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 12:02:17 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 12:02:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from categorias where name=? | Parametros: [name=123]
+dic 03, 2025 12:02:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from categorias where name=? | Parametros: [name=123]
+dic 03, 2025 12:02:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao insert
+INFORMACIÓN: Ejecutando SQL: INSERT INTO categorias(id,name,imagePath,description,enabled) VALUES (?,?,?,?,?) | Params: [1]=624f8e99-e89f-478c-aaf8-822c87434b8a, [2]=123, [3]=624f8e99-e89f-478c-aaf8-822c87434b8a.jpg, [4]=si, [5]=true]
+dic 03, 2025 12:02:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:02:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao registerToObject
+GRAVE: null
+java.sql.SQLException: Column 'IMAGE_PATH' not found.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:98)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:90)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:64)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.findColumn(ResultSetImpl.java:584)
+	at com.mysql.cj.jdbc.result.ResultSetImpl.getString(ResultSetImpl.java:896)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.registerToObject(CategoriaDao.java:190)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.getAll(CategoriaDao.java:95)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.getAll(BBDDRepositorioCategoriasJava.java:44)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.getAll(BBDDCategoriaRepository.kt:34)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.listar.ListarCategoriaUseCase.invoke(ListarCategoriaUseCase.kt:11)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel$1.invokeSuspend(CategoriasViewModel.kt:50)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel.<init>(CategoriasViewModel.kt:49)
+	at ies.sequeros.com.dam.pmdm.AppKt.App$lambda$4$0(App.kt:64)
+	at androidx.lifecycle.viewmodel.internal.ViewModelProviders.createViewModelFromInitializers$lifecycle_viewmodel(ViewModelProviders.kt:85)
+	at androidx.lifecycle.viewmodel.InitializerViewModelFactory.create(InitializerViewModelFactory.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl_desktopKt.createViewModel(ViewModelProviderImpl.desktop.kt:27)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel(ViewModelProviderImpl.kt:60)
+	at androidx.lifecycle.viewmodel.ViewModelProviderImpl.getViewModel$lifecycle_viewmodel$default(ViewModelProviderImpl.kt:43)
+	at androidx.lifecycle.ViewModelProvider.get(ViewModelProvider.desktop.kt:35)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.get(ViewModel.kt:172)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.get(ViewModel.kt:1)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt__ViewModelKt.viewModel(ViewModel.kt:106)
+	at androidx.lifecycle.viewmodel.compose.ViewModelKt.viewModel(ViewModel.kt:1)
+	at ies.sequeros.com.dam.pmdm.AppKt.App(App.kt:185)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:49)
+	at ies.sequeros.com.dam.pmdm.ComposableSingletons$MainKt$lambda$-1167175247$1$2.invoke(main.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:130)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:161)
+	at androidx.compose.ui.awt.ComposeWindow$setContent$5.invoke(ComposeWindow.desktop.kt:160)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.awt.WindowContentLayout_desktopKt.WindowContentLayout(WindowContentLayout.desktop.kt:110)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:146)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3$1.invoke(ComposeWindowPanel.desktop.kt:145)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:143)
+	at androidx.compose.ui.awt.ComposeWindowPanel$setContent$3.invoke(ComposeWindowPanel.desktop.kt:142)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:385)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:579)
+	at androidx.compose.ui.scene.ComposeContainer_desktopKt.access$ProvideContainerCompositionLocals(ComposeContainer.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:384)
+	at androidx.compose.ui.scene.ComposeContainer$setContent$1.invoke(ComposeContainer.desktop.kt:383)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:596)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.ui.layout.OverlayLayout_skikoKt.OverlayLayout(OverlayLayout.skiko.kt:81)
+	at androidx.compose.ui.viewinterop.InteropContainer_skikoKt.TrackInteropPlacementContainer(InteropContainer.skiko.kt:138)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:276)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer$invoke$1.invoke(SwingInteropContainer.desktop.kt:275)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:390)
+	at androidx.compose.ui.viewinterop.SwingInteropContainer.invoke(SwingInteropContainer.desktop.kt:273)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:595)
+	at androidx.compose.ui.scene.ComposeSceneMediator$setContent$1$1$1.invoke(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:150)
+	at androidx.compose.ui.scene.BaseComposeScene$setContent$1$2.invoke(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.ui.platform.CompositionLocalsKt.ProvideCommonCompositionLocals(CompositionLocals.kt:216)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:47)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2$1.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:370)
+	at androidx.compose.runtime.CompositionLocalKt.CompositionLocalProvider(CompositionLocal.kt:410)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.provide(Wrapper.skiko.kt:60)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.access$provide(Wrapper.skiko.kt:1)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:46)
+	at androidx.compose.ui.platform.Wrapper_skikoKt$setContent$2.invoke(Wrapper.skiko.kt:45)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:121)
+	at androidx.compose.runtime.internal.ComposableLambdaImpl.invoke(ComposableLambda.kt:51)
+	at androidx.compose.runtime.internal.Expect_jvmKt.invokeComposable(Expect.jvm.kt:24)
+	at androidx.compose.runtime.ComposerImpl.doCompose-aFTiNEg(Composer.kt:3843)
+	at androidx.compose.runtime.ComposerImpl.composeContent--ZbOJvo$runtime(Composer.kt:3747)
+	at androidx.compose.runtime.CompositionImpl.composeContent(Composition.kt:832)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1233)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.platform.Wrapper_skikoKt.setContent(Wrapper.skiko.kt:45)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.createComposition(CanvasLayersComposeScene.skiko.kt:215)
+	at androidx.compose.ui.scene.BaseComposeScene.setContent(BaseComposeScene.skiko.kt:149)
+	at androidx.compose.ui.scene.ComposeSceneMediator.setContent$lambda$14(ComposeSceneMediator.desktop.kt:594)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onComponentAttached(ComposeSceneMediator.desktop.kt:564)
+	at androidx.compose.ui.scene.ComposeContainer.addNotify(ComposeContainer.desktop.kt:324)
+	at androidx.compose.ui.awt.ComposeWindowPanel.addNotify(ComposeWindowPanel.desktop.kt:123)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JComponent.addNotify(Unknown Source)
+	at java.desktop/javax.swing.JRootPane.addNotify(Unknown Source)
+	at java.desktop/java.awt.Container.addNotify(Unknown Source)
+	at java.desktop/java.awt.Window.addNotify(Unknown Source)
+	at java.desktop/java.awt.Frame.addNotify(Unknown Source)
+	at java.desktop/java.awt.Window.pack(Unknown Source)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeImpl-6HolHcs(Windows.desktop.kt:115)
+	at androidx.compose.ui.util.Windows_desktopKt.setSizeSafely-hQcJfNw(Windows.desktop.kt:54)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$37$lambda$36(SwingWindow.desktop.kt:294)
+	at androidx.compose.ui.awt.SwingWindow_desktopKt.SwingWindow$lambda$12$lambda$11(SwingWindow.desktop.kt:130)
+	at androidx.compose.ui.awt.AwtWindow_desktopKt.AwtWindow$lambda$7$lambda$6(AwtWindow.desktop.kt:77)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate$lambda$4(UpdateEffect.desktop.kt:59)
+	at androidx.compose.runtime.snapshots.Snapshot$Companion.observe(Snapshot.kt:2495)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver$ObservedScopeMap.observe(SnapshotStateObserver.kt:464)
+	at androidx.compose.runtime.snapshots.SnapshotStateObserver.observeReads(SnapshotStateObserver.kt:248)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7$performUpdate(UpdateEffect.desktop.kt:55)
+	at androidx.compose.ui.util.UpdateEffect_desktopKt.UpdateEffect$lambda$8$lambda$7(UpdateEffect.desktop.kt:64)
+	at androidx.compose.runtime.DisposableEffectImpl.onRemembered(Effects.kt:85)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberList(RememberEventDispatcher.kt:253)
+	at androidx.compose.runtime.internal.RememberEventDispatcher.dispatchRememberObservers(RememberEventDispatcher.kt:225)
+	at androidx.compose.runtime.CompositionImpl.applyChangesInLocked(Composition.kt:1122)
+	at androidx.compose.runtime.CompositionImpl.applyChanges(Composition.kt:1149)
+	at androidx.compose.runtime.Recomposer.composeInitial$runtime(Recomposer.kt:1266)
+	at androidx.compose.runtime.CompositionImpl.composeInitial(Composition.kt:672)
+	at androidx.compose.runtime.CompositionImpl.setContent(Composition.kt:639)
+	at androidx.compose.ui.window.Application_desktopKt$awaitApplication$2$1$2.invokeSuspend(Application.desktop.kt:219)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:100)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 12:02:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 12:02:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 12:03:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:03:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 12:03:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 12:04:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=624f8e99-e89f-478c-aaf8-822c87434b8a]
+dic 03, 2025 12:04:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 12:04:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=624f8e99-e89f-478c-aaf8-822c87434b8a]
+dic 03, 2025 12:04:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao delete
+INFORMACIÓN: Ejecutando SQL: delete from categorias where id=? | Parametros: [id=624f8e99-e89f-478c-aaf8-822c87434b8a]
+dic 03, 2025 12:04:27 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from categorias where name=? | Parametros: [name=prueba	]
+dic 03, 2025 12:04:27 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from categorias where name=? | Parametros: [name=prueba	]
+dic 03, 2025 12:04:27 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao insert
+INFORMACIÓN: Ejecutando SQL: INSERT INTO categorias(id,name,imagePath,description,enabled) VALUES (?,?,?,?,?) | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=prueba	, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.png, [4]=jajjajaja xd, [5]=true]
+dic 03, 2025 12:04:35 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:04:35 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 12:04:35 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 12:04:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:04:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+GRAVE: null
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: '2b10bb16-4385-4f78-acd3-143d8d8c3aae'
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.update(CategoriaDao.java:118)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.update(BBDDRepositorioCategoriasJava.java:39)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.update(BBDDCategoriaRepository.kt:28)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.activar.ActivarCategoriaUseCase.invoke(ActivarCategoriaUseCase.kt:19)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel$switchEnableCategoria$1.invokeSuspend(CategoriasViewModel.kt:66)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel.switchEnableCategoria(CategoriasViewModel.kt:65)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasKt$Categorias$1$2$1$1.invoke$lambda$1$0(Categorias.kt:110)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriaCardKt$CategoriaCard$1.invoke$lambda$0$3$0$0(CategoriaCard.kt:142)
+	at androidx.compose.foundation.ClickableNode.onPointerEvent-H0pRuoY(Clickable.kt:1014)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:444)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:430)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:430)
+	at androidx.compose.ui.input.pointer.NodeParent.dispatchMainEventPass(HitPathTracker.kt:276)
+	at androidx.compose.ui.input.pointer.HitPathTracker.dispatchChanges(HitPathTracker.kt:172)
+	at androidx.compose.ui.input.pointer.PointerInputEventProcessor.process-BIzXfog(PointerInputEventProcessor.kt:118)
+	at androidx.compose.ui.node.RootNodeOwner.onPointerInput-l-3BpVI(RootNodeOwner.skiko.kt:315)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.processRelease-l-3BpVI(CanvasLayersComposeScene.skiko.kt:335)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.processPointerInputEvent-l-3BpVI(CanvasLayersComposeScene.skiko.kt:236)
+	at androidx.compose.ui.scene.BaseComposeScene$inputHandler$2.invoke-l-3BpVI(BaseComposeScene.skiko.kt:65)
+	at androidx.compose.ui.scene.BaseComposeScene$inputHandler$2.invoke(BaseComposeScene.skiko.kt:65)
+	at androidx.compose.ui.input.pointer.SyntheticEventSender.sendInternal-l-3BpVI(SyntheticEventSender.skiko.kt:197)
+	at androidx.compose.ui.input.pointer.SyntheticEventSender.send-l-3BpVI(SyntheticEventSender.skiko.kt:82)
+	at androidx.compose.ui.scene.ComposeSceneInputHandler.onPointerEvent--c_cFIg(ComposeSceneInputHandler.skiko.kt:130)
+	at androidx.compose.ui.scene.ComposeSceneInputHandler.onPointerEvent-lDgZiSw(ComposeSceneInputHandler.skiko.kt:91)
+	at androidx.compose.ui.scene.BaseComposeScene.sendPointerEvent-lDgZiSw(BaseComposeScene.skiko.kt:216)
+	at androidx.compose.ui.scene.ComposeScene.sendPointerEvent-lDgZiSw$default(ComposeScene.skiko.kt:202)
+	at androidx.compose.ui.scene.ComposeSceneMediator_desktopKt.onMouseEvent-d-4ec7I(ComposeSceneMediator.desktop.kt:846)
+	at androidx.compose.ui.scene.ComposeSceneMediator_desktopKt.access$onMouseEvent-d-4ec7I(ComposeSceneMediator.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onMouseEvent(ComposeSceneMediator.desktop.kt:454)
+	at androidx.compose.ui.scene.ComposeSceneMediator.access$onMouseEvent(ComposeSceneMediator.desktop.kt:110)
+	at androidx.compose.ui.scene.ComposeSceneMediator$mouseListener$1.mouseReleased(ComposeSceneMediator.desktop.kt:269)
+	at java.desktop/java.awt.Component.processMouseEvent(Unknown Source)
+	at java.desktop/java.awt.Component.processEvent(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 12:04:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:04:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+GRAVE: null
+com.mysql.cj.jdbc.exceptions.MysqlDataTruncation: Data truncation: Truncated incorrect DOUBLE value: '2b10bb16-4385-4f78-acd3-143d8d8c3aae'
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:104)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.update(CategoriaDao.java:118)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.update(BBDDRepositorioCategoriasJava.java:39)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.update(BBDDCategoriaRepository.kt:28)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.activar.ActivarCategoriaUseCase.invoke(ActivarCategoriaUseCase.kt:19)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel$switchEnableCategoria$1.invokeSuspend(CategoriasViewModel.kt:66)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel.switchEnableCategoria(CategoriasViewModel.kt:65)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasKt$Categorias$1$2$1$1.invoke$lambda$0$0(Categorias.kt:104)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriaCardKt$CategoriaCard$1.invoke$lambda$0$3$0$0(CategoriaCard.kt:144)
+	at androidx.compose.foundation.ClickableNode.onPointerEvent-H0pRuoY(Clickable.kt:1014)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:444)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:430)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:430)
+	at androidx.compose.ui.input.pointer.NodeParent.dispatchMainEventPass(HitPathTracker.kt:276)
+	at androidx.compose.ui.input.pointer.HitPathTracker.dispatchChanges(HitPathTracker.kt:172)
+	at androidx.compose.ui.input.pointer.PointerInputEventProcessor.process-BIzXfog(PointerInputEventProcessor.kt:118)
+	at androidx.compose.ui.node.RootNodeOwner.onPointerInput-l-3BpVI(RootNodeOwner.skiko.kt:315)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.processRelease-l-3BpVI(CanvasLayersComposeScene.skiko.kt:335)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.processPointerInputEvent-l-3BpVI(CanvasLayersComposeScene.skiko.kt:236)
+	at androidx.compose.ui.scene.BaseComposeScene$inputHandler$2.invoke-l-3BpVI(BaseComposeScene.skiko.kt:65)
+	at androidx.compose.ui.scene.BaseComposeScene$inputHandler$2.invoke(BaseComposeScene.skiko.kt:65)
+	at androidx.compose.ui.input.pointer.SyntheticEventSender.sendInternal-l-3BpVI(SyntheticEventSender.skiko.kt:197)
+	at androidx.compose.ui.input.pointer.SyntheticEventSender.send-l-3BpVI(SyntheticEventSender.skiko.kt:82)
+	at androidx.compose.ui.scene.ComposeSceneInputHandler.onPointerEvent--c_cFIg(ComposeSceneInputHandler.skiko.kt:130)
+	at androidx.compose.ui.scene.ComposeSceneInputHandler.onPointerEvent-lDgZiSw(ComposeSceneInputHandler.skiko.kt:91)
+	at androidx.compose.ui.scene.BaseComposeScene.sendPointerEvent-lDgZiSw(BaseComposeScene.skiko.kt:216)
+	at androidx.compose.ui.scene.ComposeScene.sendPointerEvent-lDgZiSw$default(ComposeScene.skiko.kt:202)
+	at androidx.compose.ui.scene.ComposeSceneMediator_desktopKt.onMouseEvent-d-4ec7I(ComposeSceneMediator.desktop.kt:846)
+	at androidx.compose.ui.scene.ComposeSceneMediator_desktopKt.access$onMouseEvent-d-4ec7I(ComposeSceneMediator.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onMouseEvent(ComposeSceneMediator.desktop.kt:454)
+	at androidx.compose.ui.scene.ComposeSceneMediator.access$onMouseEvent(ComposeSceneMediator.desktop.kt:110)
+	at androidx.compose.ui.scene.ComposeSceneMediator$mouseListener$1.mouseReleased(ComposeSceneMediator.desktop.kt:269)
+	at java.desktop/java.awt.Component.processMouseEvent(Unknown Source)
+	at java.desktop/java.awt.Component.processEvent(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 12:05:37 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:05:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 12:05:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 12:05:42 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:05:42 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+GRAVE: null
+java.sql.SQLException: No value specified for parameter 6
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1084)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.update(CategoriaDao.java:117)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.update(BBDDRepositorioCategoriasJava.java:39)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.update(BBDDCategoriaRepository.kt:28)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.activar.ActivarCategoriaUseCase.invoke(ActivarCategoriaUseCase.kt:19)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel$switchEnableCategoria$1.invokeSuspend(CategoriasViewModel.kt:66)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel.switchEnableCategoria(CategoriasViewModel.kt:65)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasKt$Categorias$1$2$1$1.invoke$lambda$1$0(Categorias.kt:110)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriaCardKt$CategoriaCard$1.invoke$lambda$0$3$0$0(CategoriaCard.kt:142)
+	at androidx.compose.foundation.ClickableNode.onPointerEvent-H0pRuoY(Clickable.kt:1014)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:444)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:430)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:430)
+	at androidx.compose.ui.input.pointer.NodeParent.dispatchMainEventPass(HitPathTracker.kt:276)
+	at androidx.compose.ui.input.pointer.HitPathTracker.dispatchChanges(HitPathTracker.kt:172)
+	at androidx.compose.ui.input.pointer.PointerInputEventProcessor.process-BIzXfog(PointerInputEventProcessor.kt:118)
+	at androidx.compose.ui.node.RootNodeOwner.onPointerInput-l-3BpVI(RootNodeOwner.skiko.kt:315)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.processRelease-l-3BpVI(CanvasLayersComposeScene.skiko.kt:335)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.processPointerInputEvent-l-3BpVI(CanvasLayersComposeScene.skiko.kt:236)
+	at androidx.compose.ui.scene.BaseComposeScene$inputHandler$2.invoke-l-3BpVI(BaseComposeScene.skiko.kt:65)
+	at androidx.compose.ui.scene.BaseComposeScene$inputHandler$2.invoke(BaseComposeScene.skiko.kt:65)
+	at androidx.compose.ui.input.pointer.SyntheticEventSender.sendInternal-l-3BpVI(SyntheticEventSender.skiko.kt:197)
+	at androidx.compose.ui.input.pointer.SyntheticEventSender.send-l-3BpVI(SyntheticEventSender.skiko.kt:82)
+	at androidx.compose.ui.scene.ComposeSceneInputHandler.onPointerEvent--c_cFIg(ComposeSceneInputHandler.skiko.kt:130)
+	at androidx.compose.ui.scene.ComposeSceneInputHandler.onPointerEvent-lDgZiSw(ComposeSceneInputHandler.skiko.kt:91)
+	at androidx.compose.ui.scene.BaseComposeScene.sendPointerEvent-lDgZiSw(BaseComposeScene.skiko.kt:216)
+	at androidx.compose.ui.scene.ComposeScene.sendPointerEvent-lDgZiSw$default(ComposeScene.skiko.kt:202)
+	at androidx.compose.ui.scene.ComposeSceneMediator_desktopKt.onMouseEvent-d-4ec7I(ComposeSceneMediator.desktop.kt:846)
+	at androidx.compose.ui.scene.ComposeSceneMediator_desktopKt.access$onMouseEvent-d-4ec7I(ComposeSceneMediator.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onMouseEvent(ComposeSceneMediator.desktop.kt:454)
+	at androidx.compose.ui.scene.ComposeSceneMediator.access$onMouseEvent(ComposeSceneMediator.desktop.kt:110)
+	at androidx.compose.ui.scene.ComposeSceneMediator$mouseListener$1.mouseReleased(ComposeSceneMediator.desktop.kt:269)
+	at java.desktop/java.awt.Component.processMouseEvent(Unknown Source)
+	at java.desktop/java.awt.Component.processEvent(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 12:05:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:05:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+GRAVE: null
+java.sql.SQLException: No value specified for parameter 6
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:130)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1084)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao.update(CategoriaDao.java:117)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava.update(BBDDRepositorioCategoriasJava.java:39)
+	at ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository.update(BBDDCategoriaRepository.kt:28)
+	at ies.sequeros.com.dam.pmdm.administrador.aplicacion.categorias.activar.ActivarCategoriaUseCase.invoke(ActivarCategoriaUseCase.kt:19)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel$switchEnableCategoria$1.invokeSuspend(CategoriasViewModel.kt:66)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:34)
+	at kotlinx.coroutines.internal.DispatchedContinuationKt.resumeCancellableWith(DispatchedContinuation.kt:375)
+	at kotlinx.coroutines.intrinsics.CancellableKt.startCoroutineCancellable(Cancellable.kt:26)
+	at kotlinx.coroutines.CoroutineStart.invoke(CoroutineStart.kt:358)
+	at kotlinx.coroutines.AbstractCoroutine.start(AbstractCoroutine.kt:134)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch(Builders.common.kt:53)
+	at kotlinx.coroutines.BuildersKt.launch(Unknown Source)
+	at kotlinx.coroutines.BuildersKt__Builders_commonKt.launch$default(Builders.common.kt:44)
+	at kotlinx.coroutines.BuildersKt.launch$default(Unknown Source)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel.switchEnableCategoria(CategoriasViewModel.kt:65)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasKt$Categorias$1$2$1$1.invoke$lambda$0$0(Categorias.kt:104)
+	at ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriaCardKt$CategoriaCard$1.invoke$lambda$0$3$0$0(CategoriaCard.kt:144)
+	at androidx.compose.foundation.ClickableNode.onPointerEvent-H0pRuoY(Clickable.kt:1014)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:444)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:430)
+	at androidx.compose.ui.input.pointer.Node.dispatchMainEventPass(HitPathTracker.kt:430)
+	at androidx.compose.ui.input.pointer.NodeParent.dispatchMainEventPass(HitPathTracker.kt:276)
+	at androidx.compose.ui.input.pointer.HitPathTracker.dispatchChanges(HitPathTracker.kt:172)
+	at androidx.compose.ui.input.pointer.PointerInputEventProcessor.process-BIzXfog(PointerInputEventProcessor.kt:118)
+	at androidx.compose.ui.node.RootNodeOwner.onPointerInput-l-3BpVI(RootNodeOwner.skiko.kt:315)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.processRelease-l-3BpVI(CanvasLayersComposeScene.skiko.kt:335)
+	at androidx.compose.ui.scene.CanvasLayersComposeSceneImpl.processPointerInputEvent-l-3BpVI(CanvasLayersComposeScene.skiko.kt:236)
+	at androidx.compose.ui.scene.BaseComposeScene$inputHandler$2.invoke-l-3BpVI(BaseComposeScene.skiko.kt:65)
+	at androidx.compose.ui.scene.BaseComposeScene$inputHandler$2.invoke(BaseComposeScene.skiko.kt:65)
+	at androidx.compose.ui.input.pointer.SyntheticEventSender.sendInternal-l-3BpVI(SyntheticEventSender.skiko.kt:197)
+	at androidx.compose.ui.input.pointer.SyntheticEventSender.send-l-3BpVI(SyntheticEventSender.skiko.kt:82)
+	at androidx.compose.ui.scene.ComposeSceneInputHandler.onPointerEvent--c_cFIg(ComposeSceneInputHandler.skiko.kt:130)
+	at androidx.compose.ui.scene.ComposeSceneInputHandler.onPointerEvent-lDgZiSw(ComposeSceneInputHandler.skiko.kt:91)
+	at androidx.compose.ui.scene.BaseComposeScene.sendPointerEvent-lDgZiSw(BaseComposeScene.skiko.kt:216)
+	at androidx.compose.ui.scene.ComposeScene.sendPointerEvent-lDgZiSw$default(ComposeScene.skiko.kt:202)
+	at androidx.compose.ui.scene.ComposeSceneMediator_desktopKt.onMouseEvent-d-4ec7I(ComposeSceneMediator.desktop.kt:846)
+	at androidx.compose.ui.scene.ComposeSceneMediator_desktopKt.access$onMouseEvent-d-4ec7I(ComposeSceneMediator.desktop.kt:1)
+	at androidx.compose.ui.scene.ComposeSceneMediator.onMouseEvent(ComposeSceneMediator.desktop.kt:454)
+	at androidx.compose.ui.scene.ComposeSceneMediator.access$onMouseEvent(ComposeSceneMediator.desktop.kt:110)
+	at androidx.compose.ui.scene.ComposeSceneMediator$mouseListener$1.mouseReleased(ComposeSceneMediator.desktop.kt:269)
+	at java.desktop/java.awt.Component.processMouseEvent(Unknown Source)
+	at java.desktop/java.awt.Component.processEvent(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.Component.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$5.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Unknown Source)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+
+dic 03, 2025 12:14:00 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:14:00 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 12:14:00 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 12:14:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:14:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=prueba	, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.png, [4]=jajjajaja xd, [5]=false]
+dic 03, 2025 12:14:05 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:14:05 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=prueba	, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.png, [4]=jajjajaja xd, [5]=true]
+dic 03, 2025 12:14:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:15:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:15:19 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=prueba	, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=jajjajaja xd, [5]=true]
+dic 03, 2025 12:15:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:15:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=prueba	, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=jajjajaja xd, [5]=true]
+dic 03, 2025 12:15:50 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:15:50 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=false]
+dic 03, 2025 12:15:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:15:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=true]
+dic 03, 2025 12:15:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:15:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=false]
+dic 03, 2025 12:15:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:15:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=true]
+dic 03, 2025 12:19:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:19:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from categorias | Parametros: 
+dic 03, 2025 12:19:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from productos | Parametros: 
+dic 03, 2025 12:19:37 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where name=? | Parametros: [name=jajajajaj]
+dic 03, 2025 12:19:37 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao findByName
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where name=? | Parametros: [name=jajajajaj]
+dic 03, 2025 12:19:37 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao insert
+INFORMACIÓN: Ejecutando SQL: INSERT INTO dependientes (id, name, email, password, imagePath, enabled, isAdmin) VALUES (?, ?, ?, ?, ?, ?, ?) | Params: [1]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6, [2]=jajajajaj, [3]=prueba@123, [4]=1234567890Aa, [5]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6.jpg, [6]=true, [7]=true]
+dic 03, 2025 12:19:41 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:19:41 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=123, [2]=123@123, [3]=123456789Aa, [4]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c.jpg, [5]=false, [6]=true, [7]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:19:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:19:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=123, [2]=123@123, [3]=123456789Aa, [4]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c.jpg, [5]=true, [6]=true, [7]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:19:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:19:44 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=123, [2]=123@123, [3]=123456789Aa, [4]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c.jpg, [5]=true, [6]=false, [7]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:19:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:19:45 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=123, [2]=123@123, [3]=123456789Aa, [4]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c.jpg, [5]=true, [6]=true, [7]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:20:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:20:01 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=nononono, [2]=123@123, [3]=123456789Aa, [4]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c.jpg, [5]=true, [6]=true, [7]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:20:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:20:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=nononono, [2]=nonono@nonono, [3]=123456789Aa, [4]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c.jpg, [5]=true, [6]=true, [7]=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:20:51 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:20:51 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:20:51 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:20:51 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao delete
+INFORMACIÓN: Ejecutando SQL: delete from dependientes where id=? | Parametros: [id=5a0deb78-6839-4c1b-b498-c18a54b2bd9c]
+dic 03, 2025 12:20:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6]
+dic 03, 2025 12:20:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=jajajajaj, [2]=prueba@123, [3]=1234567890Aa, [4]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6.jpg, [5]=true, [6]=false, [7]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6]
+dic 03, 2025 12:20:58 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6]
+dic 03, 2025 12:20:58 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=jajajajaj, [2]=prueba@123, [3]=1234567890Aa, [4]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6.jpg, [5]=false, [6]=false, [7]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6]
+dic 03, 2025 12:21:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:21:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=false]
+dic 03, 2025 12:21:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: Ejecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae]
+dic 03, 2025 12:21:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=true]
+dic 03, 2025 12:30:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: Ejecutando SQL: select * from dependientes | Parametros: 
+dic 03, 2025 12:30:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 03, 2025 12:30:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 03, 2025 12:30:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: Ejecutando SQL: select * from dependientes where id=? | Parametros: [id=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6]
+dic 03, 2025 12:30:49 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: Ejecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=jajajajaj, [2]=prueba@123, [3]=1234567890Aa, [4]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6.jpg, [5]=true, [6]=false, [7]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6]
+dic 03, 2025 12:30:58 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae][0m
+dic 03, 2025 12:30:58 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: [32mEjecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=false][0m
+dic 03, 2025 12:30:59 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae][0m
+dic 03, 2025 12:30:59 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: [32mEjecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=true][0m
+dic 03, 2025 12:31:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae][0m
+dic 03, 2025 12:31:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: [32mEjecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=true][0m
+dic 03, 2025 12:37:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 03, 2025 12:37:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 03, 2025 12:37:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 03, 2025 12:37:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes where id=? | Parametros: [id=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6][0m
+dic 03, 2025 12:37:38 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: [32mEjecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=jajajajaj, [2]=prueba@123, [3]=1234567890Aa, [4]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6.jpg, [5]=false, [6]=false, [7]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6][0m
+dic 03, 2025 12:37:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes where id=? | Parametros: [id=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6][0m
+dic 03, 2025 12:37:39 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao update
+INFORMACIÓN: [32mEjecutando SQL: UPDATE dependientes SET name = ?, email = ?, password = ?, imagePath = ?, enabled = ?, isAdmin = ? WHERE id = ? | Params: [1]=jajajajaj, [2]=prueba@123, [3]=1234567890Aa, [4]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6.jpg, [5]=true, [6]=false, [7]=ce3fa971-31b1-43f6-8d7b-d24deeb9b4b6][0m
+dic 03, 2025 12:37:41 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae][0m
+dic 03, 2025 12:37:41 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: [32mEjecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=false][0m
+dic 03, 2025 12:37:42 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=2b10bb16-4385-4f78-acd3-143d8d8c3aae][0m
+dic 03, 2025 12:37:42 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFORMACIÓN: [32mEjecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=2b10bb16-4385-4f78-acd3-143d8d8c3aae, [2]=jijijija, [3]=2b10bb16-4385-4f78-acd3-143d8d8c3aae.jpg, [4]=no, [5]=true][0m
+dic 03, 2025 12:40:23 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 03, 2025 12:40:23 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 03, 2025 12:40:23 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 03, 2025 12:42:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 03, 2025 12:42:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 03, 2025 12:42:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 03, 2025 12:44:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 03, 2025 12:44:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 03, 2025 12:44:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m

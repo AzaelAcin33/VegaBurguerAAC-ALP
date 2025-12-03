@@ -1,5 +1,6 @@
 package ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias;
 
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.ConsoleColors;
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Categoria;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.DataBaseConnection;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.IDao;
@@ -47,7 +48,7 @@ public class CategoriaDao implements IDao<Categoria> {
             }
             pst.close();
             Logger logger = Logger.getLogger(CategoriaDao.class.getName());
-            logger.info("Ejecutando SQL: " + selectbyid + " | Parametros: [id=" + id + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + selectbyid + " | Parametros: [id=" + id + "]"+ ConsoleColors.RESET);
             return cat;
         } catch (final SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
@@ -67,7 +68,7 @@ public class CategoriaDao implements IDao<Categoria> {
             }
             pst.close();
             Logger logger = Logger.getLogger(CategoriaDao.class.getName());
-            logger.info("Ejecutando SQL: " + findbyname + " | Parametros: [name=" + name + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + findbyname + " | Parametros: [name=" + name + "]"+ConsoleColors.RESET);
 
             return sp;
         } catch (final SQLException ex) {
@@ -97,7 +98,7 @@ public class CategoriaDao implements IDao<Categoria> {
             }
             pst.close();
             Logger logger = Logger.getLogger(CategoriaDao.class.getName());
-            logger.info("Ejecutando SQL: " + selectall + " | Parametros: ");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + selectall + " | Parametros: "+ConsoleColors.RESET);
         } catch (final SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
                     null, ex);
@@ -110,22 +111,22 @@ public class CategoriaDao implements IDao<Categoria> {
         try{
             final PreparedStatement pst = conn.getConnection().prepareStatement(update);
             pst.setString(1,item.getId());
-            pst.setString(2,item.getDescription());
-            pst.setString(3,item.getName());
-            pst.setString(4,item.getImagePath());
-            pst.setString(5,item.getDescription());
-            pst.setBoolean(6,item.getEnabled());
+            pst.setString(2,item.getName());
+            pst.setString(3,item.getImagePath());
+            pst.setString(4,item.getDescription());
+            pst.setBoolean(5,item.getEnabled());
+            pst.setString(6, item.getId());
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(CategoriaDao.class.getName());
-            logger.info(() ->
+            logger.info(() ->ConsoleColors.GREEN+
                     "Ejecutando SQL: " + update +
                             " | Params: [1]=" + item.getId() +
                             ", [2]=" + item.getName()+
                             ", [3]=" + item.getImagePath()+
                             ", [4]=" + item.getDescription()+
                             ", [5]=" + item.getEnabled()+
-                            "]"
+                            "]"+ConsoleColors.RESET
             );
         }catch(final SQLException ex){
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
@@ -142,7 +143,7 @@ public class CategoriaDao implements IDao<Categoria> {
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(CategoriaDao.class.getName());
-            logger.info("Ejecutando SQL: " + deletebyid + " | Parametros: [id=" + item.getId() + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + deletebyid + " | Parametros: [id=" + item.getId() + "]"+ConsoleColors.RESET);
 
         } catch (final SQLException ex) {
             Logger.getLogger(CategoriaDao.class.getName()).log(Level.SEVERE,
@@ -157,23 +158,22 @@ public class CategoriaDao implements IDao<Categoria> {
             pst = conn.getConnection().prepareStatement(insert,
                     Statement.RETURN_GENERATED_KEYS);
             pst.setString(1,item.getId());
-            pst.setString(2,item.getDescription());
-            pst.setString(3,item.getName());
-            pst.setString(4,item.getImagePath());
-            pst.setString(5,item.getDescription());
-            pst.setBoolean(6,item.getEnabled());
+            pst.setString(2,item.getName());
+            pst.setString(3,item.getImagePath());
+            pst.setString(4,item.getDescription());
+            pst.setBoolean(5,item.getEnabled());
 
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(CategoriaDao.class.getName());
-            logger.info(() ->
+            logger.info(() ->ConsoleColors.GREEN+
                     "Ejecutando SQL: " + insert +
                             " | Params: [1]=" + item.getId() +
                             ", [2]=" + item.getName()+
                             ", [3]=" + item.getImagePath()+
                             ", [4]=" + item.getDescription()+
                             ", [5]=" + item.getEnabled()+
-                            "]"
+                            "]"+ConsoleColors.RESET
             );
 
         } catch (final SQLException ex) {
@@ -188,7 +188,7 @@ public class CategoriaDao implements IDao<Categoria> {
             cat=new Categoria(
                     rs.getString("ID"),
                     rs.getString("NAME"),
-                    rs.getString("IMAGE_PATH"),
+                    rs.getString("IMAGEPATH"),
                     rs.getString("DESCRIPTION"),
                     rs.getBoolean("ENABLED")
             );

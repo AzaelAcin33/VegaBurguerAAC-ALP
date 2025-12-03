@@ -1,5 +1,6 @@
 package ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineaPedido;
 
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.ConsoleColors;
 import ies.sequeros.com.dam.pmdm.administrador.modelo.LineaPedido;
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto;
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.DataBaseConnection;
@@ -50,7 +51,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             }
             pst.close();
             Logger logger = Logger.getLogger(LineaPedidoDao.class.getName());
-            logger.info("Ejecutando SQL: " + selectbyid + " | Parametros: [id=" + id + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + selectbyid + " | Parametros: [id=" + id + "]"+ConsoleColors.RESET);
             return sp;
         } catch (final SQLException ex) {
             Logger.getLogger(LineaPedidoDao.class.getName()).log(Level.SEVERE,
@@ -70,7 +71,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             }
             pst.close();
             Logger logger = Logger.getLogger(LineaPedidoDao.class.getName());
-            logger.info("Ejecutando SQL: " + findbyname + " | Parametros: [name=" + name + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + findbyname + " | Parametros: [name=" + name + "]"+ConsoleColors.RESET);
 
             return sp;
         } catch (final SQLException ex) {
@@ -99,7 +100,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
 
             pst.close();
             Logger logger = Logger.getLogger(LineaPedidoDao.class.getName());
-            logger.info("Ejecutando SQL: " + selectall+ " | Parametros: ");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + selectall+ " | Parametros: "+ConsoleColors.RESET);
 
         } catch (final SQLException ex) {
             Logger.getLogger(LineaPedidoDao.class.getName()).log(Level.SEVERE,
@@ -124,7 +125,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(LineaPedidoDao.class.getName());
-            logger.info(() ->
+            logger.info(() ->ConsoleColors.GREEN+
                     "Ejecutando SQL: " + update +
                             " | Params: [1]=" + item.getCantidad() +
                             ", [2]=" + item.getPrecioUnitario() +
@@ -132,7 +133,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
                             ", [4]=" + item.getPedidoId() +
                             ", [5]=" + item.getProductoId() +
                             ", [6]=" + item.getId() +
-                            "]"
+                            "]"+ ConsoleColors.RESET
             );
         } catch (final SQLException ex) {
             Logger.getLogger(LineaPedidoDao.class.getName()).log(Level.SEVERE,
@@ -150,7 +151,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(LineaPedidoDao.class.getName());
-            logger.info("Ejecutando SQL: " + deletebyid + " | Parametros: [id=" + item.getId() + "]");
+            logger.info(ConsoleColors.GREEN+"Ejecutando SQL: " + deletebyid + " | Parametros: [id=" + item.getId() + "]"+ConsoleColors.RESET);
 
         } catch (final SQLException ex) {
             Logger.getLogger(LineaPedidoDao.class.getName()).log(Level.SEVERE,
@@ -175,7 +176,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             pst.executeUpdate();
             pst.close();
             Logger logger = Logger.getLogger(LineaPedidoDao.class.getName());
-            logger.info(() ->
+            logger.info(() ->ConsoleColors.GREEN+
                     "Ejecutando SQL: " + update +
                             " | Params: [1]=" + item.getCantidad() +
                             ", [2]=" + item.getPrecioUnitario() +
@@ -183,7 +184,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
                             ", [4]=" + item.getPedidoId() +
                             ", [5]=" + item.getProductoId() +
                             ", [6]=" + item.getId() +
-                            "]"
+                            "]"+ConsoleColors.RESET
             );
 
         } catch (final SQLException ex) {

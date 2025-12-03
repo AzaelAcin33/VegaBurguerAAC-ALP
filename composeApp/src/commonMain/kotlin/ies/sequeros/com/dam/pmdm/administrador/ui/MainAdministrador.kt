@@ -125,7 +125,7 @@ fun MainAdministrador(
             ItemOption(
                 Icons.AutoMirrored.Filled.FactCheck,
                 {
-                    navController.navigate(AdminRoutes.Pedido) {
+                    navController.navigate(AdminRoutes.Pedidos) {
                         //
                         launchSingleTop = true
                         popUpTo(AdminRoutes.Main)
@@ -197,7 +197,7 @@ fun MainAdministrador(
                 })
             }
             composable(AdminRoutes.Categoria) {
-                //Text("Categorias")
+                //Text("Categorias Formulario")
                 CategoriaForm(
                     categoriasViewModel, {
                         navController.popBackStack()
@@ -217,9 +217,10 @@ fun MainAdministrador(
                     }
                 })
                 */
+                Text("Productos")
             }
             composable(AdminRoutes.Producto) {
-                Text("Producto")
+                Text("Producto Formulario")
             }
 
             composable(AdminRoutes.Pedidos) {
@@ -231,9 +232,11 @@ fun MainAdministrador(
                     }
                 })
                 */
+                Text("Pedidos")
+
             }
             composable(AdminRoutes.Pedido) {
-                Text("Pedido")
+                Text("Pedido Formulario")
             }
 
         }
