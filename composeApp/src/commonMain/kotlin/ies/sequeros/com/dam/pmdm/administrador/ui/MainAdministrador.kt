@@ -43,6 +43,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowWidthSizeClass
 import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
 import ies.sequeros.com.dam.pmdm.administrador.ui.AdminRoutes.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.Pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
@@ -53,6 +54,7 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteForm
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
+//import ies.sequeros.com.dam.pmdm.administrador.ui.productos.Productos
 
 
 @Suppress("ViewModelConstructorInComposable")
@@ -185,6 +187,7 @@ fun MainAdministrador(
                     }
                 )
             }
+
             composable(AdminRoutes.Categorias) {
                 Categorias(mainViewModel, categoriasViewModel, {
                     categoriasViewModel.setSelectedCategoria(it)
@@ -206,12 +209,32 @@ fun MainAdministrador(
             }
 
             composable(AdminRoutes.Productos) {
-                Text("Productos")
+                /*
+                Productos(mainViewModel, productosViewModel, {
+                    productosViewModel.setSelectedProducto(it)
+                    navController.navigate(AdminRoutes.Producto){
+                        launchSingleTop = true
+                    }
+                })
+                */
+            }
+            composable(AdminRoutes.Producto) {
+                Text("Producto")
+            }
+
+            composable(AdminRoutes.Pedidos) {
+                /*
+                Pedidos(mainViewModel, pedidosViewModel, {
+                    pedidosViewModel.setSelectedPedido(it)
+                    navController.navigate(AdminRoutes.Pedido){
+                        launchSingleTop = true
+                    }
+                })
+                */
             }
             composable(AdminRoutes.Pedido) {
                 Text("Pedido")
             }
-
 
         }
     }
