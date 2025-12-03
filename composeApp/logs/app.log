@@ -13466,3 +13466,9 @@ dic 03, 2025 12:44:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestruc
 INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
 dic 03, 2025 12:44:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
 INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 03, 2025 8:07:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 03, 2025 8:07:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 03, 2025 8:07:30 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
