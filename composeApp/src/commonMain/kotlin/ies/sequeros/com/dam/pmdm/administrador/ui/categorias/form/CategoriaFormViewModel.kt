@@ -28,14 +28,14 @@ class CategoriaFormViewModel (private val item: CategoriaDTO?, onSuccess: (Categ
     val isFormValid: StateFlow<Boolean> = uiState.map { state ->
         if (item == null)
         state.nombreError == null &&
-                state.descriptionError == null &&
+                //state.descriptionError == null &&
                 state.imagePathError ==null &&
                 !state.nombre.isBlank() &&
                 !state.description.isBlank() &&
                 state.imagePath.isNotBlank()
         else{
             state.nombreError == null &&
-                    state.descriptionError == null &&
+                    //state.descriptionError == null &&
                     state.imagePathError ==null &&
                     !state.nombre.isBlank() &&
                     !state.description.isBlank() &&

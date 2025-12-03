@@ -19,3 +19,4 @@ captures
 node_modules/
 compose.yaml
 mysql-data/
+composeApp/bbdd/vegaburguer/log/

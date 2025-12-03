@@ -53,7 +53,11 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form.CategoriaForm
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteForm
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.Pedidos
+import ies.sequeros.com.dam.pmdm.administrador.ui.productos.Productos
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.productos.form.ProductoForm
+
 //import ies.sequeros.com.dam.pmdm.administrador.ui.productos.Productos
 
 
@@ -209,30 +213,33 @@ fun MainAdministrador(
             }
 
             composable(AdminRoutes.Productos) {
-                /*
                 Productos(mainViewModel, productosViewModel, {
                     productosViewModel.setSelectedProducto(it)
                     navController.navigate(AdminRoutes.Producto){
                         launchSingleTop = true
                     }
                 })
-                */
-                Text("Productos")
             }
             composable(AdminRoutes.Producto) {
-                Text("Producto Formulario")
+
+                ProductoForm(
+                    productosViewModel, {
+                        navController.popBackStack()
+                    }, {
+                        productosViewModel.save(it)
+                        navController.popBackStack()
+                    }
+                )
+
             }
 
             composable(AdminRoutes.Pedidos) {
-                /*
                 Pedidos(mainViewModel, pedidosViewModel, {
                     pedidosViewModel.setSelectedPedido(it)
                     navController.navigate(AdminRoutes.Pedido){
                         launchSingleTop = true
                     }
                 })
-                */
-                Text("Pedidos")
 
             }
             composable(AdminRoutes.Pedido) {

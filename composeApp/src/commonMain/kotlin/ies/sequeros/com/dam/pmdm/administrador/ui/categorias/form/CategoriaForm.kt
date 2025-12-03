@@ -18,6 +18,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountTree
 import androidx.compose.material.icons.filled.Autorenew
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.PersonOutline
@@ -100,7 +101,7 @@ fun CategoriaForm(
                     modifier = Modifier.size(40.dp)
                 )
                 Text(
-                    text = if (selected == null)
+                    text = if (selected != null)
                         "Crear nueva categoría"
                     else
                         "Editar categoría",
@@ -133,7 +134,7 @@ fun CategoriaForm(
                 onValueChange = { categoriaFormularioViewModel.onDescriptionChange(it) },
                 label = { Text("Descripcion") },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-                leadingIcon = { Icon(Icons.Default.AccountTree, contentDescription = null) },
+                leadingIcon = { Icon(Icons.Default.Description, contentDescription = null) },
                 modifier = Modifier.fillMaxWidth()
             )
             Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -146,7 +147,7 @@ fun CategoriaForm(
                 }
             }
             //  Selector de avatar
-            Text("Selecciona un avatar:", style = MaterialTheme.typography.titleSmall)
+            Text("Selecciona una imagen para la categoría:", style = MaterialTheme.typography.titleSmall)
 
             HorizontalDivider(thickness = 1.dp, color = MaterialTheme.colorScheme.outlineVariant)
             val scope = rememberCoroutineScope()

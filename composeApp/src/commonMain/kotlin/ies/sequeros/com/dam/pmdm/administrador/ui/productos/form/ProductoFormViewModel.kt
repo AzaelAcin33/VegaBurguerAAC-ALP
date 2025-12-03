@@ -30,7 +30,7 @@ class ProductoFormViewModel (private val item: ProductoDTO?, onSuccess: (Product
     val isFormValid: StateFlow<Boolean> = uiState.map { state ->
         if (item == null)
             state.nameError == null &&
-                    state.descriptionError == null &&
+                    //state.descriptionError == null &&
                     state.imagePathError ==null &&
                     state.priceError ==null &&
                     state.categoriaIdError ==null &&
@@ -41,7 +41,7 @@ class ProductoFormViewModel (private val item: ProductoDTO?, onSuccess: (Product
                     state.categoriaId.isNotBlank()
         else{
             state.nameError == null &&
-                    state.descriptionError == null &&
+                    //state.descriptionError == null &&
                     state.imagePathError ==null &&
                     state.priceError ==null &&
                     state.categoriaIdError ==null &&
