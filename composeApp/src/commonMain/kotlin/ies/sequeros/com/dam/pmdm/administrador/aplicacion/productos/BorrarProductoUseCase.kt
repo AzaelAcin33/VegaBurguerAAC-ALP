@@ -1,10 +1,16 @@
 package ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.listar.toDTO
+import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 
 
-class BorrarProductoUseCase(private val repositorio: IProductoRepositorio,private val almacenDatos: AlmacenDatos) {
+class BorrarProductoUseCase(
+    private val repositorio: IProductoRepositorio,
+    private val categoria: ICategoriaRepositorio,
+    private val almacenDatos: AlmacenDatos
+
+) {
 
     suspend  fun invoke(id: String) {
         val tempo=repositorio.getById(id)
@@ -14,7 +20,10 @@ class BorrarProductoUseCase(private val repositorio: IProductoRepositorio,privat
             throw IllegalArgumentException("El id no está registrado.")
         }
         //se borra del repositorio
-        val tempoDto=tempo.toDTO(almacenDatos.getAppDataDir()+"/productos/")
+        val tempoDto=tempo.toDTO(
+            "",
+            tempo.categoriaId
+        )
 
         repositorio.remove(id)
         //se borra la imagen una vez borrado del repositorio

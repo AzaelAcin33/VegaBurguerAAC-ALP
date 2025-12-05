@@ -22,7 +22,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
     private final String selectbyid = "select * from " + table_name + " where id=?";
     private final String findbyname = "select * from " + table_name + " where name=?";
 
-    private final String deletebyid = "delete from " + table_name + " where id='?'";
+    private final String deletebyid = "delete from " + table_name + " where id=?";
     private final String insert = "INSERT INTO " + table_name + " (id, name, image_path, price, description, enabled) " +
             "VALUES (?, ?, ?, ?, ?, ?, ?)";
     private final String update =

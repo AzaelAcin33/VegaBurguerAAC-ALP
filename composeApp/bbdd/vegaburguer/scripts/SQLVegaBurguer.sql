@@ -23,7 +23,7 @@ CREATE TABLE productos (
     price DECIMAL(10,2) NOT NULL,
     description VARCHAR(250),
     enabled TINYINT(1) DEFAULT 1,
-    categoriaId VARCHAR(10),
+    categoriaId CHAR(64),
     FOREIGN KEY (categoriaId) REFERENCES categorias(id)
 );
 
@@ -32,7 +32,7 @@ CREATE TABLE pedidos (
     clienteName VARCHAR(100) NOT NULL,
     estado VARCHAR(50) NOT NULL,
     fecha VARCHAR(100) NOT NULL,
-    dependienteId VARCHAR(10),
+    dependienteId CHAR(64),
     FOREIGN KEY (dependienteId) REFERENCES dependientes(id)
 );
 
@@ -41,8 +41,8 @@ CREATE TABLE linea_pedido (
     cantidad INT NOT NULL,
     precioUnitario DECIMAL(10,2) NOT NULL,
     entregado TINYINT(1) DEFAULT 0,
-    pedidoId VARCHAR(10),
-    productoId VARCHAR(10),
+    pedidoId CHAR(64),
+    productoId CHAR(64),
     FOREIGN KEY (pedidoId) REFERENCES pedidos(id),
     FOREIGN KEY (productoId) REFERENCES productos(id)
 );

@@ -53,7 +53,7 @@ import vegaburguer.composeapp.generated.resources.hombre
 @Composable
 fun ProductoForm(
     productoViewModel: ProductosViewModel,
-    //categoriaViewModel: CategoriasViewModel,
+    categoriaViewModel: CategoriasViewModel,
     onClose: () -> Unit,
     onConfirm: (datos: ProductoFormState) -> Unit = {},
     productoFormularioViewModel: ProductoFormViewModel = viewModel {
@@ -69,6 +69,10 @@ fun ProductoForm(
     val imagePath =
         remember { mutableStateOf(if (state.imagePath != null && state.imagePath.isNotEmpty()) state.imagePath else "") }
     val scrollState = rememberScrollState()
+    //val categoria = categoriaViewModel.setSelectedCategoria(categoriaViewModel.selected.value)
+    val categoria = categoriaViewModel.items.collectAsState()
+    val selectedCategory = remember { mutableStateOf(null) }
+
 
     Surface(
         modifier = Modifier
@@ -144,6 +148,12 @@ fun ProductoForm(
 
             //aqui meter el combobox de las categorias para el producto
             //CategoriasComboBox(categoriaViewModel, productoFormularioViewModel)
+
+            CategoriasComboBox(
+                categorias = categoria.value,
+                current = selectedCategory.value,
+                onSelect = {productoFormularioViewModel.onCategoriaIdChange(it.id)}
+            )
 
             Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
                 Row(verticalAlignment = Alignment.CenterVertically) {

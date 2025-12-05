@@ -16,6 +16,7 @@ import ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.listar.Lista
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.FileDependienteRepository
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Dependiente
+import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
@@ -30,6 +31,7 @@ import kotlinx.coroutines.launch
 class ProductosViewModel(
     //private val administradorViewModel: MainAdministradorViewModel,
     private val productoRepositorio: IProductoRepositorio,
+    private val categoriaRepositorio: ICategoriaRepositorio,
     val almacenDatos: AlmacenDatos
 ) : ViewModel() {
     //los casos de uso se crean dentro para la recomposición
@@ -48,10 +50,10 @@ class ProductosViewModel(
 
     init {
         actualizarProductoUseCase = ActualizarProductoUseCase(productoRepositorio,almacenDatos)
-        borrarProductoUseCase = BorrarProductoUseCase(productoRepositorio,almacenDatos)
-        crearProductoUseCase = CrearProductoUseCase(productoRepositorio,almacenDatos)
-        listarProductosUseCase = ListarProductoUseCase(productoRepositorio,almacenDatos)
-        activarProductoUseCase = ActivarProductoUseCase(productoRepositorio,almacenDatos)
+        borrarProductoUseCase = BorrarProductoUseCase(productoRepositorio,categoriaRepositorio, almacenDatos)
+        crearProductoUseCase = CrearProductoUseCase(productoRepositorio,categoriaRepositorio, almacenDatos)
+        listarProductosUseCase = ListarProductoUseCase(productoRepositorio,categoriaRepositorio, almacenDatos)
+        activarProductoUseCase = ActivarProductoUseCase(productoRepositorio,categoriaRepositorio, almacenDatos)
         viewModelScope.launch {
             var items = listarProductosUseCase.invoke()
             _items.value.clear()
@@ -120,7 +122,8 @@ class ProductosViewModel(
             formState.imagePath,
             formState.price,
             formState.description,
-            formState.enabled
+            formState.enabled,
+            formState.categoriaId
         )
         viewModelScope.launch {
             val item = actualizarProductoUseCase.invoke(command)

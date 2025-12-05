@@ -19,10 +19,13 @@ class ActualizarProductoUseCase(private val repositorio: IProductoRepositorio,
         //val nombreArchivo = command.imagePath.substringAfterLast('/')
         var nuevaImagePath:String?=null
         if (item==null) {
-            throw IllegalArgumentException("El usuario no esta registrado.")
+            throw IllegalArgumentException("El producto no esta registrado.")
         }
         //se pasa a dto para tener el path
-        var itemDTO: ProductoDTO=item.toDTO(almacenDatos.getAppDataDir()+"/productos/")
+        var itemDTO: ProductoDTO=item.toDTO(
+            almacenDatos.getAppDataDir()+"/productos/",
+            command.categoriaId
+        )
 
         //si las rutas son diferentes se borra y se copia
         if(itemDTO.imagePath!=command.imagePath) {
@@ -32,16 +35,21 @@ class ActualizarProductoUseCase(private val repositorio: IProductoRepositorio,
             nuevaImagePath=item.imagePath
         }
 
-        var newUser= item.copy(
+        var newProducto= item.copy(
+            id=command.id,
             name=command.name,
             //si se ha sustituido
             imagePath = nuevaImagePath,
             price = command.price,
             description = command.description,
-            enabled = command.enabled
+            enabled = command.enabled,
+            categoriaId = command.categoriaId
         )
-        repositorio.update(newUser)
+        repositorio.update(newProducto)
         //se devuelve con el path correcto
-        return newUser.toDTO(almacenDatos.getAppDataDir()+"/dependientes/")
+        return newProducto.toDTO(
+            almacenDatos.getAppDataDir()+"/productos/",
+            command.categoriaId
+        )
     }
 }

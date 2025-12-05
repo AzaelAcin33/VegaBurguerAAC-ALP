@@ -6,5 +6,6 @@ data class ActualizarProductoCommand (
     val imagePath:String,
     val price:String,
     val description:String,
-    val enabled:Boolean
+    val enabled:Boolean,
+    val categoriaId:String
 )
