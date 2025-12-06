@@ -8,19 +8,19 @@ import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import ies.sequeros.com.dam.pmdm.generateUUID
 
 class CrearPedidoUseCase(private val repositorio: IPedidoRepositorio,private val almacenDatos: AlmacenDatos) {
-    suspend  fun invoke(createUserCommand: CrearPedidoCommand): PedidoDTO {
-        //this.validateUser(user)
-        if (repositorio.findByName(createUserCommand.clienteName)!=null) {
+    suspend  fun invoke(createPedidoCommand: CrearPedidoCommand): PedidoDTO {
+        //this.validatePedido(user)
+        if (repositorio.findByName(createPedidoCommand.clienteName)!=null) {
             throw IllegalArgumentException("El nombre ya está registrado.")
         }
         val id=generateUUID()
 
         val item = Pedido(
             id = id,
-            clienteName = createUserCommand.clienteName,
-            estado = createUserCommand.estado,
-            fecha = createUserCommand.fecha,
-            dependienteId = createUserCommand.dependienteId
+            clienteName = createPedidoCommand.clienteName,
+            estado = createPedidoCommand.estado,
+            fecha = createPedidoCommand.fecha,
+            dependienteId = createPedidoCommand.dependienteId
         )
         val element=repositorio.findByName(item.clienteName)
         if(element!=null)

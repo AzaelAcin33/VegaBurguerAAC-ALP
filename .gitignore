@@ -17,7 +17,6 @@ captures
 !*.xcworkspace/contents.xcworkspacedata
 **/xcshareddata/WorkspaceSettings.xcsettings
 node_modules/
-compose.yaml
 mysql-data/
 composeApp/bbdd/vegaburguer/log/
 composeApp/categorias
@@ -25,3 +24,5 @@ composeApp/dependientes
 composeApp/productos
 composeApp/lineaPedido
 *.jpg
+# *.log
+composeApp/app.properties
