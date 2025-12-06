@@ -45,7 +45,7 @@ import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
 import ies.sequeros.com.dam.pmdm.administrador.ui.AdminRoutes.Categorias
-import ies.sequeros.com.dam.pmdm.administrador.ui.Pedidos.PedidosViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form.CategoriaForm

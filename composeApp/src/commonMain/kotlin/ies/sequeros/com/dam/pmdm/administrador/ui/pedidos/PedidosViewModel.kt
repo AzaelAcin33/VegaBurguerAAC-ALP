@@ -1,4 +1,4 @@
-package ies.sequeros.com.dam.pmdm.administrador.ui.Pedidos
+package ies.sequeros.com.dam.pmdm.administrador.ui.pedidos
 
 import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel

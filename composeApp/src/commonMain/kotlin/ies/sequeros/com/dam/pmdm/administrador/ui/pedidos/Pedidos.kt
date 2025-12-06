@@ -31,7 +31,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.listar.PedidoDTO
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
-import ies.sequeros.com.dam.pmdm.administrador.ui.Pedidos.PedidosViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidoCard
 
 @Composable

@@ -33,7 +33,7 @@ import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministrador
 import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
-import ies.sequeros.com.dam.pmdm.administrador.ui.Pedidos.PedidosViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
