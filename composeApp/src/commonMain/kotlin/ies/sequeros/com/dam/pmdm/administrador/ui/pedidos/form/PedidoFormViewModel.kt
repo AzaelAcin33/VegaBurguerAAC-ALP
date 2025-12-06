@@ -73,6 +73,7 @@ class PedidoFormViewModel (private val item: PedidoDTO?, onSuccess: (PedidoFormS
     private fun validateClienteName(name:String): String?{
         if (name.isBlank()) return "El nombre es obligatorio"
         if (name.length < 2) return "El nombre es muy corto"
+        if (name.length > 100) return "El nombre es muy largo"
         return null
     }
 

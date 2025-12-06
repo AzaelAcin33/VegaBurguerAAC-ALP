@@ -7,7 +7,7 @@ data class CategoriaFormState (
     val enabled: Boolean = false,
     // errores (null = sin error)
     val nombreError: String? =null,
-    //val descriptionError: String? =null,
+    val descriptionError: String? =null,
     val imagePathError: String? =null,
 
     val submitted: Boolean = false

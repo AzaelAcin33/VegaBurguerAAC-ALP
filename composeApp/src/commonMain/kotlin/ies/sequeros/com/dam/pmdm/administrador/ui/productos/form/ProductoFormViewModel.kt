@@ -30,7 +30,7 @@ class ProductoFormViewModel (private val item: ProductoDTO?, onSuccess: (Product
     val isFormValid: StateFlow<Boolean> = uiState.map { state ->
         if (item == null)
             state.nameError == null &&
-                    //state.descriptionError == null &&
+                    state.descriptionError == null &&
                     state.imagePathError ==null &&
                     state.priceError ==null &&
                     state.categoriaIdError ==null &&
@@ -41,7 +41,7 @@ class ProductoFormViewModel (private val item: ProductoDTO?, onSuccess: (Product
                     state.categoriaId.isNotBlank()
         else{
             state.nameError == null &&
-                    //state.descriptionError == null &&
+                    state.descriptionError == null &&
                     state.imagePathError ==null &&
                     state.priceError ==null &&
                     state.categoriaIdError ==null &&
@@ -88,10 +88,14 @@ class ProductoFormViewModel (private val item: ProductoDTO?, onSuccess: (Product
     private fun validateName(name:String): String?{
         if (name.isBlank()) return "El nombre es obligatorio"
         if (name.length < 2) return "El nombre es muy corto"
+        if (name.length > 100) return "El nombre es muy largo"
         return null
     }
 
-    //private fun validateDescription(){}
+    private fun validateDescription(description:String): String?{
+        if (description.length > 250) return "La descripción es muy larga"
+        return null
+    }
 
     private fun validateImagePath(path: String): String? {
         if (path.isBlank()) return "La imagen es obligatoria"
@@ -116,11 +120,13 @@ class ProductoFormViewModel (private val item: ProductoDTO?, onSuccess: (Product
     fun validateAll(): Boolean {
         val s = _uiState.value
         val nameErr = validateName(s.name)
+        val descriptionErr = validateDescription(s.description)
         val imageErr = validateImagePath(s.imagePath)
         val priceErr = validatePrice(s.price)
         val categoriaErr = validateCategoriaId(s.categoriaId)
         val newState = s.copy(
             nameError = nameErr,
+            descriptionError = descriptionErr,
             imagePathError = imageErr,
             priceError = priceErr,
             categoriaIdError = categoriaErr,
@@ -128,7 +134,7 @@ class ProductoFormViewModel (private val item: ProductoDTO?, onSuccess: (Product
         )
         _uiState.value = newState
 
-        return listOf(nameErr, imageErr, priceErr, categoriaErr).all { it == null }
+        return listOf(nameErr, descriptionErr, imageErr, priceErr, categoriaErr).all { it == null }
     }
 
 

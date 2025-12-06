@@ -97,6 +97,7 @@ class DependienteFormViewModel (private val item: DependienteDTO?,
     private fun validateNombre(nombre: String): String? {
         if (nombre.isBlank()) return "El nombre es obligatorio"
         if (nombre.length < 2) return "El nombre es muy corto"
+        if (nombre.length > 100) return "El nombre es muy largo"
         return null
     }
     private fun validateImagePath(path: String): String? {

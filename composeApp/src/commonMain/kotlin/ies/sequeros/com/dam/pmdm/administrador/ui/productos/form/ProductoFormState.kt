@@ -9,7 +9,7 @@ data class ProductoFormState (
     val categoriaId: String="",
     // errores (null = sin error)
     val nameError: String?=null,
-    //val descriptionError:String?=null,
+    val descriptionError:String?=null,
     val imagePathError:String?=null,
     val priceError:String?=null,
     val categoriaIdError:String?=null,

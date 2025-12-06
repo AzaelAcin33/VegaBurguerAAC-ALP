@@ -28,14 +28,14 @@ class CategoriaFormViewModel (private val item: CategoriaDTO?, onSuccess: (Categ
     val isFormValid: StateFlow<Boolean> = uiState.map { state ->
         if (item == null)
         state.nombreError == null &&
-                //state.descriptionError == null &&
+                state.descriptionError == null &&
                 state.imagePathError ==null &&
                 !state.nombre.isBlank() &&
                 !state.description.isBlank() &&
                 state.imagePath.isNotBlank()
         else{
             state.nombreError == null &&
-                    //state.descriptionError == null &&
+                    state.descriptionError == null &&
                     state.imagePathError ==null &&
                     !state.nombre.isBlank() &&
                     !state.description.isBlank() &&
@@ -70,10 +70,14 @@ class CategoriaFormViewModel (private val item: CategoriaDTO?, onSuccess: (Categ
     private fun validateName(name:String): String?{
         if (name.isBlank()) return "El nombre es obligatorio"
         if (name.length < 2) return "El nombre es muy corto"
+        if (name.length > 100) return "El nombre es muy largo"
         return null
     }
 
-    //private fun validateDescription(){}
+    private fun validateDescription(description:String): String?{
+        if (description.length > 250) return "La descripción es muy larga"
+        return null
+    }
 
     private fun validateImagePath(path: String): String? {
         if (path.isBlank()) return "La imagen es obligatoria"
@@ -83,14 +87,16 @@ class CategoriaFormViewModel (private val item: CategoriaDTO?, onSuccess: (Categ
     fun validateAll(): Boolean {
         val s = _uiState.value
         val nombreErr = validateName(s.nombre)
+        val descriptionErr = validateDescription(s.description)
         val imageErr=validateImagePath(s.imagePath)
         val newState = s.copy(
             nombreError = nombreErr,
+            descriptionError = descriptionErr,
             imagePathError = imageErr,
             submitted = true
         )
         _uiState.value = newState
-        return listOf(nombreErr, imageErr).all { it == null }
+        return listOf(nombreErr, descriptionErr, imageErr).all { it == null }
     }
 
     fun submit(
