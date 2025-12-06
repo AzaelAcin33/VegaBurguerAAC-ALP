@@ -1,35 +1,39 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form
 
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto // Asegúrate de tener este modelo
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Dependiente
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
 
 data class PedidoFormState(
-    // ... tus campos anteriores (id, clienteName, etc.) ...
+    // Datos Cabecera
     val id: String = "",
     val clienteName: String = "",
     val estado: String = "Pendiente",
     val fecha: String = "",
+
+    // Dependiente seleccionado
     val dependienteId: String? = null,
+    val dependienteSeleccionadoNombre: String = "", // Para mostrar en el input
 
-    // Lista de líneas del pedido actual
-    val lineas: List<LineaPedidoFormState> = emptyList(),
-
-    // --- NUEVO: Catálogo de productos disponibles desde BBDD ---
+    // Listas de datos disponibles (ComboBox / Catálogo)
+    val dependientesDisponibles: List<Dependiente> = emptyList(),
     val productosDisponibles: List<Producto> = emptyList(),
 
-    // Campos temporales
+    // Líneas del pedido
+    val lineas: List<LineaPedidoFormState> = emptyList(),
+
+    // Datos temporales para añadir linea
     val tempProductoId: String = "",
     val tempProductoNombre: String = "",
     val tempPrecioUnitario: String = "",
     val tempCantidad: String = "1",
 
-    // Validaciones y totales
+    // Totales y Validaciones
     val totalPedido: Double = 0.0,
     val clienteNameError: String? = null,
     val lineasError: String? = null,
     val submitted: Boolean = false
 )
 
-// LineaPedidoFormState se queda igual...
 data class LineaPedidoFormState(
     val id: String = "",
     val cantidad: Int = 1,

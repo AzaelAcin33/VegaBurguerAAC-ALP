@@ -31,7 +31,7 @@ import kotlinx.coroutines.launch
 
 class DependientesViewModel(
     //private val administradorViewModel: MainAdministradorViewModel,
-    private val dependienteRepositorio: IDependienteRepositorio,
+    val dependienteRepositorio: IDependienteRepositorio,
      val almacenDatos: AlmacenDatos
 ) : ViewModel() {
     //los casos de uso se crean dentro para la recomposición

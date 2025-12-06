@@ -2,6 +2,8 @@ package ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Dependiente
+import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
 import kotlinx.coroutines.Dispatchers
@@ -12,53 +14,69 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class PedidoFormViewModel(
-    // Inyectamos el repositorio en lugar de crearlo aquí
     private val productoRepo: IProductoRepositorio,
+    private val dependienteRepo: IDependienteRepositorio,
     private val currentDependienteId: String? = null,
     onSuccess: (PedidoFormState) -> Unit
 ) : ViewModel() {
 
     private val _uiState = MutableStateFlow(PedidoFormState(
         fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),
-        dependienteId = currentDependienteId ?: ""
+        dependienteId = currentDependienteId
     ))
     val uiState: StateFlow<PedidoFormState> = _uiState.asStateFlow()
 
-    // Validador
+    // Validamos que haya cliente, líneas y dependiente seleccionado
     val isFormValid: StateFlow<Boolean> = uiState.map { state ->
         state.clienteName.isNotBlank() &&
                 state.lineas.isNotEmpty() &&
+                !state.dependienteId.isNullOrBlank() &&
                 state.clienteNameError == null
     }.stateIn(viewModelScope, SharingStarted.Eagerly, false)
 
     init {
-        cargarProductosDeBBDD()
+        cargarDatosIniciales()
     }
 
-    private fun cargarProductosDeBBDD() {
+    private fun cargarDatosIniciales() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                // Usamos la interfaz común
-                val listaProductos = productoRepo.getAll()
+                // Cargar listados desde BBDD
+                val productos = productoRepo.getAll()
+                val dependientes = dependienteRepo.getAll()
 
-                _uiState.update { currentState ->
-                    currentState.copy(productosDisponibles = listaProductos)
+                // Buscar nombre del dependiente actual si existe para mostrarlo
+                val depActualName = dependientes.find { it.id == currentDependienteId }?.name ?: ""
+
+                _uiState.update {
+                    it.copy(
+                        productosDisponibles = productos,
+                        dependientesDisponibles = dependientes,
+                        dependienteSeleccionadoNombre = depActualName
+                    )
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                // Opcional: Manejar error en UI
             }
         }
     }
 
-    // --- LOGICA DEL FORMULARIO ---
+    // --- Eventos UI ---
 
     fun onClienteNameChange(nombre: String) {
         val error = if (nombre.isBlank()) "El nombre es obligatorio" else null
         _uiState.update { it.copy(clienteName = nombre, clienteNameError = error) }
     }
 
-    // Selección de producto desde el catálogo (BBDD)
+    fun onDependienteSelected(dependiente: Dependiente) {
+        _uiState.update {
+            it.copy(
+                dependienteId = dependiente.id,
+                dependienteSeleccionadoNombre = dependiente.name
+            )
+        }
+    }
+
     fun onProductoRealSelect(producto: Producto) {
         _uiState.update {
             it.copy(
@@ -77,25 +95,30 @@ class PedidoFormViewModel(
 
     fun agregarLinea() {
         val state = _uiState.value
-        val cantidadInt = state.tempCantidad.toIntOrNull() ?: 1
-        val precioDouble = state.tempPrecioUnitario.toDoubleOrNull() ?: 0.0
+        val cantidad = state.tempCantidad.toIntOrNull() ?: 1
+        val precio = state.tempPrecioUnitario.toDoubleOrNull() ?: 0.0
 
-        if (state.tempProductoId.isBlank() || precioDouble <= 0) return
+        if (state.tempProductoId.isBlank() || precio <= 0) return
 
         val nuevaLinea = LineaPedidoFormState(
             id = "LP-${System.currentTimeMillis()}", // ID Temporal
-            cantidad = cantidadInt,
-            precioUnitario = precioDouble,
+            cantidad = cantidad,
+            precioUnitario = precio,
             entregado = false,
             pedidoId = state.id,
             productoId = state.tempProductoId,
             productName = state.tempProductoNombre,
-            totalLinea = cantidadInt * precioDouble
+            totalLinea = cantidad * precio
         )
 
         val nuevasLineas = state.lineas + nuevaLinea
         recalcularTotales(nuevasLineas)
         limpiarTemp()
+    }
+
+    fun eliminarLinea(index: Int) {
+        val nuevasLineas = _uiState.value.lineas.toMutableList().apply { removeAt(index) }
+        recalcularTotales(nuevasLineas)
     }
 
     fun toggleEntregado(index: Int) {
@@ -105,30 +128,20 @@ class PedidoFormViewModel(
         _uiState.update { it.copy(lineas = lineas) }
     }
 
-    fun eliminarLinea(index: Int) {
-        val nuevasLineas = _uiState.value.lineas.toMutableList().apply { removeAt(index) }
-        recalcularTotales(nuevasLineas)
-    }
-
-    private fun recalcularTotales(nuevasLineas: List<LineaPedidoFormState>) {
-        val total = nuevasLineas.sumOf { it.totalLinea }
+    private fun recalcularTotales(lineas: List<LineaPedidoFormState>) {
+        val total = lineas.sumOf { it.totalLinea }
         _uiState.update {
             it.copy(
-                lineas = nuevasLineas,
+                lineas = lineas,
                 totalPedido = total,
-                lineasError = if (nuevasLineas.isEmpty()) "Añade productos al pedido" else null
+                lineasError = if (lineas.isEmpty()) "Añade productos al pedido" else null
             )
         }
     }
 
     private fun limpiarTemp() {
         _uiState.update {
-            it.copy(
-                tempProductoId = "",
-                tempProductoNombre = "",
-                tempPrecioUnitario = "",
-                tempCantidad = "1"
-            )
+            it.copy(tempProductoId = "", tempProductoNombre = "", tempPrecioUnitario = "", tempCantidad = "1")
         }
     }
 

@@ -1,41 +1,14 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.FactCheck
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.DarkMode
-import androidx.compose.material.icons.filled.Fastfood
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Icecream
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.NavigationDrawerItem
-import androidx.compose.material3.PermanentDrawerSheet
-import androidx.compose.material3.PermanentNavigationDrawer
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-
-
-import androidx.compose.runtime.getValue
-import androidx.compose.ui.Modifier
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material3.*
 import androidx.compose.material3.adaptive.currentWindowAdaptiveInfo
-
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -43,24 +16,18 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowWidthSizeClass
 import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
-import ies.sequeros.com.dam.pmdm.administrador.ui.AdminRoutes.Categorias
-import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
-import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form.CategoriaForm
-
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteForm
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.Pedidos
 import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form.PedidoForm
-import ies.sequeros.com.dam.pmdm.administrador.ui.productos.Productos
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
+import ies.sequeros.com.dam.pmdm.administrador.ui.productos.Productos
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.form.ProductoForm
-
-//import ies.sequeros.com.dam.pmdm.administrador.ui.productos.Productos
-
 
 @Suppress("ViewModelConstructorInComposable")
 @Composable
@@ -72,262 +39,141 @@ fun MainAdministrador(
     categoriasViewModel: CategoriasViewModel,
     productosViewModel: ProductosViewModel,
     pedidosViewModel: PedidosViewModel,
-
     onExit: () -> Unit
 ) {
     val navController = rememberNavController()
     val options by mainViewModel.filteredItems.collectAsState()
+    val wai by appViewModel.windowsAdaptativeInfo.collectAsState()
 
-    val wai by appViewModel.windowsAdaptativeInfo.collectAsState();
     mainViewModel.setOptions(
         listOf(
-            ItemOption(
-                Icons.Default.Home, {
-                    navController.navigate(AdminRoutes.Main) {
-                        launchSingleTop = true
-                        popUpTo(AdminRoutes.Main)
-                    }
-                },
-                "Home", false
-            ),
-            ItemOption(
-                Icons.Default.Person,
-                {
-                    navController.navigate(AdminRoutes.Dependientes) {
-                        //
-                        launchSingleTop = true
-                        popUpTo(AdminRoutes.Dependientes)
-                    }
-                },
-                "",
-                true
-            ),
-
-            ItemOption(
-                Icons.Default.Icecream,
-                {
-                    navController.navigate(AdminRoutes.Categorias) {
-                        //
-                        launchSingleTop = true
-                        popUpTo(AdminRoutes.Main)
-                    }
-                },
-                "Users  Admin",
-                true
-            ),
-            ItemOption(
-                Icons.Default.Fastfood,
-                {
-                    navController.navigate(AdminRoutes.Productos) {
-                        //
-                        launchSingleTop = true
-                        popUpTo(AdminRoutes.Main)
-                    }
-                },
-                "Users  Admin",
-                true
-            ),
-            ItemOption(
-                Icons.AutoMirrored.Filled.FactCheck,
-                {
-                    navController.navigate(AdminRoutes.Pedidos) {
-                        //
-                        launchSingleTop = true
-                        popUpTo(AdminRoutes.Main)
-                    }
-                },
-                "Users  Admin",
-                true
-            ),
-
-            ItemOption(
-                Icons.Default.DarkMode,
-                {
-                    appViewModel.swithMode()
-
-
-                },
-                "Darkmode",
-                true
-            ),
-
-            ItemOption(Icons.Default.Close, {
-
-                onExit()
-            }, "Close", false)
+            ItemOption(Icons.Default.Home, {
+                navController.navigate(AdminRoutes.Main) { launchSingleTop = true; popUpTo(AdminRoutes.Main) }
+            }, "Home", false),
+            ItemOption(Icons.Default.Person, {
+                navController.navigate(AdminRoutes.Dependientes) { launchSingleTop = true; popUpTo(AdminRoutes.Main) }
+            }, "Dependientes", true),
+            ItemOption(Icons.Default.Icecream, {
+                navController.navigate(AdminRoutes.Categorias) { launchSingleTop = true; popUpTo(AdminRoutes.Main) }
+            }, "Categorias", true),
+            ItemOption(Icons.Default.Fastfood, {
+                navController.navigate(AdminRoutes.Productos) { launchSingleTop = true; popUpTo(AdminRoutes.Main) }
+            }, "Productos", true),
+            ItemOption(Icons.AutoMirrored.Filled.FactCheck, {
+                navController.navigate(AdminRoutes.Pedidos) { launchSingleTop = true; popUpTo(AdminRoutes.Main) }
+            }, "Pedidos", true),
+            ItemOption(Icons.Default.DarkMode, { appViewModel.swithMode() }, "Darkmode", true),
+            ItemOption(Icons.Default.Close, { onExit() }, "Close", false)
         )
     )
 
-    //icono seleccionado
-    //var selected by remember { mutableStateOf(items[0]) }
-
-    val adaptiveInfo = currentWindowAdaptiveInfo()
-
-
     val navegador: @Composable () -> Unit = {
-        NavHost(
-            navController,
-            startDestination = AdminRoutes.Main
-        ) {
-            composable(AdminRoutes.Main) {
+        NavHost(navController, startDestination = AdminRoutes.Main) {
+            composable(AdminRoutes.Main) { PrincipalAdministrador() }
 
-                PrincipalAdministrador()
-            }
+            // --- Dependientes ---
             composable(AdminRoutes.Dependientes) {
                 Dependientes(mainViewModel, dependientesViewModel, {
                     dependientesViewModel.setSelectedDependiente(it)
-                    navController.navigate(AdminRoutes.Dependiente) {
-                        launchSingleTop = true
-
-                    }
+                    navController.navigate(AdminRoutes.Dependiente) { launchSingleTop = true }
                 })
             }
             composable(AdminRoutes.Dependiente) {
-                DependienteForm(
-                    dependientesViewModel, {
-                        navController.popBackStack()
-                    }, {
-                        dependientesViewModel.save(it)
-                        navController.popBackStack()
-                    }
-                )
+                DependienteForm(dependientesViewModel, { navController.popBackStack() }, {
+                    dependientesViewModel.save(it)
+                    navController.popBackStack()
+                })
             }
 
+            // --- Categorias ---
             composable(AdminRoutes.Categorias) {
                 Categorias(mainViewModel, categoriasViewModel, {
                     categoriasViewModel.setSelectedCategoria(it)
-                    navController.navigate(AdminRoutes.Categoria) {
-                        launchSingleTop = true
-                    }
+                    navController.navigate(AdminRoutes.Categoria) { launchSingleTop = true }
                 })
             }
             composable(AdminRoutes.Categoria) {
-                //Text("Categorias Formulario")
-                CategoriaForm(
-                    categoriasViewModel, {
-                        navController.popBackStack()
-                    }, {
-                        categoriasViewModel.save(it)
-                        navController.popBackStack()
-                    }
-                )
+                CategoriaForm(categoriasViewModel, { navController.popBackStack() }, {
+                    categoriasViewModel.save(it)
+                    navController.popBackStack()
+                })
             }
 
+            // --- Productos ---
             composable(AdminRoutes.Productos) {
                 Productos(mainViewModel, productosViewModel, {
                     productosViewModel.setSelectedProducto(it)
-                    navController.navigate(AdminRoutes.Producto){
-                        launchSingleTop = true
-                    }
+                    navController.navigate(AdminRoutes.Producto) { launchSingleTop = true }
                 })
             }
             composable(AdminRoutes.Producto) {
-
-                ProductoForm(
-                    productosViewModel, categoriasViewModel,{
-                        navController.popBackStack()
-                    }, {
-                        productosViewModel.save(it)
-                        navController.popBackStack()
-                    }
-                )
-
+                ProductoForm(productosViewModel, categoriasViewModel, { navController.popBackStack() }, {
+                    productosViewModel.save(it)
+                    navController.popBackStack()
+                })
             }
 
+            // --- Pedidos ---
             composable(AdminRoutes.Pedidos) {
                 Pedidos(mainViewModel, pedidosViewModel, {
-                    pedidosViewModel.setSelectedPedido(it)
-                    navController.navigate(AdminRoutes.Pedido){
-                        launchSingleTop = true
-                    }
+                    navController.navigate(AdminRoutes.Pedido) { launchSingleTop = true }
                 })
-
             }
-            composable(AdminRoutes.Pedido) {
 
+            // --- FORMULARIO PEDIDO (INTEGRACIÓN COMPLETA) ---
+            composable(AdminRoutes.Pedido) {
                 PedidoForm(
-                    // Aquí le pasamos el repositorio que ya tiene cargado el ViewModel de productos
+                    // Inyectamos repositorios públicos
                     productoRepo = productosViewModel.productoRepositorio,
-                    onClose = {
-                        navController.popBackStack()
-                    },
+                    dependienteRepo = dependientesViewModel.dependienteRepositorio,
+
+                    onClose = { navController.popBackStack() },
                     onConfirm = {
                         pedidosViewModel.save(it)
                         navController.popBackStack()
                     }
                 )
             }
-
         }
     }
-
-
 
     if (wai?.windowSizeClass?.windowWidthSizeClass == WindowWidthSizeClass.COMPACT) {
         Scaffold(
             bottomBar = {
-
                 NavigationBar {
                     mainViewModel.filteredItems.collectAsState().value.forEach { item ->
-                        // if(!item.admin || (item.admin && appViewModel.hasPermission()))
                         NavigationBarItem(
-
                             selected = true,
                             onClick = { item.action() },
-
-                            icon = { Icon(item.icon, contentDescription = item.name) },
-
-                            )
+                            icon = { Icon(item.icon, contentDescription = item.name) }
+                        )
                     }
                 }
             }
         ) { innerPadding ->
-            Box(Modifier.padding(innerPadding)) {
-                navegador()
-            }
+            Box(Modifier.padding(innerPadding)) { navegador() }
         }
     } else {
-
         PermanentNavigationDrawer(
             drawerContent = {
-                PermanentDrawerSheet(
-                    Modifier.then(
-                        if (wai?.windowSizeClass?.windowWidthSizeClass == WindowWidthSizeClass.COMPACT)
-                            Modifier.width(128.dp)
-                        else Modifier.width(128.dp)
-                    )
-                ) {
+                PermanentDrawerSheet(Modifier.width(128.dp)) {
                     Column(
-                        modifier = Modifier.fillMaxHeight()  // ocupa todo el alto del drawer
-                            .padding(vertical = 16.dp),
-                        verticalArrangement = Arrangement.Center,  // centra verticalmente
-                        horizontalAlignment = Alignment.CenterHorizontally  // opcional: centra horizontalmente
+                        modifier = Modifier.fillMaxHeight().padding(vertical = 16.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-
                         Spacer(Modifier.height(16.dp))
                         options.forEach { item ->
-                            //si se tienen permiso
-                            // if(!item.admin || (item.admin && appViewModel.hasPermission()))
                             NavigationDrawerItem(
                                 icon = {
-                                    Box(
-                                        modifier = Modifier.fillMaxWidth(),
-                                        contentAlignment = Alignment.Center,
-
-                                        ) {
-                                        Icon(
-                                            item.icon,
-                                            tint = MaterialTheme.colorScheme.primary,
-                                            contentDescription = item.name
-                                        )
+                                    Box(modifier = Modifier.fillMaxWidth(), contentAlignment = Alignment.Center) {
+                                        Icon(item.icon, tint = MaterialTheme.colorScheme.primary, contentDescription = item.name)
                                     }
                                 },
-                                label = { appViewModel.windowsAdaptativeInfo.collectAsState().value?.windowSizeClass.toString() }, // sin texto
+                                label = { },
                                 selected = false,
                                 onClick = { item.action() },
-                                modifier = Modifier
-                                    .padding(vertical = 4.dp) // espaciado entre items
-
+                                modifier = Modifier.padding(vertical = 4.dp)
                             )
                         }
                     }
@@ -335,22 +181,11 @@ fun MainAdministrador(
             },
             content = {
                 Column(
-                    modifier = Modifier
-                        .fillMaxSize()
-                        .padding(16.dp)
-                        // Add a fixed height constraint to prevent "Size out of range" error
-                        .height(600.dp),
+                    modifier = Modifier.fillMaxSize().padding(16.dp),
                     horizontalAlignment = Alignment.CenterHorizontally,
                     verticalArrangement = Arrangement.Center
-                ) {
-                    navegador()
-
-                }
+                ) { navegador() }
             }
         )
     }
-
-
 }
-
-
