@@ -22,10 +22,8 @@ class CrearPedidoUseCase(private val repositorio: IPedidoRepositorio,private val
             fecha = createPedidoCommand.fecha,
             dependienteId = createPedidoCommand.dependienteId
         )
-        val element=repositorio.findByName(item.clienteName)
-        if(element!=null)
-            throw IllegalArgumentException("El nombre ya está registrado.")
         repositorio.add(item)
+
         return item.toDTO( almacenDatos.getAppDataDir()+"/pedidos/");
     }
 }
