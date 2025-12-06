@@ -24,3 +24,5 @@ composeApp/dependientes
 composeApp/productos
 composeApp/lineaPedido
 *.jpg
+# *.log
+composeApp/app.properties

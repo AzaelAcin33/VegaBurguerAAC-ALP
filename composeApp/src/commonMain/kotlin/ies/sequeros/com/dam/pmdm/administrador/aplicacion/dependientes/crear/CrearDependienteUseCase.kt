@@ -8,7 +8,10 @@ import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
 import ies.sequeros.com.dam.pmdm.generateUUID
 
 
-class CrearDependienteUseCase(private val repositorio: IDependienteRepositorio,private val almacenDatos: AlmacenDatos)  {
+class CrearDependienteUseCase(
+    private val repositorio: IDependienteRepositorio,
+    private val almacenDatos: AlmacenDatos
+) {
 
     suspend  fun invoke(createUserCommand: CrearDependienteCommand): DependienteDTO {
         //this.validateUser(user)

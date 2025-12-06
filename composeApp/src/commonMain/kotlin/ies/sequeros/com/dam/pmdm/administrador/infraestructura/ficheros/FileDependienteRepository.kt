@@ -1,4 +1,4 @@
-package ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria
+package ies.sequeros.com.dam.pmdm.administrador.infraestructura.ficheros
 
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Dependiente

@@ -11,27 +11,28 @@ import ies.sequeros.com.dam.pmdm.generateUUID
 class CrearProductoUseCase(
     private val repositorio: IProductoRepositorio,
     private val categoria: ICategoriaRepositorio,
-    private val almacenDatos: AlmacenDatos) {
-    suspend  fun invoke(createUserCommand: CrearProductoCommand): ProductoDTO {
+    private val almacenDatos: AlmacenDatos
+) {
+    suspend  fun invoke(createProductoCommand: CrearProductoCommand): ProductoDTO {
         //this.validateUser(user)
-        if (repositorio.findByName(createUserCommand.name)!=null) {
+        if (repositorio.findByName(createProductoCommand.name)!=null) {
             throw IllegalArgumentException("El producto ya está registrado.")
         }
-
-        val element=repositorio.findByName(createUserCommand.name)
-        if(element!=null)
-            throw IllegalArgumentException("El nombre ya está registrado.")
         val id=generateUUID()
-        val imageName=almacenDatos.copy(createUserCommand.imagePath,id,"/productos/")
+        val imageName=almacenDatos.copy(createProductoCommand.imagePath,id,"/productos/")
         val item = Producto(
             id = id,
-            name = createUserCommand.name,
+            name = createProductoCommand.name,
             imagePath = imageName,
-            price = createUserCommand.price,
-            description = createUserCommand.description,
-            enabled = createUserCommand.enabled,
-            categoriaId = createUserCommand.categoriaId
+            price = createProductoCommand.price,
+            description = createProductoCommand.description,
+            enabled = createProductoCommand.enabled,
+            categoriaId = createProductoCommand.categoriaId
         )
+        //val elementName=repositorio.findByName(item.name)
+        val element=repositorio.findByName(item.name)
+        if(element!=null)
+            throw IllegalArgumentException("El nombre ya está registrado.")
         repositorio.add(item)
         return item.toDTO(almacenDatos.getAppDataDir()+"/productos/",
             categoria.getById(item.categoriaId)?.name ?: ""
