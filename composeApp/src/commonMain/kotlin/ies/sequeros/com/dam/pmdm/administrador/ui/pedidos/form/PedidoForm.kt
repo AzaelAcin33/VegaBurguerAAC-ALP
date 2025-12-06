@@ -15,5 +15,13 @@ fun PedidoForm(
         )
     }
 ) {
+/*
+    nombre del cliente
+    Estado del pedido los circulitos estos del tipo test, solo deja elegir uno
+    fecha del pedido
+    combobox del dependiente id
 
+
+
+*/
 }
