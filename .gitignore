@@ -26,3 +26,6 @@ composeApp/lineaPedido
 *.jpg
 # *.log
 composeApp/app.properties
+composeApp/src/jvmMain/resources/app.properties
+composeApp/*.log
+composeApp/*.logs
