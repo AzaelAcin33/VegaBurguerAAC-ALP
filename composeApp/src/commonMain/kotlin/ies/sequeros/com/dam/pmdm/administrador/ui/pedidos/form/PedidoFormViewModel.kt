@@ -1,134 +1,142 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form
+
 import androidx.lifecycle.ViewModel
-import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.listar.PedidoDTO
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
 import androidx.lifecycle.viewModelScope
-import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form.PedidoFormState
-import kotlinx.coroutines.CoroutineScope
+import ies.sequeros.com.dam.pmdm.administrador.modelo.IProductoRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.IO
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
-
-class PedidoFormViewModel (private val item: PedidoDTO?, onSuccess: (PedidoFormState) -> Unit): ViewModel(){
+class PedidoFormViewModel(
+    // Inyectamos el repositorio en lugar de crearlo aquí
+    private val productoRepo: IProductoRepositorio,
+    private val currentDependienteId: String? = null,
+    onSuccess: (PedidoFormState) -> Unit
+) : ViewModel() {
 
     private val _uiState = MutableStateFlow(PedidoFormState(
-        clienteName = item?.clienteName ?: "",
-        estado = item?.estado?:"",
-        fecha = item?.fecha?:"",
-        dependienteId = item?.dependienteId?:""
+        fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")),
+        dependienteId = currentDependienteId ?: ""
     ))
-
     val uiState: StateFlow<PedidoFormState> = _uiState.asStateFlow()
 
+    // Validador
     val isFormValid: StateFlow<Boolean> = uiState.map { state ->
-        if (item == null)
-            state.clienteNameError == null &&
-                    state.estadoError == null &&
-                    state.fechaError ==null &&
-                    state.dependienteIdError ==null &&
-                    !state.clienteName.isBlank() &&
-                    !state.estado.isBlank() &&
-                    state.fecha.isNotBlank() &&
-                    state.dependienteId.isNotBlank()
-        else{
-            state.clienteNameError == null &&
-                    state.estadoError == null &&
-                    state.fechaError ==null &&
-                    state.dependienteIdError ==null &&
-                    !state.clienteName.isBlank() &&
-                    !state.estado.isBlank() &&
-                    state.fecha.isNotBlank() &&
-                    state.dependienteId.isNotBlank()
-        }
-    }.stateIn(
-        scope = viewModelScope,
-        started = SharingStarted.Eagerly,
-        initialValue = false
-    )
+        state.clienteName.isNotBlank() &&
+                state.lineas.isNotEmpty() &&
+                state.clienteNameError == null
+    }.stateIn(viewModelScope, SharingStarted.Eagerly, false)
 
-    fun onClienteNameChange(v:String){
-        _uiState.value = _uiState.value.copy(clienteName = v, clienteNameError = validateClienteName(v))
+    init {
+        cargarProductosDeBBDD()
     }
 
-    fun onFechaChange(v:String){
-        _uiState.value = _uiState.value.copy(fecha =  v, fechaError =  validateFecha(v))
-    }
+    private fun cargarProductosDeBBDD() {
+        viewModelScope.launch(Dispatchers.IO) {
+            try {
+                // Usamos la interfaz común
+                val listaProductos = productoRepo.getAll()
 
-    fun onDependienteIdChange(v: String){
-        _uiState.value = _uiState.value.copy(dependienteId = v, dependienteIdError = validateDependienteId(v))
-    }
-
-    fun onEstadoChange(v:String){
-        _uiState.value = _uiState.value.copy(estado = v, estadoError = validateEstado(v))
-    }
-
-    fun clear(){
-        _uiState.value = PedidoFormState()
-    }
-
-    private fun validateClienteName(name:String): String?{
-        if (name.isBlank()) return "El nombre es obligatorio"
-        if (name.length < 2) return "El nombre es muy corto"
-        if (name.length > 100) return "El nombre es muy largo"
-        return null
-    }
-
-    private fun validateFecha(fecha: String): String? {
-        if (fecha.isBlank()) return "La fecha es obligatoria"
-
-        val regex = Regex("\\d{4}-\\d{2}-\\d{2}")
-        if (!regex.matches(fecha)) return "Formato de fecha inválido (YYYY-MM-DD)"
-
-        return null
-    }
-
-    private fun validateDependienteId(id: String): String? {
-        if (id.isBlank()) return "Debe seleccionar un dependiente"
-        return null
-    }
-
-    private fun validateEstado(estado: String): String? {
-        if (estado.isBlank()) return "El estado es obligatorio"
-        return null
-    }
-
-    fun validateAll(): Boolean {
-        val s = _uiState.value
-        val clienteErr = validateClienteName(s.clienteName)
-        val fechaErr = validateFecha(s.fecha)
-        val depErr = validateDependienteId(s.dependienteId)
-        val estadoErr = validateEstado(s.estado)
-        val newState = s.copy(
-            clienteNameError = clienteErr,
-            fechaError = fechaErr,
-            dependienteIdError = depErr,
-            estadoError = estadoErr,
-            submitted = true
-        )
-        _uiState.value = newState
-
-        return listOf(clienteErr, fechaErr, depErr, estadoErr).all { it == null }
-    }
-
-
-    fun submit(
-        onSuccess: ( PedidoFormState) -> Unit,
-        onFailure: ((PedidoFormState) -> Unit)? = null
-    ) {
-        //se ejecuta en una corrutina, evitando que se bloque la interfaz gráficas
-        viewModelScope.launch {
-            val ok = validateAll()
-            if (ok) {
-                onSuccess(_uiState.value)
-            } else {
-                onFailure?.invoke(_uiState.value)
+                _uiState.update { currentState ->
+                    currentState.copy(productosDisponibles = listaProductos)
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                // Opcional: Manejar error en UI
             }
         }
     }
 
+    // --- LOGICA DEL FORMULARIO ---
 
+    fun onClienteNameChange(nombre: String) {
+        val error = if (nombre.isBlank()) "El nombre es obligatorio" else null
+        _uiState.update { it.copy(clienteName = nombre, clienteNameError = error) }
+    }
+
+    // Selección de producto desde el catálogo (BBDD)
+    fun onProductoRealSelect(producto: Producto) {
+        _uiState.update {
+            it.copy(
+                tempProductoId = producto.id,
+                tempProductoNombre = producto.name,
+                tempPrecioUnitario = producto.price.toString()
+            )
+        }
+    }
+
+    fun onTempCantidadChange(cant: String) {
+        if (cant.all { it.isDigit() }) {
+            _uiState.update { it.copy(tempCantidad = cant) }
+        }
+    }
+
+    fun agregarLinea() {
+        val state = _uiState.value
+        val cantidadInt = state.tempCantidad.toIntOrNull() ?: 1
+        val precioDouble = state.tempPrecioUnitario.toDoubleOrNull() ?: 0.0
+
+        if (state.tempProductoId.isBlank() || precioDouble <= 0) return
+
+        val nuevaLinea = LineaPedidoFormState(
+            id = "LP-${System.currentTimeMillis()}", // ID Temporal
+            cantidad = cantidadInt,
+            precioUnitario = precioDouble,
+            entregado = false,
+            pedidoId = state.id,
+            productoId = state.tempProductoId,
+            productName = state.tempProductoNombre,
+            totalLinea = cantidadInt * precioDouble
+        )
+
+        val nuevasLineas = state.lineas + nuevaLinea
+        recalcularTotales(nuevasLineas)
+        limpiarTemp()
+    }
+
+    fun toggleEntregado(index: Int) {
+        val lineas = _uiState.value.lineas.toMutableList()
+        val linea = lineas[index]
+        lineas[index] = linea.copy(entregado = !linea.entregado)
+        _uiState.update { it.copy(lineas = lineas) }
+    }
+
+    fun eliminarLinea(index: Int) {
+        val nuevasLineas = _uiState.value.lineas.toMutableList().apply { removeAt(index) }
+        recalcularTotales(nuevasLineas)
+    }
+
+    private fun recalcularTotales(nuevasLineas: List<LineaPedidoFormState>) {
+        val total = nuevasLineas.sumOf { it.totalLinea }
+        _uiState.update {
+            it.copy(
+                lineas = nuevasLineas,
+                totalPedido = total,
+                lineasError = if (nuevasLineas.isEmpty()) "Añade productos al pedido" else null
+            )
+        }
+    }
+
+    private fun limpiarTemp() {
+        _uiState.update {
+            it.copy(
+                tempProductoId = "",
+                tempProductoNombre = "",
+                tempPrecioUnitario = "",
+                tempCantidad = "1"
+            )
+        }
+    }
+
+    fun submit(onSuccess: (PedidoFormState) -> Unit) {
+        viewModelScope.launch {
+            if (isFormValid.value) {
+                onSuccess(_uiState.value)
+            }
+        }
+    }
 }

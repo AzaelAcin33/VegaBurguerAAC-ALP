@@ -1,6 +1,5 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui.pedidos
 
-import androidx.compose.runtime.remember
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 
@@ -12,9 +11,7 @@ import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.crear.CrearPed
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.listar.PedidoDTO
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.listar.ListarPedidoUseCase
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Pedido
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IPedidoRepositorio
-import ies.sequeros.com.dam.pmdm.administrador.ui.MainAdministradorViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form.PedidoFormState
 
 import kotlinx.coroutines.flow.MutableStateFlow

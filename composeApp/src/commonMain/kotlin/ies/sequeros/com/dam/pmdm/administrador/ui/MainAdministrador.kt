@@ -54,6 +54,7 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.Dependientes
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form.DependienteForm
 import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.Pedidos
+import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form.PedidoForm
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.Productos
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.form.ProductoForm
@@ -243,7 +244,18 @@ fun MainAdministrador(
 
             }
             composable(AdminRoutes.Pedido) {
-                Text("Pedido Formulario")
+
+                PedidoForm(
+                    // Aquí le pasamos el repositorio que ya tiene cargado el ViewModel de productos
+                    productoRepo = productosViewModel.productoRepositorio,
+                    onClose = {
+                        navController.popBackStack()
+                    },
+                    onConfirm = {
+                        pedidosViewModel.save(it)
+                        navController.popBackStack()
+                    }
+                )
             }
 
         }

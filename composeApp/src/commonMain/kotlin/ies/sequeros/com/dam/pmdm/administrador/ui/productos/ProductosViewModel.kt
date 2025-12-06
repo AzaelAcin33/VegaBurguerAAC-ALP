@@ -30,7 +30,7 @@ import kotlinx.coroutines.launch
 
 class ProductosViewModel(
     //private val administradorViewModel: MainAdministradorViewModel,
-    private val productoRepositorio: IProductoRepositorio,
+    val productoRepositorio: IProductoRepositorio, //private
     private val categoriaRepositorio: ICategoriaRepositorio,
     val almacenDatos: AlmacenDatos
 ) : ViewModel() {

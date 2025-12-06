@@ -5,9 +5,9 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Pedido (
-    val id:String,
-    val clienteName:String,
-    val estado:String,
+    val id: String,
+    val clienteName: String,
+    val estado: String,
     val fecha: String,
-    val dependienteId: String
+    val dependienteId: String?
 )
