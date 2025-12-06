@@ -27,7 +27,7 @@ class MainActivity : ComponentActivity() {
             //pasan a la aplicación,
             val almacenImagenes:AlmacenDatos=  AlmacenDatos(this)
 
-            App(dependienteRepositorio,almacenImagenes)
+            App(almacenImagenes,dependienteRepositorio)
         }
     }
 }

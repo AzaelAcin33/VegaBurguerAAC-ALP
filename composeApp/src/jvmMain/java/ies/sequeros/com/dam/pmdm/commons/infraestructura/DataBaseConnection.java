@@ -72,5 +72,5 @@ public class DataBaseConnection {
 
     public void setConfig_path(String config_path) {
         this.config_path = config_path;
-    }
+}
 }
