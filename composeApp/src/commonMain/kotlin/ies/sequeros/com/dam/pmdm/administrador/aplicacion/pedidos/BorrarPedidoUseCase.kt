@@ -6,15 +6,11 @@ import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 
 class BorrarPedidoUseCase(private val repositorio: IPedidoRepositorio,private val almacenDatos: AlmacenDatos) {
     suspend  fun invoke(id: String) {
-        val tempo = repositorio.getById(id)
-        val elementos = repositorio.getAll();
+        val item = repositorio.getById(id)
         //this.validateUser(user)
-        if (tempo == null) {
+        if (item == null) {
             throw IllegalArgumentException("El id no está registrado.")
         }
-        //se borra del repositorio
-        val tempoDto = tempo.toDTO(almacenDatos.getAppDataDir() + "/pedidos/")
-
         repositorio.remove(id)
     }
 }

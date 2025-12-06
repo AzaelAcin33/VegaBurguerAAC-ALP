@@ -21,13 +21,6 @@ class ActualizarPedidoUseCase(
             throw IllegalArgumentException("El pedido no está registrado.")
         }
 
-        // Se pasa a DTO para mantener el mismo patrón que Dependiente
-        val itemDTO: PedidoDTO = item.toDTO(almacenDatos.getAppDataDir() + "/pedidos/")
-
-        // No hay gestión de imágenes, pero mantenemos la variable por consistencia
-        var nuevaRuta: String? = null
-        nuevaRuta = "" // No se copia ningún archivo, pero mantenemos la variable
-
         val nuevoItem = item.copy(
             clienteName = command.clienteName,
             estado = command.estado,
