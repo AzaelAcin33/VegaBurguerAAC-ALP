@@ -68,6 +68,7 @@ class PedidosViewModel(
         val command = CrearPedidoCommand(
             formState.clienteName,
             formState.estado,
+            formState.total,
             formState.fecha,
             formState.dependienteId
         )

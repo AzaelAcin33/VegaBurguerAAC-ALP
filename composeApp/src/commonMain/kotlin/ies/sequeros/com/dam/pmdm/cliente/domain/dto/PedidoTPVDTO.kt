@@ -1,5 +1,9 @@
 package ies.sequeros.com.dam.pmdm.cliente.domain.dto
 
-class PedidoTPVDTO {
-    //Info de pedido
-}
+data class PedidoTPVDTO(
+    val nombreCliente: String,
+    val lineas: List<LineaPedidoTPVDTO>,
+    val dependienteId: String?,
+    val fecha: Long, // Timestamp
+    val total: Double
+)

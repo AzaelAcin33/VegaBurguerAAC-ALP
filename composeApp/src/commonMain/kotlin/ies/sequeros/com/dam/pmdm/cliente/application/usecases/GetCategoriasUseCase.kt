@@ -1,5 +1,10 @@
 package ies.sequeros.com.dam.pmdm.cliente.application.usecases
 
-class GetCategoriasUseCase {
-    //Se encarga de obtener la lista de categorías de productos
+import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Categoria
+
+class GetCategoriasUseCase(private val repositorio: ICategoriaRepositorio) {
+    suspend fun invoke(): List<Categoria> {
+        return repositorio.getAll()
+    }
 }

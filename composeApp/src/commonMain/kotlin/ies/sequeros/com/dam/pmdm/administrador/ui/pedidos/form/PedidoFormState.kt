@@ -8,6 +8,7 @@ data class PedidoFormState(
     val id: String = "",
     val clienteName: String = "",
     val estado: String = "Pendiente",
+    val total: Double = 0.0,
     val fecha: String = "",
 
     // Dependiente seleccionado

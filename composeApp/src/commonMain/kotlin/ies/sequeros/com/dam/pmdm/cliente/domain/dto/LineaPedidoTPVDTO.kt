@@ -1,5 +1,9 @@
 package ies.sequeros.com.dam.pmdm.cliente.domain.dto
 
-class LineaPedidoTPVDTO {
-    //Info de linea de pedido
+data class LineaPedidoTPVDTO(
+    val producto: ProductoTPVDTO,
+    var cantidad: Int
+) {
+    val total: Double
+        get() = producto.precio.toDouble() * cantidad
 }

@@ -4,6 +4,7 @@ data class PedidoDTO(
     val id: String,
     val clienteName: String,
     val estado: String,
+    val total: Double,
     val fecha: String,
     val dependienteId: String?
 )

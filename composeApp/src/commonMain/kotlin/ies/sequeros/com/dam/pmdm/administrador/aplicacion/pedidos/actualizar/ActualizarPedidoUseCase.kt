@@ -24,7 +24,7 @@ class ActualizarPedidoUseCase(
         val nuevoItem = item.copy(
             clienteName = command.clienteName,
             estado = command.estado,
-            fecha = command.fecha
+            fecha = command.fecha.toLong()
         )
 
         repositorio.update(nuevoItem)

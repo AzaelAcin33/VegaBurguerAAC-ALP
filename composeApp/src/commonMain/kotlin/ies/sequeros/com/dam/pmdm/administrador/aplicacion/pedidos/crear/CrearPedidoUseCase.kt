@@ -19,7 +19,8 @@ class CrearPedidoUseCase(private val repositorio: IPedidoRepositorio,private val
             id = id,
             clienteName = createPedidoCommand.clienteName,
             estado = createPedidoCommand.estado,
-            fecha = createPedidoCommand.fecha,
+            total = createPedidoCommand.total,
+            fecha = createPedidoCommand.fecha.toLong(),
             dependienteId = createPedidoCommand.dependienteId
         )
         repositorio.add(item)

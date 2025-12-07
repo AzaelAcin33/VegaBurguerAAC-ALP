@@ -8,7 +8,8 @@ data class Pedido (
     val id: String,
     val clienteName: String,
     val estado: String,
-    val fecha: String,
+    val total: Double,
+    val fecha: Long,
     val dependienteId: String?,
     val lineas: List<LineaPedido> = emptyList()
 )
