@@ -35,8 +35,8 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
             pst.setInt(2, item.getCantidad());
             pst.setString(3, item.getPrecioUnitario());
             pst.setBoolean(4, item.getEntregado()); // Java maneja el booleano a TINYINT automáticamente
-            //pst.setString(5, item.getPedidoId());
-            pst.setString(5, item.getProductoId());
+            pst.setString(5, item.getPedidoId());
+            pst.setString(6, item.getProductoId());
 
             pst.executeUpdate();
             pst.close();
@@ -58,7 +58,7 @@ public class LineaPedidoDao implements IDao<LineaPedido> {
                         rs.getInt("cantidad"),
                         rs.getString("precioUnitario"),
                         rs.getBoolean("entregado"),
-                        //rs.getString("pedidoId"),
+                        rs.getString("pedidoId"),
                         rs.getString("productoId")
                 ));
             }
