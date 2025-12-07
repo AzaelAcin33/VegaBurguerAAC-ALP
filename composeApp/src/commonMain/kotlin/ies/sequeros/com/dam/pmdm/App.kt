@@ -106,6 +106,7 @@ fun App( almacenImagenes:AlmacenDatos,
                         productoRepo = productoRepositorio,
                         dependienteRepo = dependienteRepositorio,
                         pedidoRepo = pedidoRepositorio,
+                        almacenDatos = almacenImagenes
                     ),
                     onExit = {
                         navController.popBackStack()

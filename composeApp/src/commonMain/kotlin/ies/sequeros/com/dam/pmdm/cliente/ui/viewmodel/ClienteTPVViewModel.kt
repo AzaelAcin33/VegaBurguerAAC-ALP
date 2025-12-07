@@ -14,6 +14,7 @@ import ies.sequeros.com.dam.pmdm.cliente.domain.dto.PedidoTPVDTO
 import ies.sequeros.com.dam.pmdm.cliente.domain.dto.ProductoTPVDTO
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.DependienteDTO // Asumiendo que existe
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.toDTO
+import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -24,7 +25,8 @@ class ClienteTPVViewModel(
     private val categoriaRepo: ICategoriaRepositorio,
     private val productoRepo: IProductoRepositorio,
     private val dependienteRepo: IDependienteRepositorio,
-    private val pedidoRepo: IPedidoRepositorio
+    private val pedidoRepo: IPedidoRepositorio,
+    private val almacenDatos: AlmacenDatos
 ) : ViewModel() {
 
     // Casos de uso
@@ -60,18 +62,58 @@ class ClienteTPVViewModel(
 
     fun loadCategorias() {
         viewModelScope.launch {
-            _categorias.value = getCategoriasUseCase.invoke()
+            // 1. Obtenemos la ruta base
+            val rawPath = almacenDatos.getAppDataDir()+"/categorias/"
+
+            // 2. Aseguramos que termine en "/"
+            val path = if (rawPath.endsWith("/")) rawPath else "$rawPath/"
+
+            // 3. Cargamos y mapeamos
+            val listaCategorias = getCategoriasUseCase.invoke().map { categoria ->
+                // Solo concatenamos si hay una imagen definida
+                val finalPath = if (categoria.imagePath.isNotEmpty()) {
+                    path + categoria.imagePath
+                } else {
+                    ""
+                }
+
+                // LOG PARA DEPURAR (Míralo en Logcat)
+                println("TPV DEBUG - Categoria: ${categoria.name} -> Ruta: $finalPath")
+
+                categoria.copy(imagePath = finalPath)
+            }
+            _categorias.value = listaCategorias
         }
     }
 
     fun loadProductos(categoriaId: String) {
         viewModelScope.launch {
-            // Asumiendo que productoRepo tiene getByCategoria o getAll y filtramos
-            val allProds = productoRepo.getAll() // Ajustar según tu repo real
+            // 1. Obtenemos la ruta base asegurando la barra
+            val rawPath = almacenDatos.getAppDataDir()+"/productos/"
+            val path = if (rawPath.endsWith("/")) rawPath else "$rawPath/"
+
+            val allProds = productoRepo.getAll()
+
             _productos.value = allProds
-                .filter { it.categoriaId == categoriaId } // Asumiendo campo categoriaId en Producto
-                .map {
-                    ProductoTPVDTO(it.id, it.name, it.price, it.imagePath, it.categoriaId)
+                .filter { it.categoriaId == categoriaId }
+                .map { producto ->
+
+                    val finalPath = if (producto.imagePath.isNotEmpty()) {
+                        path + producto.imagePath
+                    } else {
+                        ""
+                    }
+
+                    // LOG PARA DEPURAR
+                    println("TPV DEBUG - Producto: ${producto.name} -> Ruta: $finalPath")
+
+                    ProductoTPVDTO(
+                        id = producto.id,
+                        nombre = producto.name,
+                        precio = producto.price,
+                        imagePath = finalPath, // Usamos la ruta corregida
+                        categoriaId = producto.categoriaId
+                    )
                 }
         }
     }
