@@ -31,6 +31,7 @@ CREATE TABLE pedidos (
 	id CHAR(64) PRIMARY KEY,
     clienteName VARCHAR(100) NOT NULL,
     estado VARCHAR(50) NOT NULL,
+    total DECIMAL(10,2) NOT NULL,
     fecha VARCHAR(100) NOT NULL,
     dependienteId CHAR(64),
     FOREIGN KEY (dependienteId) REFERENCES dependientes(id)

@@ -78,9 +78,7 @@ fun App( almacenImagenes:AlmacenDatos,
             composable(AppRoutes.Main) {
                 Principal({
                     navController.navigate(AppRoutes.Administrador)
-                },{},{
-                    navController.navigate(AppRoutes.TPV)
-                },)
+                },{},{},)
             }
             composable (AppRoutes.Administrador){
                 MainAdministrador(appViewModel,
@@ -94,11 +92,11 @@ fun App( almacenImagenes:AlmacenDatos,
             }
 
             composable(AppRoutes.TPV){
-                Tpv(
+                /*Tpv(
                     categoriaRepositorio = categoriaRepositorio,
                     productoRepositorio = productoRepositorio,
                     almacenImagenes = almacenImagenes
-                )
+                )*/
             }
 
         }

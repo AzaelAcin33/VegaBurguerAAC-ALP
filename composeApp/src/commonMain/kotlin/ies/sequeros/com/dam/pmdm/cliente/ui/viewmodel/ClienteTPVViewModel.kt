@@ -21,10 +21,10 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class ClienteTPVViewModel(
-    categoriaRepo: ICategoriaRepositorio,
+    private val categoriaRepo: ICategoriaRepositorio,
     private val productoRepo: IProductoRepositorio,
     private val dependienteRepo: IDependienteRepositorio,
-    pedidoRepo: IPedidoRepositorio
+    private val pedidoRepo: IPedidoRepositorio
 ) : ViewModel() {
 
     // Casos de uso

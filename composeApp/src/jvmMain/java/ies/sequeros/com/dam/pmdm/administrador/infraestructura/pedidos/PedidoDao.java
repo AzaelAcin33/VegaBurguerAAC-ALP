@@ -28,12 +28,12 @@ public class PedidoDao implements IDao<Pedido> {
     private final String deletebyid = "delete from " + table_name + " where id=?";
 
     // INSERT: Usamos clienteName, estado, fecha, dependienteId
-    private final String insert = "INSERT INTO " + table_name + " (id, clienteName, estado, fecha, dependienteId) " +
-            "VALUES (?, ?, ?, ?, ?)";
+    private final String insert = "INSERT INTO " + table_name + " (id, clienteName, estado, total, fecha, dependienteId) " +
+            "VALUES (?, ?, ?, ?, ?, ?)";
 
     // UPDATE
     private final String update =
-            "UPDATE " + table_name + " SET clienteName = ?, estado = ?, fecha = ?, dependienteId = ? " +
+            "UPDATE " + table_name + " SET clienteName = ?, estado = ?, total = ?, fecha = ?, dependienteId = ? " +
                     "WHERE id = ?";
 
     public PedidoDao() {
@@ -107,9 +107,10 @@ public class PedidoDao implements IDao<Pedido> {
             // 1=clienteName, 2=estado, 3=fecha, 4=dependienteId, 5=id (WHERE)
             pst.setString(1, item.getClienteName());
             pst.setString(2, item.getEstado());
-            pst.setLong(3, item.getFecha());
-            pst.setString(4, item.getDependienteId());
-            pst.setString(5, item.getId());
+            pst.setDouble(3, item.getTotal());
+            pst.setLong(4, item.getFecha());
+            pst.setString(5, item.getDependienteId());
+            pst.setString(6, item.getId());
 
             pst.executeUpdate();
             pst.close();
@@ -144,9 +145,9 @@ public class PedidoDao implements IDao<Pedido> {
 
             // dependienteId puede ser nulo si no hay nadie asignado
             if (item.getDependienteId() != null) {
-                pst.setString(5, item.getDependienteId());
+                pst.setString(6, item.getDependienteId());
             } else {
-                pst.setNull(5, java.sql.Types.VARCHAR);
+                pst.setNull(6, java.sql.Types.VARCHAR);
             }
 
             pst.executeUpdate();
