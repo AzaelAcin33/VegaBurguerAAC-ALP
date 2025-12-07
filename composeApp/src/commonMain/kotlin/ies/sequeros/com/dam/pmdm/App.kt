@@ -83,7 +83,7 @@ fun App( almacenImagenes:AlmacenDatos,
                 Principal({
                     navController.navigate(AppRoutes.Administrador)
                 },{},{
-                    navController.navigate(AppRoutes.TPV)
+                    navController.navigate(AppRoutes.Cliente)
                 },)
             }
             composable (AppRoutes.Administrador){
@@ -97,7 +97,7 @@ fun App( almacenImagenes:AlmacenDatos,
             {navController.popBackStack() })
             }
 
-            composable(AppRoutes.TPV){
+            composable(AppRoutes.Cliente){
 
                 ClienteMainScreen(
                     appViewModel,

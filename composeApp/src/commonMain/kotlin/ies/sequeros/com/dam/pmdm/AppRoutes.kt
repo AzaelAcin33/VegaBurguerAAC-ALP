@@ -4,6 +4,6 @@ object  AppRoutes {
     const val Main="main"
     const val Administrador = "admin"
     const val Dependiente="dependiente"
-    const val TPV = "clientes"
+    const val Cliente = "cliente"
 
 }
