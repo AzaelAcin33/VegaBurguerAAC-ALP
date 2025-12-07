@@ -122,7 +122,7 @@ fun MainAdministrador(
 
             // --- FORMULARIO PEDIDO (INTEGRACIÓN COMPLETA) ---
             composable(AdminRoutes.Pedido) {
-                PedidoForm(
+                /*PedidoForm(
                     // Inyectamos repositorios públicos
                     productoRepo = productosViewModel.productoRepositorio,
                     dependienteRepo = dependientesViewModel.dependienteRepositorio,
@@ -132,7 +132,7 @@ fun MainAdministrador(
                         pedidosViewModel.save(it)
                         navController.popBackStack()
                     }
-                )
+                )*/
             }
         }
     }

@@ -91,6 +91,14 @@ fun App( almacenImagenes:AlmacenDatos,
             {navController.popBackStack() })
             }
 
+            composable(AppRoutes.TPV){
+                /*Tpv(
+                    categoriaRepositorio = categoriaRepositorio,
+                    productoRepositorio = productoRepositorio,
+                    almacenImagenes = almacenImagenes
+                )*/
+            }
+
         }
     }
 
