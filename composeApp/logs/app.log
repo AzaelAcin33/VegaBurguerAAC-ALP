@@ -18087,3 +18087,45 @@ java.sql.SQLException: Column 'total' not found.
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
 
+dic 07, 2025 5:27:08 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 07, 2025 5:27:08 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 07, 2025 5:27:08 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 07, 2025 5:50:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 07, 2025 5:50:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 07, 2025 5:50:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 07, 2025 5:52:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 07, 2025 5:52:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 07, 2025 5:52:22 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 07, 2025 5:55:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 07, 2025 5:55:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 07, 2025 5:55:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 07, 2025 5:58:50 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 07, 2025 5:58:50 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 07, 2025 5:58:50 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 07, 2025 6:01:18 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 07, 2025 6:01:18 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 07, 2025 6:01:18 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 07, 2025 6:08:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 07, 2025 6:08:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 07, 2025 6:08:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
