@@ -37,6 +37,7 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
+import ies.sequeros.com.dam.pmdm.cliente.ui.viewmodel.ClienteTPVViewModel
 
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
@@ -65,6 +66,8 @@ fun App( almacenImagenes:AlmacenDatos,
 
     val productosViewModel= viewModel {ProductosViewModel(productoRepositorio, categoriaRepositorio,almacenImagenes)}
     val pedidosViewModel= viewModel { PedidosViewModel(pedidoRepositorio, almacenImagenes) }
+    //val TPVviewModel = viewModel { ClienteTPVViewModel(categoriaRepositorio, productoRepositorio,
+      //  dependienteRepositorio, pedidoRepositorio) }
 
     appViewModel.setWindowsAdatativeInfo( currentWindowAdaptiveInfo())
     val navController= rememberNavController()
@@ -92,12 +95,14 @@ fun App( almacenImagenes:AlmacenDatos,
             }
 
             composable(AppRoutes.TPV){
-                /*Tpv(
-                    categoriaRepositorio = categoriaRepositorio,
-                    productoRepositorio = productoRepositorio,
-                    almacenImagenes = almacenImagenes
-                )*/
+                ClienteTPVViewModel(
+                    categoriaRepo = categoriaRepositorio,
+                    productoRepo = productoRepositorio,
+                    dependienteRepo = dependienteRepositorio,
+                    pedidoRepo = pedidoRepositorio,
+                )
             }
+
 
         }
     }
