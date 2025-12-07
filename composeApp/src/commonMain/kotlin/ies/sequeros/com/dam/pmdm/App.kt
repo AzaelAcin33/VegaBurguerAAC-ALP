@@ -37,6 +37,7 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.PedidosViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.DependientesViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
+import ies.sequeros.com.dam.pmdm.cliente.ui.viewmodel.ClienteMainScreen
 import ies.sequeros.com.dam.pmdm.cliente.ui.viewmodel.ClienteTPVViewModel
 
 import org.jetbrains.compose.resources.painterResource
@@ -81,7 +82,9 @@ fun App( almacenImagenes:AlmacenDatos,
             composable(AppRoutes.Main) {
                 Principal({
                     navController.navigate(AppRoutes.Administrador)
-                },{},{},)
+                },{},{
+                    navController.navigate(AppRoutes.TPV)
+                },)
             }
             composable (AppRoutes.Administrador){
                 MainAdministrador(appViewModel,
@@ -95,11 +98,18 @@ fun App( almacenImagenes:AlmacenDatos,
             }
 
             composable(AppRoutes.TPV){
-                ClienteTPVViewModel(
-                    categoriaRepo = categoriaRepositorio,
-                    productoRepo = productoRepositorio,
-                    dependienteRepo = dependienteRepositorio,
-                    pedidoRepo = pedidoRepositorio,
+
+                ClienteMainScreen(
+                    appViewModel,
+                    viewModel = ClienteTPVViewModel(
+                        categoriaRepo = categoriaRepositorio,
+                        productoRepo = productoRepositorio,
+                        dependienteRepo = dependienteRepositorio,
+                        pedidoRepo = pedidoRepositorio,
+                    ),
+                    onExit = {
+                        navController.popBackStack()
+                    }
                 )
             }
 
