@@ -31,11 +31,16 @@ fun ClienteNavGraph(
             CategoriasScreen(
                 viewModel = viewModel,
                 onCategoriaSelected = { catId ->
-                    // [!CAMBIO!] Navegamos usando el Objeto Serializable en lugar del String
-                    navController.navigate(ClienteRoutes.Productos(categoriaId = catId))
+                    navController.navigate(
+                        ClienteRoutes.Productos(categoriaId = catId)
+                    )
+                },
+                onBack = {
+                    navController.popBackStack()
                 }
             )
         }
+
 
         // Pantalla PRODUCTOS (Aquí estaba el error)
         // Usamos la versión genérica composable<T> para navegación segura
@@ -46,7 +51,8 @@ fun ClienteNavGraph(
             ProductosScreen(
                 categoriaId = args.categoriaId,
                 viewModel = viewModel,
-                onNavigateToPago = { navController.navigate(ClienteRoutes.PAGO) }
+                onNavigateToPago = { navController.navigate(ClienteRoutes.PAGO) },
+                onBack = { navController.popBackStack() }
             )
         }
 
@@ -58,7 +64,8 @@ fun ClienteNavGraph(
                     navController.navigate(ClienteRoutes.LOGIN) {
                         popUpTo(ClienteRoutes.LOGIN) { inclusive = true }
                     }
-                }
+                },
+                onBack = { navController.popBackStack() }
             )
         }
     }

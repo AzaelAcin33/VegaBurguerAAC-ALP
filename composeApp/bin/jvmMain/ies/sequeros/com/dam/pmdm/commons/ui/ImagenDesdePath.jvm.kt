@@ -1,7 +1,7 @@
 package ies.sequeros.com.dam.pmdm.commons.ui
 
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
+import androidx.compose.runtime.MutableState
 import androidx.compose.ui.Modifier
 import coil3.compose.AsyncImage
 import coil3.compose.LocalPlatformContext
@@ -12,7 +12,7 @@ import java.io.File
 
 @Composable
 actual fun ImagenDesdePath(
-    path: State<String>,
+    path: MutableState<String>,
     default: DrawableResource,
     modifier: Modifier
 ) {
@@ -29,8 +29,8 @@ val file= File(path.value)
         modifier = modifier
     )}
     else{
-        AsyncImage(
-            model = file,
+        Image(
+            painter = org.jetbrains.compose.resources.painterResource(default),
             contentDescription = null,
             modifier = modifier
         )
