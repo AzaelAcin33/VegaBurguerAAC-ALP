@@ -107,7 +107,7 @@ public class PedidoDao implements IDao<Pedido> {
             // 1=clienteName, 2=estado, 3=fecha, 4=dependienteId, 5=id (WHERE)
             pst.setString(1, item.getClienteName());
             pst.setString(2, item.getEstado());
-            pst.setString(3, item.getFecha());
+            pst.setLong(3, item.getFecha());
             pst.setString(4, item.getDependienteId());
             pst.setString(5, item.getId());
 
@@ -139,7 +139,8 @@ public class PedidoDao implements IDao<Pedido> {
             pst.setString(1, item.getId());
             pst.setString(2, item.getClienteName());
             pst.setString(3, item.getEstado());
-            pst.setString(4, item.getFecha());
+            pst.setDouble(4, item.getTotal());
+            pst.setLong(5, item.getFecha());
 
             // dependienteId puede ser nulo si no hay nadie asignado
             if (item.getDependienteId() != null) {
@@ -164,7 +165,8 @@ public class PedidoDao implements IDao<Pedido> {
                     r.getString("id"),
                     r.getString("clienteName"),
                     r.getString("estado"),
-                    r.getString("fecha"),
+                    r.getDouble("total"),
+                    r.getLong("fecha"),
                     r.getString("dependienteId"),
                     new ArrayList<>() // <--- ¡AQUÍ ESTÁ LA SOLUCIÓN! Pasamos una lista vacía.
             );

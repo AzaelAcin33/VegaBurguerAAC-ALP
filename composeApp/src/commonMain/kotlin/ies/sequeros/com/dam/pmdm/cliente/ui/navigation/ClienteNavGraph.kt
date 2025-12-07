@@ -1,13 +1,10 @@
-// Archivo: composeApp/src/commonMain/kotlin/ies/sequeros/com/dam/pmdm/cliente/ui/navigation/ClienteNavGraph.kt
 package ies.sequeros.com.dam.pmdm.cliente.ui.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost      // Importante
-import androidx.navigation.compose.composable   // Importante
-import androidx.navigation.NavType              // Importante si usas argumentos
-import androidx.navigation.navArgument          // Importante si usas argumentos
-import androidx.savedstate.SavedState
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.toRoute // [!IMPORTANTE!] Necesario para leer los argumentos
 import ies.sequeros.com.dam.pmdm.cliente.ui.screens.*
 import ies.sequeros.com.dam.pmdm.cliente.ui.viewmodel.ClienteTPVViewModel
 
@@ -21,32 +18,39 @@ fun ClienteNavGraph(
         navController = navController,
         startDestination = ClienteRoutes.LOGIN
     ) {
+        // Pantalla LOGIN
         composable(ClienteRoutes.LOGIN) {
             LoginScreen(
                 viewModel = viewModel,
                 onNavigateNext = { navController.navigate(ClienteRoutes.CATEGORIAS) }
             )
         }
+
+        // Pantalla CATEGORÍAS
         composable(ClienteRoutes.CATEGORIAS) {
             CategoriasScreen(
                 viewModel = viewModel,
                 onCategoriaSelected = { catId ->
-                    navController.navigate(ClienteRoutes.buildProductosRoute(catId))
+                    // [!CAMBIO!] Navegamos usando el Objeto Serializable en lugar del String
+                    navController.navigate(ClienteRoutes.Productos(categoriaId = catId))
                 }
             )
         }
-        // Definición de la ruta con argumento
-        composable(
-            route = ClienteRoutes.PRODUCTOS,
-            arguments = listOf(navArgument("categoriaId") { type = NavType.StringType })
-        ) { backStackEntry ->
-            val catId = backStackEntry.arguments?.getString("categoriaId") ?: return@composable
+
+        // Pantalla PRODUCTOS (Aquí estaba el error)
+        // Usamos la versión genérica composable<T> para navegación segura
+        composable<ClienteRoutes.Productos> { backStackEntry ->
+            // [!CAMBIO!] 'toRoute' extrae los argumentos automáticamente sin usar getString
+            val args = backStackEntry.toRoute<ClienteRoutes.Productos>()
+
             ProductosScreen(
-                categoriaId = catId,
+                categoriaId = args.categoriaId,
                 viewModel = viewModel,
                 onNavigateToPago = { navController.navigate(ClienteRoutes.PAGO) }
             )
         }
+
+        // Pantalla PAGO
         composable(ClienteRoutes.PAGO) {
             PagoScreen(
                 viewModel = viewModel,
@@ -59,5 +63,3 @@ fun ClienteNavGraph(
         }
     }
 }
-
-

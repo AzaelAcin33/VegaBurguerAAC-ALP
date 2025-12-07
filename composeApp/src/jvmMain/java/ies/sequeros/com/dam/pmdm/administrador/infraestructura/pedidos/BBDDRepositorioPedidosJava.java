@@ -117,6 +117,7 @@ public class BBDDRepositorioPedidosJava {
                 p.getId(),
                 p.getClienteName(),
                 p.getEstado(),
+                p.getTotal(),
                 p.getFecha(),
                 p.getDependienteId(),
                 lineas // <--- Aquí inyectamos la lista
