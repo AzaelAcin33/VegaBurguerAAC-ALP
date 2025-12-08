@@ -96,8 +96,9 @@ class FilePedidoRepository (
         return null;
     }
 
-    override fun listarProductos(): List<Producto> {
-        TODO("Not yet implemented")
+    override suspend fun listarProductos(): List<Producto> {
+        val productoRepository = FileProductoRepository(almacenDatos)
+        return productoRepository.getAll()
     }
 
 }

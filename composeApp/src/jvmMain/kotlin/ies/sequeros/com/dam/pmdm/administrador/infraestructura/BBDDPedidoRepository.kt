@@ -41,7 +41,7 @@ class BBDDPedidoRepository(
     override suspend fun getById(id: String): Pedido? {
         return bbddRepositorioDepedientesJava.getById(id)
     }
-    override fun listarProductos(): List<Producto> {
+    override suspend fun listarProductos(): List<Producto> {
         return emptyList()
     }
 

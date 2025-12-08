@@ -42,6 +42,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
 
+
         setContent {
             //se crean almacenes de datos y de imagenes propias de la plataforma y se
             //pasan a la aplicación,
