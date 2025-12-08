@@ -122,9 +122,9 @@ fun MainAdministrador(
                 })
             }
 
-            /*// --- FORMULARIO PEDIDO (INTEGRACIÓN COMPLETA) ---
-            composable(AdminRoutes.Pedido) {
-                /*PedidoForm(
+            // --- FORMULARIO PEDIDO (INTEGRACIÓN COMPLETA) ---
+            /*composable(AdminRoutes.Pedido) {
+                PedidoForm(
                     // Inyectamos repositorios públicos
                     productoRepo = productosViewModel.productoRepositorio,
                     dependienteRepo = dependientesViewModel.dependienteRepositorio,
@@ -134,8 +134,9 @@ fun MainAdministrador(
                         pedidosViewModel.save(it)
                         navController.popBackStack()
                     }
-                )*/
+                )
             }*/
+
             composable(AdminRoutes.Pedido) {
                 // Obtenemos el pedido seleccionado del ViewModel de listado
                 val pedidoSeleccionado by pedidosViewModel.selected.collectAsState()

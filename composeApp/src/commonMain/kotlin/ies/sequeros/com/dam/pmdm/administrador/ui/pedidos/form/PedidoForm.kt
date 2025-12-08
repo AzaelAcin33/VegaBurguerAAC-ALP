@@ -52,100 +52,87 @@ fun PedidoForm(
         topBar = {
             TopAppBar(
                 title = { Text("Detalle del Pedido") },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Volver")
-                    }
-                }
+                navigationIcon = { IconButton(onClick = onBack) { Icon(Icons.Default.ArrowBack, "Volver") } }
             )
         }
     ) { padding ->
         if (state.isLoading) {
-            Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                CircularProgressIndicator()
-            }
-        } else if (state.error != null) {
-            Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                Text("Error: ${state.error}", color = MaterialTheme.colorScheme.error)
-            }
+            Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) { CircularProgressIndicator() }
         } else {
             Column(
-                modifier = Modifier
-                    .padding(padding)
-                    .padding(16.dp)
-                    .fillMaxSize()
+                modifier = Modifier.padding(padding).padding(16.dp).fillMaxSize(),
+                verticalArrangement = Arrangement.spacedBy(16.dp) // Espacio entre elementos
             ) {
-                // --- Cabecera ---
-                Card(
-                    colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceContainer),
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
-                        CampoSoloLectura("Cliente", state.clienteName, Icons.Default.Person)
+                // SECCIÓN DATOS CABECERA
+                Card(modifier = Modifier.fillMaxWidth()) {
+                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                        // Verifica que 'value' usa 'state.clienteName'
+                        OutlinedTextField(
+                            value = state.clienteName,
+                            onValueChange = {},
+                            label = { Text("Cliente") },
+                            readOnly = true,
+                            modifier = Modifier.fillMaxWidth()
+                        )
+
                         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                            Box(Modifier.weight(1f)) { CampoSoloLectura("Fecha", state.fecha, Icons.Default.DateRange) }
-                            Box(Modifier.weight(1f)) { CampoSoloLectura("Estado", state.estado, Icons.Default.Info) }
+                            OutlinedTextField(
+                                value = state.fecha,
+                                onValueChange = {},
+                                label = { Text("Fecha") },
+                                readOnly = true,
+                                modifier = Modifier.weight(1f)
+                            )
+                            OutlinedTextField(
+                                value = state.estado,
+                                onValueChange = {},
+                                label = { Text("Estado") },
+                                readOnly = true,
+                                modifier = Modifier.weight(1f)
+                            )
                         }
-                        CampoSoloLectura("Atendido por", state.nombreDependiente, Icons.Default.Person)
+
+                        OutlinedTextField(
+                            value = state.nombreDependiente,
+                            onValueChange = {},
+                            label = { Text("Dependiente") },
+                            readOnly = true,
+                            modifier = Modifier.fillMaxWidth()
+                        )
                     }
                 }
 
-                Spacer(Modifier.height(16.dp))
-                Text("Productos", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
-                Spacer(Modifier.height(8.dp))
+                Text("Líneas de Pedido (${state.lineas.size})", style = MaterialTheme.typography.titleMedium)
 
-                // --- Lista de Productos ---
-                LazyColumn(
-                    modifier = Modifier.weight(1f),
-                    verticalArrangement = Arrangement.spacedBy(8.dp)
-                ) {
+                // SECCIÓN LISTA PRODUCTOS
+                LazyColumn(modifier = Modifier.weight(1f)) {
                     items(state.lineas) { linea ->
-                        Card(elevation = CardDefaults.cardElevation(2.dp)) {
+                        Card(modifier = Modifier.padding(vertical = 4.dp)) {
                             Row(
-                                modifier = Modifier.fillMaxWidth().padding(12.dp),
-                                horizontalArrangement = Arrangement.SpaceBetween,
-                                verticalAlignment = Alignment.CenterVertically
+                                modifier = Modifier.fillMaxWidth().padding(16.dp),
+                                horizontalArrangement = Arrangement.SpaceBetween
                             ) {
-                                Column(modifier = Modifier.weight(1f)) {
+                                Column {
                                     Text(linea.nombreProducto, fontWeight = FontWeight.Bold)
-                                    Text("${linea.cantidad} x ${linea.precioUnitario}€", style = MaterialTheme.typography.bodySmall)
+                                    Text("${linea.cantidad} x ${linea.precioUnitario} €")
                                 }
-                                Text("${"%.2f".format(linea.totalLinea)}€", fontWeight = FontWeight.Bold)
+                                Text("${linea.totalLinea} €", fontWeight = FontWeight.Bold)
                             }
                         }
                     }
                 }
 
-                // --- Total ---
-                Spacer(Modifier.height(16.dp))
+                // SECCIÓN TOTAL
                 Card(colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)) {
                     Row(
                         modifier = Modifier.fillMaxWidth().padding(16.dp),
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
-                        Text("TOTAL PEDIDO", style = MaterialTheme.typography.titleLarge)
-                        Text("${"%.2f".format(state.total)}€", style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Bold)
+                        Text("TOTAL", style = MaterialTheme.typography.titleLarge)
+                        Text("${state.total} €", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                     }
                 }
             }
         }
     }
-}
-
-@Composable
-fun CampoSoloLectura(label: String, valor: String, icon: androidx.compose.ui.graphics.vector.ImageVector) {
-    OutlinedTextField(
-        value = valor,
-        onValueChange = {},
-        label = { Text(label) },
-        readOnly = true,
-        leadingIcon = { Icon(icon, null) },
-        modifier = Modifier.fillMaxWidth(),
-        colors = OutlinedTextFieldDefaults.colors(
-            disabledTextColor = MaterialTheme.colorScheme.onSurface,
-            disabledBorderColor = MaterialTheme.colorScheme.outline,
-            disabledLabelColor = MaterialTheme.colorScheme.onSurfaceVariant
-        ),
-        enabled = false // Deshabilitado para que se vea gris pero legible gracias a los colores custom
-    )
 }

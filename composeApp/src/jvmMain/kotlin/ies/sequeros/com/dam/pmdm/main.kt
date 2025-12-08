@@ -2,6 +2,7 @@ package ies.sequeros.com.dam.pmdm
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDLineaPedidoRepository
@@ -50,7 +51,7 @@ fun main() = application {
     ) {
         //se envuelve el repositorio en java en uno que exista en Kotlin
         //nueva configuracion de acceso categoria
-        App(AlmacenDatos(), dependienteRepositorio, categoriaRepositorio, productoRepositorio, pedidoRepositorio, lineaPedidoRepositorio )
+        App(AlmacenDatos(), dependienteRepositorio, categoriaRepositorio, productoRepositorio, pedidoRepositorio, lineaPedidoRepositorio, listarDependientesUseCase = ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase(dependienteRepositorio, AlmacenDatos()) )
     }
 }
 fun configureExternalLogging(path: String) {

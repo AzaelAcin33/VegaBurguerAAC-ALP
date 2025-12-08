@@ -41,6 +41,13 @@ fun Pedidos(
     onSelectItem: (PedidoDTO?) -> Unit
 ) {
     val items by pedidosViewModel.items.collectAsState()
+    //intentar obtener nombre de dependiente
+    val listaDependientes by mainAdministradorViewModel.dependientes.collectAsState()
+    val mapaDependientes = remember(listaDependientes) {
+        listaDependientes.associate { dependiente ->
+            dependiente.id to dependiente.name // Mapeamos ID a NAME según tu DTO
+        }
+    }
     var searchText by remember { mutableStateOf("") }
     val filteredItems = items.filter {
         if (searchText.isNotBlank()) {
@@ -101,6 +108,7 @@ fun Pedidos(
 
                 PedidoCard(
                     item = pedido,
+                    mapaDependientes = mapaDependientes,
                     onView = {
 
                         onSelectItem(pedido)

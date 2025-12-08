@@ -55,12 +55,14 @@ fun App( almacenImagenes:AlmacenDatos,
          categoriaRepositorio: ICategoriaRepositorio,
          productoRepositorio: IProductoRepositorio,
          pedidoRepositorio: IPedidoRepositorio,
-         lineaPedidoRepositorio: ILinePedidoRepositorio
+         //intentos de poner el dependiente nombre
+         lineaPedidoRepositorio: ILinePedidoRepositorio,
+         listarDependientesUseCase: ListarDependientesUseCase
 ) {
 
     //view model
     val appViewModel= viewModel {  AppViewModel() }
-    val mainViewModel= remember { MainAdministradorViewModel() }
+    val mainViewModel= remember { MainAdministradorViewModel(listarDependientesUseCase) }
     val administradorViewModel= viewModel { AdministradorViewModel() }
     val dependientesViewModel = viewModel{ DependientesViewModel(
         dependienteRepositorio, almacenImagenes
