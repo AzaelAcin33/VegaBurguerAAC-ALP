@@ -152,7 +152,7 @@ fun PedidoCard(
                 )
             }
 
-            HorizontalDivider(
+            /*HorizontalDivider(
                 Modifier.fillMaxWidth(0.8f),
                 DividerDefaults.Thickness,
                 MaterialTheme.colorScheme.outlineVariant
@@ -175,15 +175,15 @@ fun PedidoCard(
                 }*/
 
                 // Eliminar
-                OutlinedIconButton(
+                /*OutlinedIconButton(
                     onClick = { onDelete(item) },
                     colors = IconButtonDefaults.iconButtonColors(
                         contentColor = MaterialTheme.colorScheme.error
                     )
                 ) {
                     Icon(Icons.Default.Delete, contentDescription = "Eliminar")
-                }
-            }
+                }*/
+            }*/
         }
     }
 }
