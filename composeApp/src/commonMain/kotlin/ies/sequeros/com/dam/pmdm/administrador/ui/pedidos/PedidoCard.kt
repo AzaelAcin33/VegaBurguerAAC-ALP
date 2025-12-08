@@ -46,12 +46,14 @@ fun PedidoCard(
     item: PedidoDTO,
     productos: List<Producto>,
     mapaDependientes: Map<String, String>,
+    mapaProductos: Map<String, String>,
     onView: () -> Unit,
     onEdit: (PedidoDTO) -> Unit,
     onDelete: (item: PedidoDTO) -> Unit
 ) {
     val cardAlpha by animateFloatAsState(1f)
     val nombreDependiente = mapaDependientes[item.dependienteId] ?: "ID: ${item.dependienteId}"
+    val nombreProducto = mapaProductos[item.lineas.firstOrNull()?.productoId] ?: "ID: ${item.lineas.firstOrNull()?.productoId}"
 
     // Normalización de IDs para evitar problemas de espacios, mayúsculas o unicode
     fun normalizeId(id: String?): String =
@@ -124,18 +126,13 @@ fun PedidoCard(
                     val precioUnitario = linea.precioUnitario.toString().toDoubleOrNull() ?: 0.0
 
                     Text(
-                        text = "- ${(producto?.name ?: "Producto ID: ${linea.productoId}")} | " +
+                        text = "- ${(producto?.name ?: "Producto Name: ${nombreProducto}")} | " +
                                 "${linea.cantidad} ud. | " +
                                 "${"%.2f".format(precioUnitario)} € c/u",
                         style = MaterialTheme.typography.bodyMedium,
                         color = MaterialTheme.colorScheme.onSurface
                     )
                 }
-
-
-
-
-
             }
 
             Row(

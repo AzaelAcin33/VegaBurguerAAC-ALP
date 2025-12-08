@@ -23,6 +23,7 @@ import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.BorrarDep
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.actualizar.ActualizarDependienteUseCase
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.crear.CrearDependienteUseCase
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.listar.ListarProductoUseCase
 //import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.FileDependienteRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.memoria.MemDependienteRepository
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
@@ -57,12 +58,13 @@ fun App( almacenImagenes:AlmacenDatos,
          pedidoRepositorio: IPedidoRepositorio,
          //intentos de poner el dependiente nombre
          lineaPedidoRepositorio: ILinePedidoRepositorio,
-         listarDependientesUseCase: ListarDependientesUseCase
+         listarDependientesUseCase: ListarDependientesUseCase,
+         listarProductoUseCase: ListarProductoUseCase
 ) {
 
     //view model
     val appViewModel= viewModel {  AppViewModel() }
-    val mainViewModel= remember { MainAdministradorViewModel(listarDependientesUseCase) }
+    val mainViewModel= remember { MainAdministradorViewModel(listarDependientesUseCase, listarProductoUseCase) }
     val administradorViewModel= viewModel { AdministradorViewModel() }
     val dependientesViewModel = viewModel{ DependientesViewModel(
         dependienteRepositorio, almacenImagenes

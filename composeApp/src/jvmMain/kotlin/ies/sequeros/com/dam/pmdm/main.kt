@@ -51,7 +51,10 @@ fun main() = application {
     ) {
         //se envuelve el repositorio en java en uno que exista en Kotlin
         //nueva configuracion de acceso categoria
-        App(AlmacenDatos(), dependienteRepositorio, categoriaRepositorio, productoRepositorio, pedidoRepositorio, lineaPedidoRepositorio, listarDependientesUseCase = ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase(dependienteRepositorio, AlmacenDatos()) )
+        App(AlmacenDatos(), dependienteRepositorio, categoriaRepositorio, productoRepositorio, pedidoRepositorio, lineaPedidoRepositorio,
+            listarDependientesUseCase = ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase(dependienteRepositorio, AlmacenDatos()),
+            listarProductoUseCase = ies.sequeros.com.dam.pmdm.administrador.aplicacion.productos.listar.ListarProductoUseCase(productoRepositorio,
+                categoriaRepositorio, AlmacenDatos()))
     }
 }
 fun configureExternalLogging(path: String) {
