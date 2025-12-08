@@ -6,5 +6,6 @@ data class ProductoTPVDTO (
     val nombre: String,
     val precio: String,
     val imagePath: String,
-    val categoriaId: String
+    val categoriaId: String,
+    val enabled: Boolean
 )

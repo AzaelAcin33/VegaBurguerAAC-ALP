@@ -112,7 +112,8 @@ class ClienteTPVViewModel(
                         nombre = producto.name,
                         precio = producto.price,
                         imagePath = finalPath, // Usamos la ruta corregida
-                        categoriaId = producto.categoriaId
+                        categoriaId = producto.categoriaId,
+                        enabled = producto.enabled
                     )
                 }
         }

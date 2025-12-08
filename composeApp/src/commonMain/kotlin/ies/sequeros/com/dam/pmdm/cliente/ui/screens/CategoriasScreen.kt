@@ -54,30 +54,32 @@ fun CategoriasScreen(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 items(categorias) { categoria ->
-                    Card(
-                        modifier = Modifier
-                            .height(150.dp)
-                            .clickable { onCategoriaSelected(categoria.id) },
-                        elevation = CardDefaults.cardElevation(4.dp)
-                    ) {
-                        Column(
+                    if (categoria.enabled != false){
+                        Card(
                             modifier = Modifier
-                                .fillMaxSize()
-                                .padding(8.dp),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.Center
+                                .height(150.dp)
+                                .clickable { onCategoriaSelected(categoria.id) },
+                            elevation = CardDefaults.cardElevation(4.dp)
                         ) {
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxSize()
+                                    .padding(8.dp),
+                                horizontalAlignment = Alignment.CenterHorizontally,
+                                verticalArrangement = Arrangement.Center
+                            ) {
 
-                            val imagePathState = remember { mutableStateOf(categoria.imagePath) }
+                                val imagePathState = remember { mutableStateOf(categoria.imagePath) }
 
-                            ImagenDesdePath(
-                                path = imagePathState,
-                                default = Res.drawable.hombre,
-                                modifier = Modifier.size(80.dp)
-                            )
+                                ImagenDesdePath(
+                                    path = imagePathState,
+                                    default = Res.drawable.hombre,
+                                    modifier = Modifier.size(80.dp)
+                                )
 
-                            Spacer(modifier = Modifier.height(8.dp))
-                            Text(categoria.name)
+                                Spacer(modifier = Modifier.height(8.dp))
+                                Text(categoria.name)
+                            }
                         }
                     }
                 }

@@ -65,45 +65,46 @@ fun ProductosScreen(
             LazyColumn {
                 items(productos) { producto ->
                     val enCarrito = carrito.find { it.producto.id == producto.id }?.cantidad ?: 0
-
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .padding(vertical = 4.dp)
-                    ) {
-                        Row(
+                    if (producto.enabled != false){
+                        Card(
                             modifier = Modifier
-                                .padding(16.dp)
-                                .fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically
+                                .fillMaxWidth()
+                                .padding(vertical = 4.dp)
                         ) {
-                            val imagePathState = remember {
-                                mutableStateOf(producto.imagePath ?: "")
-                            }
-
-                            ImagenDesdePath(
-                                path = imagePathState,
-                                default = Res.drawable.hombre,
-                                modifier = Modifier.size(60.dp)
-                            )
-
-                            Spacer(modifier = Modifier.width(16.dp))
-
-                            Column(modifier = Modifier.weight(1f)) {
-                                Text(producto.nombre, style = MaterialTheme.typography.bodyLarge)
-                                Text("${producto.precio}€", style = MaterialTheme.typography.bodyMedium)
-                            }
-
-                            Row(verticalAlignment = Alignment.CenterVertically) {
-                                if (enCarrito > 0) {
-                                    TextButton(onClick = { viewModel.removeFromCarrito(producto) }) {
-                                        Text("-")
-                                    }
-                                    Text(enCarrito.toString())
+                            Row(
+                                modifier = Modifier
+                                    .padding(16.dp)
+                                    .fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween,
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                val imagePathState = remember {
+                                    mutableStateOf(producto.imagePath ?: "")
                                 }
-                                IconButton(onClick = { viewModel.addToCarrito(producto) }) {
-                                    Icon(Icons.Default.Add, contentDescription = "Añadir")
+
+                                ImagenDesdePath(
+                                    path = imagePathState,
+                                    default = Res.drawable.hombre,
+                                    modifier = Modifier.size(60.dp)
+                                )
+
+                                Spacer(modifier = Modifier.width(16.dp))
+
+                                Column(modifier = Modifier.weight(1f)) {
+                                    Text(producto.nombre, style = MaterialTheme.typography.bodyLarge)
+                                    Text("${producto.precio}€", style = MaterialTheme.typography.bodyMedium)
+                                }
+
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    if (enCarrito > 0) {
+                                        TextButton(onClick = { viewModel.removeFromCarrito(producto) }) {
+                                            Text("-")
+                                        }
+                                        Text(enCarrito.toString())
+                                    }
+                                    IconButton(onClick = { viewModel.addToCarrito(producto) }) {
+                                        Icon(Icons.Default.Add, contentDescription = "Añadir")
+                                    }
                                 }
                             }
                         }
