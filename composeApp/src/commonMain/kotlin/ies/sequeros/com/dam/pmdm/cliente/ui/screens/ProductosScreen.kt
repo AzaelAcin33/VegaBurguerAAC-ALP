@@ -12,6 +12,7 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import ies.sequeros.com.dam.pmdm.cliente.ui.viewmodel.ClienteTPVViewModel
 import ies.sequeros.com.dam.pmdm.commons.ui.ImagenDesdePath
 import vegaburguer.composeapp.generated.resources.Res
@@ -23,6 +24,7 @@ fun ProductosScreen(
     categoriaId: String,
     viewModel: ClienteTPVViewModel,
     onNavigateToPago: () -> Unit,
+    onNavigateToLogin: () -> Unit,
     onBack: () -> Unit
 ) {
     val productos by viewModel.productos.collectAsState()
@@ -46,11 +48,22 @@ fun ProductosScreen(
         },
         floatingActionButton = {
             if (carrito.isNotEmpty()) {
-                FloatingActionButton(onClick = onNavigateToPago) {
-                    Row(modifier = Modifier.padding(12.dp)) {
-                        Icon(Icons.Default.ShoppingCart, contentDescription = "Pagar")
-                        Spacer(modifier = Modifier.width(8.dp))
-                        Text("${total}€")
+                Row {
+                    FloatingActionButton(
+                        onClick = { viewModel.resetPedido()
+                            onNavigateToLogin() },
+                        containerColor = MaterialTheme.colorScheme.error
+                    ) {
+                        Text("X", style = MaterialTheme.typography.bodyLarge)
+                    }
+                    Spacer(modifier = Modifier.width(16.dp))
+
+                    FloatingActionButton(onClick = onNavigateToPago) {
+                        Row(modifier = Modifier.padding(12.dp)) {
+                            Icon(Icons.Default.ShoppingCart, contentDescription = "Pagar")
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text("${total}€")
+                        }
                     }
                 }
             }
@@ -114,3 +127,4 @@ fun ProductosScreen(
         }
     }
 }
+

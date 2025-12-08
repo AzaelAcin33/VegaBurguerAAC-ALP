@@ -101,10 +101,14 @@ fun CategoriaCard(
                     color = MaterialTheme.colorScheme.onSurface
                 )
             }
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalAlignment = Alignment.CenterVertically
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(
+                    text = "Descripcion: ${item.description}",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
                 AssistChip(
                     onClick = {},
                     label = {
@@ -154,10 +158,6 @@ fun CategoriaCard(
                         if (item.enabled) Icons.Default.VisibilityOff else Icons.Default.Visibility,
                         contentDescription = if (item.enabled) "Desactivar" else "Activar"
                     )
-                }
-                // Ver detalles
-                OutlinedIconButton(onClick = onView) {
-                    Icon(Icons.AutoMirrored.Filled.Article, contentDescription = "Ver")
                 }
 
                 // Editar

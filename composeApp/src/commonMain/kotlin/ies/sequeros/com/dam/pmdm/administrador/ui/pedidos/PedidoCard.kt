@@ -151,39 +151,6 @@ fun PedidoCard(
                     }
                 )
             }
-
-            HorizontalDivider(
-                Modifier.fillMaxWidth(0.8f),
-                DividerDefaults.Thickness,
-                MaterialTheme.colorScheme.outlineVariant
-            )
-
-            // Acciones
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceEvenly,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                // Ver detalles
-                /*OutlinedIconButton(onClick = onView) {
-                    Icon(Icons.AutoMirrored.Filled.Article, contentDescription = "Ver")
-                }
-
-                // Editar
-                OutlinedIconButton(onClick = { onEdit(item) }) {
-                    Icon(Icons.Default.Edit, contentDescription = "Editar")
-                }*/
-
-                // Eliminar
-                OutlinedIconButton(
-                    onClick = { onDelete(item) },
-                    colors = IconButtonDefaults.iconButtonColors(
-                        contentColor = MaterialTheme.colorScheme.error
-                    )
-                ) {
-                    Icon(Icons.Default.Delete, contentDescription = "Eliminar")
-                }
-            }
         }
     }
 }

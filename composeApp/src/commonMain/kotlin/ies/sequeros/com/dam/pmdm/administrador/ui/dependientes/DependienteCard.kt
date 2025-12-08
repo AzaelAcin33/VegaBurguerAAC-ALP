@@ -198,11 +198,6 @@ fun DependienteCard(
                     Icon(Icons.Default.ManageAccounts, contentDescription = "Admin")
                 }
 
-                // Ver detalles
-                OutlinedIconButton(onClick = onView) {
-                    Icon(Icons.AutoMirrored.Filled.Article, contentDescription = "Ver")
-                }
-
                 // Editar
                 OutlinedIconButton(onClick = { onEdit(item) }) {
                     Icon(Icons.Default.Edit, contentDescription = "Editar")

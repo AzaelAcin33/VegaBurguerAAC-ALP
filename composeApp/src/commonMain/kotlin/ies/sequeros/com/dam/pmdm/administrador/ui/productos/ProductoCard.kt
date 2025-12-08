@@ -101,10 +101,19 @@ fun ProductoCard(
                     color = MaterialTheme.colorScheme.onSurface
                 )
             }
-            Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp),
-                verticalAlignment = Alignment.CenterVertically
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Text(
+                    text = "Descripcion: ${item.description}",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = "Precio: ${item.price} €",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
                 AssistChip(
                     onClick = {},
                     label = {
@@ -129,6 +138,7 @@ fun ProductoCard(
                 Modifier.fillMaxWidth(0.8f),
                 DividerDefaults.Thickness, MaterialTheme.colorScheme.outlineVariant
             )
+
             // ️ Acciones (fila inferior)
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -154,10 +164,6 @@ fun ProductoCard(
                         if (item.enabled) Icons.Default.VisibilityOff else Icons.Default.Visibility,
                         contentDescription = if (item.enabled) "Desactivar" else "Activar"
                     )
-                }
-                // Ver detalles
-                OutlinedIconButton(onClick = onView) {
-                    Icon(Icons.AutoMirrored.Filled.Article, contentDescription = "Ver")
                 }
 
                 // Editar
