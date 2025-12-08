@@ -28,11 +28,11 @@ class FileProductoRepository(
     }
 
     override suspend fun getAll(): List<Producto> {
-        TODO("Not yet implemented")
+        return emptyList()
     }
 
     override suspend fun findByName(name: String): Producto? {
-        TODO("Not yet implemented")
+        return null
     }
 
     override suspend fun getById(id: String): Producto? {

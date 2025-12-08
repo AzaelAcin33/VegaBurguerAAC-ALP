@@ -25,7 +25,7 @@ class FileLineaPedidoRepository(
     }
 
     override suspend fun getAll(): List<LineaPedido> {
-        TODO("Not yet implemented")
+        return emptyList()
     }
 
     override suspend fun findByName(name: String): LineaPedido? {
