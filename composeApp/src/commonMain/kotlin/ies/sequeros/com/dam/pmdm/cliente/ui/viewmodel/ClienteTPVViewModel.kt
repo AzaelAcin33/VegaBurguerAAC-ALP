@@ -179,4 +179,12 @@ class ClienteTPVViewModel(
             onSuccess()
         }
     }
+
+    fun resetPedido() {
+        _carrito.value = emptyList()
+        _totalCarrito.value = 0.0
+        _nombreCliente.value = ""
+        _dependienteSeleccionado.value = null
+    }
+
 }

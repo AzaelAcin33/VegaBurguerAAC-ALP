@@ -52,6 +52,7 @@ fun ClienteNavGraph(
                 categoriaId = args.categoriaId,
                 viewModel = viewModel,
                 onNavigateToPago = { navController.navigate(ClienteRoutes.PAGO) },
+                onNavigateToLogin = { navController.navigate(ClienteRoutes.LOGIN) },
                 onBack = { navController.popBackStack() }
             )
         }
