@@ -12,6 +12,7 @@ import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.listar.PedidoD
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.listar.ListarPedidoUseCase
 import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IPedidoRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
 import ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form.PedidoFormState
 
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -30,6 +31,9 @@ class PedidosViewModel(
     private val borrarPedidoUseCase: BorrarPedidoUseCase
     private val crearPedidoUseCase: CrearPedidoUseCase
     private val listarPedidosUseCase: ListarPedidoUseCase
+    private val _productos = MutableStateFlow<List<Producto>>(emptyList())
+    val productos: StateFlow<List<Producto>> = _productos.asStateFlow()
+
 
     private val actualizarPedidoUseCase: ActualizarPedidoUseCase
     private val _items = MutableStateFlow<MutableList<PedidoDTO>>(mutableListOf())
@@ -46,6 +50,7 @@ class PedidosViewModel(
             var items = listarPedidosUseCase.invoke()
             _items.value.clear()
             _items.value.addAll(items)
+            _productos.value = pedidoRepositorio.listarProductos()
 
         }
     }

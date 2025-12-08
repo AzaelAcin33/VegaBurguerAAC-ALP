@@ -3,6 +3,7 @@ package ies.sequeros.com.dam.pmdm.administrador.infraestructura
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.BBDDRepositorioPedidosJava
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Pedido
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IPedidoRepositorio
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
 
 class BBDDPedidoRepository(
     private val bbddRepositorioDepedientesJava: BBDDRepositorioPedidosJava
@@ -40,4 +41,8 @@ class BBDDPedidoRepository(
     override suspend fun getById(id: String): Pedido? {
         return bbddRepositorioDepedientesJava.getById(id)
     }
+    override fun listarProductos(): List<Producto> {
+        return emptyList()
+    }
+
 }

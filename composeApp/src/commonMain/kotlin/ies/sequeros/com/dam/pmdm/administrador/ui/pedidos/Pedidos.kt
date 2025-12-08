@@ -41,6 +41,8 @@ fun Pedidos(
     onSelectItem: (PedidoDTO?) -> Unit
 ) {
     val items by pedidosViewModel.items.collectAsState()
+    val productos by pedidosViewModel.productos.collectAsState()
+
     //intentar obtener nombre de dependiente
     val listaDependientes by mainAdministradorViewModel.dependientes.collectAsState()
     val mapaDependientes = remember(listaDependientes) {
@@ -119,8 +121,9 @@ fun Pedidos(
                     },
                     onDelete = {
 
-                        pedidosViewModel.delete(it)
-                    }
+                        pedidosViewModel.delete(pedido)
+                    },
+                    productos = productos
                 )
             }
         }

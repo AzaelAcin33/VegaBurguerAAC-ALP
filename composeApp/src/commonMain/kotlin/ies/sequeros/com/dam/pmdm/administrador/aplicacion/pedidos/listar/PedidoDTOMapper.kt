@@ -8,7 +8,8 @@ fun Pedido.toDTO(path:String="") = PedidoDTO(
     estado = estado,
     total = total,
     fecha = fecha.toString(),
-    dependienteId = dependienteId
+    dependienteId = dependienteId,
+    lineas = lineas
 )
 fun PedidoDTO.toPedido()= Pedido(
     id = id,

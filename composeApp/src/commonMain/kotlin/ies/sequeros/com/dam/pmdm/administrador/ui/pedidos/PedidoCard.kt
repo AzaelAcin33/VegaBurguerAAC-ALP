@@ -15,17 +15,11 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Article
-import androidx.compose.material.icons.filled.AddShoppingCart
-import androidx.compose.material.icons.filled.Block
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
-import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.ShoppingCart
-import androidx.compose.material.icons.filled.Visibility
-import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.AssistChip
-import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DividerDefaults
@@ -37,7 +31,6 @@ import androidx.compose.material3.OutlinedIconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
@@ -45,23 +38,28 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.listar.PedidoDTO
-import ies.sequeros.com.dam.pmdm.administrador.modelo.LineaPedido
-import ies.sequeros.com.dam.pmdm.commons.ui.ImagenDesdePath
-import vegaburguer.composeapp.generated.resources.Res
-import vegaburguer.composeapp.generated.resources.hombre
+import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
 
 @Suppress("UnrememberedMutableState")
 @Composable
 fun PedidoCard(
     item: PedidoDTO,
+    productos: List<Producto>,
     mapaDependientes: Map<String, String>,
     onView: () -> Unit,
     onEdit: (PedidoDTO) -> Unit,
     onDelete: (item: PedidoDTO) -> Unit
 ) {
-
     val cardAlpha by animateFloatAsState(1f)
     val nombreDependiente = mapaDependientes[item.dependienteId] ?: "ID: ${item.dependienteId}"
+
+    // Normalización de IDs para evitar problemas de espacios, mayúsculas o unicode
+    fun normalizeId(id: String?): String =
+        id?.trim()?.lowercase()?.replace("\\s+".toRegex(), " ") ?: ""
+
+    // Preconstruimos un mapa de productos para búsqueda rápida
+    val productosMap: Map<String, Producto> = productos.associateBy { normalizeId(it.id) }
+
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -81,7 +79,6 @@ fun PedidoCard(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-
             Box(
                 modifier = Modifier
                     .size(90.dp)
@@ -100,12 +97,12 @@ fun PedidoCard(
 
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
-                    text = "Nombre del cliente: "+item.clienteName,
+                    text = "Nombre del cliente: ${item.clienteName}",
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                     color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
-                    text = "Total de la compra: "+item.total,
+                    text = "Total de la compra: ${String.format("%.2f", item.total)} €",
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                     color = MaterialTheme.colorScheme.onSurface
                 )
@@ -114,8 +111,31 @@ fun PedidoCard(
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                     color = MaterialTheme.colorScheme.onSurface
                 )
-                // aqui quedaria añadir la lista de objetos que hemos comprado
-                // niputa idea de como añadirlo
+                Text(
+                    text = "Productos comprados:",
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                    modifier = Modifier.padding(top = 8.dp),
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+
+                item.lineas.forEach { linea ->
+                    val producto = productosMap[normalizeId(linea.productoId)]
+
+                    val precioUnitario = linea.precioUnitario.toString().toDoubleOrNull() ?: 0.0
+
+                    Text(
+                        text = "- ${(producto?.name ?: "Producto ID: ${linea.productoId}")} | " +
+                                "${linea.cantidad} ud. | " +
+                                "${"%.2f".format(precioUnitario)} € c/u",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                }
+
+
+
+
+
             }
 
             Row(
@@ -147,7 +167,6 @@ fun PedidoCard(
                 horizontalArrangement = Arrangement.SpaceEvenly,
                 verticalAlignment = Alignment.CenterVertically
             ) {
-
                 // Ver detalles
                 /*OutlinedIconButton(onClick = onView) {
                     Icon(Icons.AutoMirrored.Filled.Article, contentDescription = "Ver")

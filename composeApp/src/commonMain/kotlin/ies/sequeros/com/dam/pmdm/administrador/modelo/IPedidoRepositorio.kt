@@ -8,4 +8,5 @@ interface IPedidoRepositorio {
     suspend fun getAll():List<Pedido>
     suspend fun findByName(name:String): Pedido?
     suspend fun getById(id:String):Pedido?
+    abstract fun listarProductos(): List<Producto>
 }
