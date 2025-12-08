@@ -110,11 +110,6 @@ fun PedidoCard(
                     color = MaterialTheme.colorScheme.onSurface
                 )
                 Text(
-                    text = "Fecha de la compra: "+item.fecha,
-                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                    color = MaterialTheme.colorScheme.onSurface
-                )
-                Text(
                     text = "Con el dependiente: $nombreDependiente",
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                     color = MaterialTheme.colorScheme.onSurface
