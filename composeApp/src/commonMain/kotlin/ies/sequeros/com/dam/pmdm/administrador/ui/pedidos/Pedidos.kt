@@ -45,6 +45,14 @@ fun Pedidos(
 
     //intentar obtener nombre de dependiente
     val listaDependientes by mainAdministradorViewModel.dependientes.collectAsState()
+    val listaProductos by mainAdministradorViewModel.productos.collectAsState()
+
+    val mapaProductos = remember (listaProductos){
+        listaProductos.associate { producto ->
+            producto.id to producto.name // Mapeamos ID a NAME según tu DTO
+        }
+    }
+
     val mapaDependientes = remember(listaDependientes) {
         listaDependientes.associate { dependiente ->
             dependiente.id to dependiente.name // Mapeamos ID a NAME según tu DTO
@@ -111,6 +119,7 @@ fun Pedidos(
                 PedidoCard(
                     item = pedido,
                     mapaDependientes = mapaDependientes,
+                    mapaProductos = mapaProductos,
                     onView = {
 
                         onSelectItem(pedido)

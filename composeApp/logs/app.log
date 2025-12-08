@@ -21354,13 +21354,245 @@ dic 08, 2025 2:21:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestruct
 INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
 dic 08, 2025 2:21:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
 INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
-dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+dic 08, 2025 2:23:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 2:23:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 2:23:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 2:23:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 2:23:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=81cfee53-eeac-4bc5-9bbe-87038a22c8fd][0m
+dic 08, 2025 2:23:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=4ae38516-185b-4c31-bbaa-b9a1a38b1503][0m
+dic 08, 2025 2:23:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=591d38c1-0dd8-451b-870b-a337f13ecf47][0m
+dic 08, 2025 2:31:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 2:31:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 2:31:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=81cfee53-eeac-4bc5-9bbe-87038a22c8fd][0m
+dic 08, 2025 2:31:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=4ae38516-185b-4c31-bbaa-b9a1a38b1503][0m
+dic 08, 2025 2:31:02 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=591d38c1-0dd8-451b-870b-a337f13ecf47][0m
+dic 08, 2025 2:31:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 2:31:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 2:31:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 2:31:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=81cfee53-eeac-4bc5-9bbe-87038a22c8fd][0m
+dic 08, 2025 2:31:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=4ae38516-185b-4c31-bbaa-b9a1a38b1503][0m
+dic 08, 2025 2:31:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=591d38c1-0dd8-451b-870b-a337f13ecf47][0m
+dic 08, 2025 2:33:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 2:33:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 2:33:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=81cfee53-eeac-4bc5-9bbe-87038a22c8fd][0m
+dic 08, 2025 2:33:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=4ae38516-185b-4c31-bbaa-b9a1a38b1503][0m
+dic 08, 2025 2:33:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=591d38c1-0dd8-451b-870b-a337f13ecf47][0m
+dic 08, 2025 2:33:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 2:33:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 2:33:03 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFORMACIÓN: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 2:33:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=81cfee53-eeac-4bc5-9bbe-87038a22c8fd][0m
+dic 08, 2025 2:33:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=4ae38516-185b-4c31-bbaa-b9a1a38b1503][0m
+dic 08, 2025 2:33:04 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFORMACIÓN: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=591d38c1-0dd8-451b-870b-a337f13ecf47][0m
+dic 08, 2025 3:32:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
 INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
-dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
-INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
-dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
-INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
-dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+dic 08, 2025 3:32:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
 INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
-dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+dic 08, 2025 3:32:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
 INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 3:32:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 3:32:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 3:32:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 3:32:54 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 3:34:09 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao insert
+INFO: [32mEjecutando SQL: UPDATE productos SET name = ?, imagePath = ?, price = ?, description = ?, enabled = ?, categoriaId = ? WHERE id = ? | Params: [1]=c5226f85-82dd-49fc-8f97-90f6f7e70040, [2]=Franco, [3]=c5226f85-82dd-49fc-8f97-90f6f7e70040.jpg, [4]=44, [5]=frgboiuhnviu8weofhe, [6]=false, [7]=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 3:34:09 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 3:34:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getById
+INFO: [32mEjecutando SQL: select * from productos where id=? | Parametros: [id=c5226f85-82dd-49fc-8f97-90f6f7e70040][0m
+dic 08, 2025 3:34:12 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao update
+INFO: [32mEjecutando SQL: UPDATE productos SET name = ?, imagePath = ?, price = ?, description = ?, enabled = ?, categoriaId = ? WHERE id = ? | Params: [1]=Franco, [2]=c5226f85-82dd-49fc-8f97-90f6f7e70040.jpg, [3]=44.00, [4]=frgboiuhnviu8weofhe, [5]=true, [6]=fe13ec1b-0301-4614-afc4-d11c735734d1, [7]=c5226f85-82dd-49fc-8f97-90f6f7e70040][0m
+dic 08, 2025 3:34:20 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 3:34:21 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 3:34:25 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 3:34:52 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:22:36 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:29:48 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:35:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:36:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:38:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:38:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:38:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:38:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:38:06 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:38:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:38:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:38:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:38:07 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:50:57 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:51:53 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=fe13ec1b-0301-4614-afc4-d11c735734d1][0m
+dic 08, 2025 4:52:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 4:52:16 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao update
+INFO: [32mEjecutando SQL: UPDATE categorias SET id=?, name=?, imagePath=?, description=?, enabled=? WHERE id=? | Params: [1]=9707297e-4439-4e3f-b51b-057cb59850ee, [2]=aaaaaaaaaaaaa, [3]=9707297e-4439-4e3f-b51b-057cb59850ee.jpg, [4]=aaaaaaaaaaaaaaaaaa, [5]=false][0m
+dic 08, 2025 4:52:25 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:52:34 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 4:52:40 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 4:52:41 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
