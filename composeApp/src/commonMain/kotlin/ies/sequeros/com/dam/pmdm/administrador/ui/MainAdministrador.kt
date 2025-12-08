@@ -16,6 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.window.core.layout.WindowWidthSizeClass
 import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.administrador.AdministradorViewModel
+import ies.sequeros.com.dam.pmdm.administrador.modelo.ILinePedidoRepositorio
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.CategoriasViewModel
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.Categorias
 import ies.sequeros.com.dam.pmdm.administrador.ui.categorias.form.CategoriaForm
@@ -39,6 +40,7 @@ fun MainAdministrador(
     categoriasViewModel: CategoriasViewModel,
     productosViewModel: ProductosViewModel,
     pedidosViewModel: PedidosViewModel,
+    lineaPedidoRepositorio: ILinePedidoRepositorio,
     onExit: () -> Unit
 ) {
     val navController = rememberNavController()
@@ -120,7 +122,7 @@ fun MainAdministrador(
                 })
             }
 
-            // --- FORMULARIO PEDIDO (INTEGRACIÓN COMPLETA) ---
+            /*// --- FORMULARIO PEDIDO (INTEGRACIÓN COMPLETA) ---
             composable(AdminRoutes.Pedido) {
                 /*PedidoForm(
                     // Inyectamos repositorios públicos
@@ -133,6 +135,27 @@ fun MainAdministrador(
                         navController.popBackStack()
                     }
                 )*/
+            }*/
+            composable(AdminRoutes.Pedido) {
+                // Obtenemos el pedido seleccionado del ViewModel de listado
+                val pedidoSeleccionado by pedidosViewModel.selected.collectAsState()
+
+                // IMPORTANTE: Aquí asumo que tienes acceso a estos repositorios.
+                // Si te sale en rojo 'lineaPedidoRepo', significa que debes pasarlo como parámetro
+                // a la función MainAdministrador, igual que pasas 'dependientesViewModel'.
+
+                if (pedidoSeleccionado != null) {
+                    PedidoForm(
+                        pedidoId = pedidoSeleccionado!!.id,
+                        pedidoRepo = pedidosViewModel.pedidoRepositorio, // Este ya lo tienes en el VM
+                        // ¡ATENCIÓN!: Estos dos deben estar disponibles en este ámbito.
+                        // Si da error, añádelos a los argumentos de MainAdministrador(...) arriba del todo
+                        lineaPedidoRepo = lineaPedidoRepositorio,
+                        productoRepo = productosViewModel.productoRepositorio,
+                        dependienteRepo = dependientesViewModel.dependienteRepositorio,
+                        onBack = { navController.popBackStack() }
+                    )
+                }
             }
         }
     }
