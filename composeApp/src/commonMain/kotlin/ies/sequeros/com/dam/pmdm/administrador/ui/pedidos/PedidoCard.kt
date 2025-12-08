@@ -133,9 +133,6 @@ fun PedidoCard(
                 }
 
 
-
-
-
             }
 
             Row(

@@ -21354,3 +21354,13 @@ dic 08, 2025 2:21:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestruct
 INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
 dic 08, 2025 2:21:31 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
 INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
+dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.DependienteDao getAll
+INFO: [32mEjecutando SQL: select * from dependientes | Parametros: [0m
+dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getAll
+INFO: [32mEjecutando SQL: select * from categorias | Parametros: [0m
+dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.ProductoDao getAll
+INFO: [32mEjecutando SQL: select * from productos | Parametros: [0m
+dic 08, 2025 3:29:43 P. M. ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.CategoriaDao getById
+INFO: [32mEjecutando SQL: select * from categorias where id=? | Parametros: [id=9707297e-4439-4e3f-b51b-057cb59850ee][0m
