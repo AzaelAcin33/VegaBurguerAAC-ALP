@@ -9,8 +9,9 @@ import java.util.UUID
 class SavePedidoUseCase(private val repositorio: IPedidoRepositorio) {
     suspend fun invoke(pedidoDTO: PedidoTPVDTO) {
         // Mapeo del DTO al Modelo de Dominio
+        val idpedido = UUID.randomUUID().toString()
         val nuevoPedido = Pedido(
-            id = UUID.randomUUID().toString(),
+            id = idpedido,
             clienteName = pedidoDTO.nombreCliente,
             fecha = pedidoDTO.fecha,
             dependienteId = pedidoDTO.dependienteId ?: "",
@@ -22,7 +23,7 @@ class SavePedidoUseCase(private val repositorio: IPedidoRepositorio) {
                     productoId = it.producto.id,
                     cantidad = it.cantidad,
                     entregado = false,
-                    //pedidoId = nuevoPedido.id,
+                    pedidoId = idpedido,
                     precioUnitario = it.producto.precio.toString()
                 )
             }

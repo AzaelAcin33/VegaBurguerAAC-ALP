@@ -15,10 +15,13 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Article
+import androidx.compose.material.icons.filled.AddShoppingCart
 import androidx.compose.material.icons.filled.Block
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.material3.AssistChip
@@ -42,6 +45,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ies.sequeros.com.dam.pmdm.administrador.aplicacion.pedidos.listar.PedidoDTO
+import ies.sequeros.com.dam.pmdm.administrador.modelo.LineaPedido
 import ies.sequeros.com.dam.pmdm.commons.ui.ImagenDesdePath
 import vegaburguer.composeapp.generated.resources.Res
 import vegaburguer.composeapp.generated.resources.hombre
@@ -50,13 +54,14 @@ import vegaburguer.composeapp.generated.resources.hombre
 @Composable
 fun PedidoCard(
     item: PedidoDTO,
+    mapaDependientes: Map<String, String>,
     onView: () -> Unit,
     onEdit: (PedidoDTO) -> Unit,
     onDelete: (item: PedidoDTO) -> Unit
 ) {
 
     val cardAlpha by animateFloatAsState(1f)
-
+    val nombreDependiente = mapaDependientes[item.dependienteId] ?: "ID: ${item.dependienteId}"
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -86,7 +91,7 @@ fun PedidoCard(
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
-                    Icons.Default.Block,
+                    Icons.Default.ShoppingCart,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.outlineVariant,
                     modifier = Modifier.size(40.dp)
@@ -95,10 +100,27 @@ fun PedidoCard(
 
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
-                    text = item.clienteName,
+                    text = "Nombre del cliente: "+item.clienteName,
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                     color = MaterialTheme.colorScheme.onSurface
                 )
+                Text(
+                    text = "Total de la compra: "+item.total,
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                Text(
+                    text = "Fecha de la compra: "+item.fecha,
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                Text(
+                    text = "Con el dependiente: $nombreDependiente",
+                    style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+                // aqui quedaria añadir la lista de objetos que hemos comprado
+                // niputa idea de como añadirlo
             }
 
             Row(
@@ -132,14 +154,14 @@ fun PedidoCard(
             ) {
 
                 // Ver detalles
-                OutlinedIconButton(onClick = onView) {
+                /*OutlinedIconButton(onClick = onView) {
                     Icon(Icons.AutoMirrored.Filled.Article, contentDescription = "Ver")
                 }
 
                 // Editar
                 OutlinedIconButton(onClick = { onEdit(item) }) {
                     Icon(Icons.Default.Edit, contentDescription = "Editar")
-                }
+                }*/
 
                 // Eliminar
                 OutlinedIconButton(

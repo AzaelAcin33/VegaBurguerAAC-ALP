@@ -78,7 +78,7 @@ class ClienteTPVViewModel(
                 }
 
                 // LOG PARA DEPURAR (Míralo en Logcat)
-                println("TPV DEBUG - Categoria: ${categoria.name} -> Ruta: $finalPath")
+                //println("TPV DEBUG - Categoria: ${categoria.name} -> Ruta: $finalPath")
 
                 categoria.copy(imagePath = finalPath)
             }
@@ -105,7 +105,7 @@ class ClienteTPVViewModel(
                     }
 
                     // LOG PARA DEPURAR
-                    println("TPV DEBUG - Producto: ${producto.name} -> Ruta: $finalPath")
+                    //println("TPV DEBUG - Producto: ${producto.name} -> Ruta: $finalPath")
 
                     ProductoTPVDTO(
                         id = producto.id,

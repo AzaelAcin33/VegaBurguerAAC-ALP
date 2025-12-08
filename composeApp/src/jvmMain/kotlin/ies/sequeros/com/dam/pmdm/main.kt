@@ -2,12 +2,15 @@ package ies.sequeros.com.dam.pmdm
 
 import androidx.compose.ui.window.Window
 import androidx.compose.ui.window.application
+import ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDCategoriaRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDDependienteRepository
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDLineaPedidoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDPedidoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.BBDDProductoRepository
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.categorias.BBDDRepositorioCategoriasJava
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDDRepositorioDependientesJava
+import ies.sequeros.com.dam.pmdm.administrador.infraestructura.lineaPedido.BBDDRepositorioLineaPedidoJava
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.pedidos.BBDDRepositorioPedidosJava
 import ies.sequeros.com.dam.pmdm.administrador.infraestructura.productos.BBDDRepositorioProductosJava
 import ies.sequeros.com.dam.pmdm.administrador.modelo.ICategoriaRepositorio
@@ -28,11 +31,13 @@ fun main() = application {
     val categoriaRepositorioJava= BBDDRepositorioCategoriasJava(connection)
     val productoRepositorioJava= BBDDRepositorioProductosJava(connection)
     val pedidoRepositorioJava= BBDDRepositorioPedidosJava(connection)
+    val lineaPedidoRepositorioJava= BBDDRepositorioLineaPedidoJava(connection)
 
     val dependienteRepositorio: IDependienteRepositorio = BBDDDependienteRepository(dependienteRepositorioJava )
     val categoriaRepositorio: ICategoriaRepositorio = BBDDCategoriaRepository(categoriaRepositorioJava)
     val productoRepositorio: BBDDProductoRepository = BBDDProductoRepository(productoRepositorioJava)
     val pedidoRepositorio: BBDDPedidoRepository = BBDDPedidoRepository(pedidoRepositorioJava)
+    val lineaPedidoRepositorio: BBDDLineaPedidoRepository = BBDDLineaPedidoRepository(lineaPedidoRepositorioJava)
 
 
     //esto se queda igual
@@ -46,7 +51,7 @@ fun main() = application {
     ) {
         //se envuelve el repositorio en java en uno que exista en Kotlin
         //nueva configuracion de acceso categoria
-        App(AlmacenDatos(), dependienteRepositorio, categoriaRepositorio, productoRepositorio, pedidoRepositorio)
+        App(AlmacenDatos(), dependienteRepositorio, categoriaRepositorio, productoRepositorio, pedidoRepositorio, lineaPedidoRepositorio, listarDependientesUseCase = ies.sequeros.com.dam.pmdm.administrador.aplicacion.dependientes.listar.ListarDependientesUseCase(dependienteRepositorio, AlmacenDatos()) )
     }
 }
 fun configureExternalLogging(path: String) {

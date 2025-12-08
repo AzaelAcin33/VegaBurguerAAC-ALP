@@ -22,7 +22,7 @@ import kotlinx.coroutines.launch
 
 class PedidosViewModel(
     //private val administradorViewModel: MainAdministradorViewModel,
-    private val pedidoRepositorio: IPedidoRepositorio,
+    val pedidoRepositorio: IPedidoRepositorio,
     val almacenDatos: AlmacenDatos
 ) : ViewModel() {
     //los casos de uso se crean dentro para la recomposición

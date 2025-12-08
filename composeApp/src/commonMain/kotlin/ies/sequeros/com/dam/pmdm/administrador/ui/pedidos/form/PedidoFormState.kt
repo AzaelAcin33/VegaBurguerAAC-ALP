@@ -1,47 +1,26 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui.pedidos.form
 
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Dependiente
-import ies.sequeros.com.dam.pmdm.administrador.modelo.Producto
-
 data class PedidoFormState(
-    // Datos Cabecera
+    val isLoading: Boolean = false,
+    val error: String? = null,
+
+    // Datos del pedido para mostrar
     val id: String = "",
     val clienteName: String = "",
-    val estado: String = "Pendiente",
-    val total: Double = 0.0,
     val fecha: String = "",
+    val estado: String = "",
+    val nombreDependiente: String = "",
+    val total: Double = 0.0,
+    val dependienteId: String = "",
 
-    // Dependiente seleccionado
-    val dependienteId: String? = null,
-    val dependienteSeleccionadoNombre: String = "", // Para mostrar en el input
 
-    // Listas de datos disponibles (ComboBox / Catálogo)
-    val dependientesDisponibles: List<Dependiente> = emptyList(),
-    val productosDisponibles: List<Producto> = emptyList(),
-
-    // Líneas del pedido
-    val lineas: List<LineaPedidoFormState> = emptyList(),
-
-    // Datos temporales para añadir linea
-    val tempProductoId: String = "",
-    val tempProductoNombre: String = "",
-    val tempPrecioUnitario: String = "",
-    val tempCantidad: String = "1",
-
-    // Totales y Validaciones
-    val totalPedido: Double = 0.0,
-    val clienteNameError: String? = null,
-    val lineasError: String? = null,
-    val submitted: Boolean = false
+    // Lista de productos del pedido
+    val lineas: List<LineaPedidoLectura> = emptyList()
 )
 
-data class LineaPedidoFormState(
-    val id: String = "",
-    val cantidad: Int = 1,
-    val precioUnitario: Double = 0.0,
-    val entregado: Boolean = false,
-    val pedidoId: String = "",
-    val productoId: String = "",
-    val productName: String = "",
-    val totalLinea: Double = 0.0
+data class LineaPedidoLectura(
+    val nombreProducto: String,
+    val cantidad: Int,
+    val precioUnitario: Double,
+    val totalLinea: Double
 )
