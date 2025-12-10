@@ -22,6 +22,7 @@ import ies.sequeros.com.dam.pmdm.commons.infraestructura.AlmacenDatos
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+        //variables para el repositorio
         //se crea el almacen para el json
         val almacenDatos:AlmacenDatos=  AlmacenDatos(this)
         //se le pasa al repositorio
@@ -53,27 +54,5 @@ class MainActivity : ComponentActivity() {
                 listarDependientesUseCase, listarProductoUseCase )
         }
     }
-    /*
-    override fun onCreate(savedInstanceState: Bundle?) {
-        //se crea el almacen para el json
-        val almacenDatos:AlmacenDatos=  AlmacenDatos(this)
-        //se le pasa al repositorio
-        val dependienteRepositorio: IDependienteRepositorio =
-            FileDependienteRepository(almacenDatos)
-        val categoriaRepositorio: ICategoriaRepositorio = FileCategoriaRepository(almacenDatos)
-        //val productoRepositorio: IProductoRepositorio = FileProductoRepository(almacenDatos)
-        //val pedidoRepositorio: IPedidoRepositorio = FilePedidoRepository(almacenDatos)
-
-        enableEdgeToEdge()
-        super.onCreate(savedInstanceState)
-
-        setContent {
-            //se crean almacenes de datos y de imagenes propias de la plataforma y se
-            //pasan a la aplicación,
-            val almacenImagenes:AlmacenDatos=  AlmacenDatos(this)
-
-            //App(dependienteRepositorio,categoriaRepositorio, productoRepositorio, pedidoRepositorio, almacenImagenes)
-        }
-    }*/
 }
 
