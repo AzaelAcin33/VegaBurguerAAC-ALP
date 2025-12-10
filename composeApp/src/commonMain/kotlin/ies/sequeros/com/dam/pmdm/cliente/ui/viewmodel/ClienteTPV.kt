@@ -1,4 +1,3 @@
-// Archivo: composeApp/src/commonMain/kotlin/ies/sequeros/com/dam/pmdm/cliente/ui/viewmodel/ClienteTPV.kt
 package ies.sequeros.com.dam.pmdm.cliente.ui.viewmodel
 
 import androidx.compose.runtime.Composable
@@ -7,9 +6,9 @@ import ies.sequeros.com.dam.pmdm.AppViewModel
 import ies.sequeros.com.dam.pmdm.cliente.ui.navigation.ClienteNavGraph
 
 @Composable
-fun ClienteMainScreen( // <--- CAMBIAR NOMBRE AQUÍ (antes ClienteTPVViewModel)
+fun ClienteMainScreen(
     appViewModel: AppViewModel,
-    viewModel: ClienteTPVViewModel, // Ahora se refiere correctamente a la Clase
+    viewModel: ClienteTPVViewModel, // Se refiere correctamente a la Clase
     onExit: () -> Unit
 ){
     val navController = rememberNavController()

@@ -27,6 +27,7 @@ fun ProductosScreen(
     onNavigateToLogin: () -> Unit,
     onBack: () -> Unit
 ) {
+    //Para elegir productos
     val productos by viewModel.productos.collectAsState()
     val carrito by viewModel.carrito.collectAsState()
     val total by viewModel.totalCarrito.collectAsState()

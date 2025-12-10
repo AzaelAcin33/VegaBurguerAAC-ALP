@@ -10,6 +10,7 @@ class SavePedidoUseCase(private val repositorio: IPedidoRepositorio) {
     suspend fun invoke(pedidoDTO: PedidoTPVDTO) {
         // Mapeo del DTO al Modelo de Dominio
         val idpedido = UUID.randomUUID().toString()
+        //Crea las LineaPedido a partir del DTO
         val nuevoPedido = Pedido(
             id = idpedido,
             clienteName = pedidoDTO.nombreCliente,

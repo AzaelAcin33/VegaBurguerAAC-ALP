@@ -19,6 +19,7 @@ fun PagoScreen(
     onPedidoGuardado: () -> Unit,
     onBack: () -> Unit
 ) {
+    //Pantalla final para pagar
     val carrito by viewModel.carrito.collectAsState()
     val total by viewModel.totalCarrito.collectAsState()
     val dependientes by viewModel.dependientes.collectAsState()

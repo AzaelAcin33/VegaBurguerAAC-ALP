@@ -24,6 +24,7 @@ fun CategoriasScreen(
     onCategoriaSelected: (String) -> Unit,
     onBack: () -> Unit
 ) {
+    //Para el tema de que salgan todas las categorias y se puedan escoger
     val categorias by viewModel.categorias.collectAsState()
 
     LaunchedEffect(Unit) {

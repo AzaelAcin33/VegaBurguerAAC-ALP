@@ -11,6 +11,7 @@ import ies.sequeros.com.dam.pmdm.administrador.ui.productos.ProductosViewModel
 
 @Composable
 fun AdminRoot(
+    //Lo que hace este archivo es mostrar login si no hay sesión, mostrar pantalla de admin si se conecta y mantener la UI con todos los View Models
     appViewModel: AppViewModel,
     mainViewModel: MainAdministradorViewModel,
     administradorViewModel: AdministradorViewModel,

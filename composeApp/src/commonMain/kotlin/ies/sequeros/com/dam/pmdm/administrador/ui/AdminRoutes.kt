@@ -1,6 +1,7 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui
 
 object  AdminRoutes {
+    //Esto es un gestor centralizado de rutas
     const val Main="main"
     const val Dependientes="dependientes"
     const val Dependiente="dependiente"
@@ -10,7 +11,4 @@ object  AdminRoutes {
     const val Producto="producto"
     const val Pedidos="pedidos"
     const val Pedido="pedido"
-
-
-
 }

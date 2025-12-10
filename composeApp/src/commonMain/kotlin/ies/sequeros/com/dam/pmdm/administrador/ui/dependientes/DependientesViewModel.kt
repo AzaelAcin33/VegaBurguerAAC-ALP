@@ -48,7 +48,7 @@ class DependientesViewModel(
     val items: StateFlow<List<DependienteDTO>> = _items.asStateFlow()
     private val _selected = MutableStateFlow<DependienteDTO?>(null)
     val selected = _selected.asStateFlow()
-
+    //Cargamos los datos
     init {
         actualizarDependienteUseCase = ActualizarDependienteUseCase(dependienteRepositorio,almacenDatos)
         borrarDependienteUseCase = BorrarDependienteUseCase(dependienteRepositorio,almacenDatos)
@@ -63,11 +63,11 @@ class DependientesViewModel(
 
         }
     }
-
+    //Seleccionamos un dependiente
     fun setSelectedDependiente(item: DependienteDTO?) {
         _selected.value = item
     }
-
+    //Activar o desactivar dependiente
     fun switchEnableDependiente(item: DependienteDTO) {
         val command= ActivarDependienteCommand(
             item.id,
@@ -86,7 +86,7 @@ class DependientesViewModel(
         }
 
     }
-
+    //Cambiar permisos de admin
     fun switchAdmin(item: DependienteDTO) {
         val command= CambiarPermisosCommand(
             item.id,
@@ -104,7 +104,7 @@ class DependientesViewModel(
             }.toMutableList()
         }
     }
-
+    //Borrar dependiente
     fun delete(item: DependienteDTO) {
         viewModelScope.launch {
           borrarDependienteUseCase.invoke(item.id)
@@ -114,7 +114,7 @@ class DependientesViewModel(
         }
 
     }
-
+    //Añadir dependiente
     fun add(formState: DependienteFormState) {
         val command = CrearDependienteCommand(
             formState.nombre,
@@ -134,7 +134,7 @@ class DependientesViewModel(
 
         }
     }
-
+    //Actualizar dependiente
     fun update(formState: DependienteFormState) {
         val command = ActualizarDependienteCommand(
             selected.value!!.id!!,
@@ -153,7 +153,7 @@ class DependientesViewModel(
 
 
     }
-
+    //Guardar dependiente
     fun save(item: DependienteFormState) {
         if (_selected.value == null)
             this.add(item)

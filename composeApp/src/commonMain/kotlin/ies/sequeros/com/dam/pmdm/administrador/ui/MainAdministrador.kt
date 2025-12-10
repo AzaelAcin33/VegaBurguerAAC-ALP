@@ -71,7 +71,7 @@ fun MainAdministrador(
         NavHost(navController, startDestination = AdminRoutes.Main) {
             composable(AdminRoutes.Main) { PrincipalAdministrador() }
 
-            // --- Dependientes ---
+            //Dependientes
             composable(AdminRoutes.Dependientes) {
                 Dependientes(mainViewModel, dependientesViewModel, {
                     dependientesViewModel.setSelectedDependiente(it)
@@ -85,7 +85,7 @@ fun MainAdministrador(
                 })
             }
 
-            // --- Categorias ---
+            //Categorias
             composable(AdminRoutes.Categorias) {
                 Categorias(mainViewModel, categoriasViewModel, {
                     categoriasViewModel.setSelectedCategoria(it)
@@ -99,7 +99,7 @@ fun MainAdministrador(
                 })
             }
 
-            // --- Productos ---
+            //Productos
             composable(AdminRoutes.Productos) {
                 Productos(mainViewModel, productosViewModel, {
                     productosViewModel.setSelectedProducto(it)
@@ -113,42 +113,21 @@ fun MainAdministrador(
                 })
             }
 
-            // --- Pedidos ---
+            //Pedidos
             composable(AdminRoutes.Pedidos) {
                 Pedidos(mainViewModel, pedidosViewModel, {
                     navController.navigate(AdminRoutes.Pedido) { launchSingleTop = true }
                 })
             }
 
-            // --- FORMULARIO PEDIDO (INTEGRACIÓN COMPLETA) ---
-            /*composable(AdminRoutes.Pedido) {
-                PedidoForm(
-                    // Inyectamos repositorios públicos
-                    productoRepo = productosViewModel.productoRepositorio,
-                    dependienteRepo = dependientesViewModel.dependienteRepositorio,
-
-                    onClose = { navController.popBackStack() },
-                    onConfirm = {
-                        pedidosViewModel.save(it)
-                        navController.popBackStack()
-                    }
-                )
-            }*/
-
             composable(AdminRoutes.Pedido) {
                 // Obtenemos el pedido seleccionado del ViewModel de listado
                 val pedidoSeleccionado by pedidosViewModel.selected.collectAsState()
 
-                // IMPORTANTE: Aquí asumo que tienes acceso a estos repositorios.
-                // Si te sale en rojo 'lineaPedidoRepo', significa que debes pasarlo como parámetro
-                // a la función MainAdministrador, igual que pasas 'dependientesViewModel'.
-
                 if (pedidoSeleccionado != null) {
                     PedidoForm(
                         pedidoId = pedidoSeleccionado!!.id,
-                        pedidoRepo = pedidosViewModel.pedidoRepositorio, // Este ya lo tienes en el VM
-                        // ¡ATENCIÓN!: Estos dos deben estar disponibles en este ámbito.
-                        // Si da error, añádelos a los argumentos de MainAdministrador(...) arriba del todo
+                        pedidoRepo = pedidosViewModel.pedidoRepositorio,
                         lineaPedidoRepo = lineaPedidoRepositorio,
                         productoRepo = productosViewModel.productoRepositorio,
                         dependienteRepo = dependientesViewModel.dependienteRepositorio,
@@ -158,7 +137,7 @@ fun MainAdministrador(
             }
         }
     }
-
+    //Para pantallas compactas
     if (wai?.windowSizeClass?.windowWidthSizeClass == WindowWidthSizeClass.COMPACT) {
         Scaffold(
             bottomBar = {
@@ -175,7 +154,9 @@ fun MainAdministrador(
         ) { innerPadding ->
             Box(Modifier.padding(innerPadding)) { navegador() }
         }
-    } else {
+    }
+    //Para pantallas grandes
+    else {
         PermanentNavigationDrawer(
             drawerContent = {
                 PermanentDrawerSheet(Modifier.width(128.dp)) {

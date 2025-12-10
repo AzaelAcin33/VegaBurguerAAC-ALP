@@ -55,7 +55,7 @@ class DependienteFormViewModel (private val item: DependienteDTO?,
         started = SharingStarted.Eagerly,
         initialValue = false
     )
-
+    //Cuando se cambian valores
     fun onNombreChange(v: String) {
         _uiState.value = _uiState.value.copy(nombre = v, nombreError = validateNombre(v))
     }
@@ -93,17 +93,19 @@ class DependienteFormViewModel (private val item: DependienteDTO?,
     fun clear() {
         _uiState.value = DependienteFormState()
     }
-
+    //Validacion del nombre
     private fun validateNombre(nombre: String): String? {
         if (nombre.isBlank()) return "El nombre es obligatorio"
         if (nombre.length < 2) return "El nombre es muy corto"
         if (nombre.length > 100) return "El nombre es muy largo"
         return null
     }
+    //Validacion de la imagen
     private fun validateImagePath(path: String): String? {
         if (path.isBlank()) return "La imagen es obligatoria"
         return null
     }
+    //Validacion de la contraseñ
     private fun validatePassword(pw: String): String? {
         if (pw.isBlank()) return "La contraseña es obligatoria"
         if (pw.length < 8) return "La contraseña debe tener al menos 8 caracteres"
@@ -113,13 +115,13 @@ class DependienteFormViewModel (private val item: DependienteDTO?,
         if (!hasDigit || !hasUpper) return "La contraseña debe incluir mayúscula y número"
         return null
     }
-
+    //Validacion la confirmacion de la contraseña
     private fun validateConfirmPassword(pw: String, confirm: String): String? {
         if (confirm.isBlank()) return "Confirma la contraseña"
         if (pw != confirm) return "Las contraseñas no coinciden"
         return null
     }
-
+    //Validacion de email
     private fun validateEmail(email: String): String? {
         if (email.isBlank()) return "El correo es obligatorio"
         // validación simple

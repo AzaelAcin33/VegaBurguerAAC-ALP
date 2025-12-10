@@ -4,7 +4,7 @@ import ies.sequeros.com.dam.pmdm.administrador.infraestructura.dependientes.BBDD
 import ies.sequeros.com.dam.pmdm.administrador.modelo.Dependiente
 import ies.sequeros.com.dam.pmdm.administrador.modelo.IDependienteRepositorio
 
-
+//Con esto lo que hacemos es convertir llamadas de dominio(Kotlin) en llamadas a la base de datos (Java)
 class BBDDDependienteRepository(
     private val bbddRepositorioDepedientesJava: BBDDRepositorioDependientesJava
 ) : IDependienteRepositorio {

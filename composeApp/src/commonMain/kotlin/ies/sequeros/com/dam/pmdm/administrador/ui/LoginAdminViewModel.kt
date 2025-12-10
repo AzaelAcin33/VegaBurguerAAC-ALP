@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 class LoginAdministradorViewModel : ViewModel() {
-
+    //Para la comprobación de el usuario y la contraseña
     private val _loginSuccess = MutableStateFlow(false)
     val loginSuccess: StateFlow<Boolean> = _loginSuccess
     private val _errorMessage = MutableStateFlow<String?>(null)

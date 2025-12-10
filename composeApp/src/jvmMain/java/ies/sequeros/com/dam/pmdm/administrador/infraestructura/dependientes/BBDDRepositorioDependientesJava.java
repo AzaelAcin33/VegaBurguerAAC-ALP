@@ -25,6 +25,7 @@ public  class BBDDRepositorioDependientesJava {
 
 
     }
+    //Caso para añadir
     public void add(Dependiente item){
         this.dao.insert(item);
     }
@@ -32,6 +33,8 @@ public  class BBDDRepositorioDependientesJava {
         this.dao.delete(item);
         return true;
     }
+
+    //Caso para borrar
     public boolean remove(String id){
         var item=this.dao.getById(id);
         if(item!=null){
@@ -40,17 +43,25 @@ public  class BBDDRepositorioDependientesJava {
         }
         return false;
     }
+
+    //Caso para actualizar
     public boolean  update(Dependiente item){
         this.dao.update(item);
         return true;
     }
+
+    //Caso para obtener todos
     public List<Dependiente> getAll() {
         return this.dao.getAll();
     }
+
+    //Caso para buscar por nombre
     public Dependiente findByName(String name){
 
         return this.dao.findByName(name);
     }
+
+    //Caso para buscar por id
     public Dependiente  getById(String id){
         return this.dao.getById(id);
 
@@ -59,6 +70,8 @@ public  class BBDDRepositorioDependientesJava {
     public List<Dependiente> findByIds(List<String> ids){
         return null;
     }
+
+    //Cerrar conexión
     public void close(){
         try {
             this.db.close();

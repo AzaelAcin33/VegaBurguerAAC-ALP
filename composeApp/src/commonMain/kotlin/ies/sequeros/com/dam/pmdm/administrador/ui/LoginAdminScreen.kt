@@ -13,6 +13,7 @@ fun LoginAdminScreen(
     viewModel: LoginAdministradorViewModel,
     onLoginSuccess: () -> Unit
 ) {
+    //Pantalla para acceder a la app con admin
     var user by remember { mutableStateOf("") }
     var pass by remember { mutableStateOf("") }
     val loginOK by viewModel.loginSuccess.collectAsState()

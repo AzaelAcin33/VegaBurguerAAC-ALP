@@ -17,20 +17,20 @@ class FileDependienteRepository(
     init {
 
     }
-
+    //Pilla la ruta del directorio
     private suspend fun getDirectoryPath(): String {
         val dir = almacenDatos.getAppDataDir()
         val directory = File(dir, subdirectory)
 
         return directory.absolutePath
     }
-
+    //Para guardar dependiente
     private suspend fun save(items: List<Dependiente>) {
         if(!File(this.getDirectoryPath()).exists())
             File(this.getDirectoryPath()).mkdirs()
         this.almacenDatos.writeFile(this.getDirectoryPath()+"/"+this.fileName, Json.encodeToString(items))
     }
-
+    //Pra añadir dependiente
     override suspend fun add(item: Dependiente) {
         val items = this.getAll().toMutableList()
 
@@ -41,7 +41,7 @@ class FileDependienteRepository(
         }
         this.save(items)
     }
-
+    //Para borrar dependiente
     override suspend fun remove(item: Dependiente): Boolean {
         return this.remove(item.id!!)
     }
@@ -61,7 +61,7 @@ class FileDependienteRepository(
         }
         return true
     }
-
+    //Para actualizar dependiente
     override suspend fun update(item: Dependiente): Boolean {
         val items = this.getAll().toMutableList()
         val newItems= items.map { if (it.id == item.id) item else it }.toMutableList()
@@ -69,7 +69,7 @@ class FileDependienteRepository(
         return true
     }
 
-
+    //Para conseguir todos los dependientes
     override suspend fun getAll(): List<Dependiente> {
         val path = getDirectoryPath()+"/"+this.fileName
         val items= mutableListOf<Dependiente>()
@@ -81,7 +81,7 @@ class FileDependienteRepository(
         }
         return items.toList()
     }
-
+    //Encontrar dependiente por nombre
     override suspend fun findByName(name: String): Dependiente? {
         val elements=this.getAll()
         for(element in elements){
@@ -90,7 +90,7 @@ class FileDependienteRepository(
         }
         return null; //this.items.values.firstOrNull { it.name.equals(name) };
     }
-
+    //Conseguir id de dependiente
     override suspend fun getById(id: String): Dependiente? {
         val elements=this.getAll()
         for(element in elements){

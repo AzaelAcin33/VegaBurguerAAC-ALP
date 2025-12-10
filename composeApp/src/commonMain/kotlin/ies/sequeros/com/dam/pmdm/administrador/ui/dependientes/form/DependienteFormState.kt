@@ -1,6 +1,7 @@
 package ies.sequeros.com.dam.pmdm.administrador.ui.dependientes.form
 
 data class DependienteFormState(
+    //Contiene los valores y posibles errores del formulario
     val nombre: String = "",
     val email: String = "",
     val password: String = "",

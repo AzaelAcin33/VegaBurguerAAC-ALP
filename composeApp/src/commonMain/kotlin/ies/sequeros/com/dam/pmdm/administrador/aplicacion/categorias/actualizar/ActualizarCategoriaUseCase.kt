@@ -10,7 +10,7 @@ import ies.sequeros.com.dam.pmdm.generateUUID
 class ActualizarCategoriaUseCase( private val repositorio: ICategoriaRepositorio, private val almacenDatos: AlmacenDatos) {
 
     suspend fun invoke(command: ActualizarCategoriaCommand, ): CategoriaDTO {
-
+        //Buscar categoria
         val item: Categoria?=repositorio.getById(command.id)
 
         //val nombreArchivo = command.imagePath.substringAfterLast('/')
@@ -28,13 +28,14 @@ class ActualizarCategoriaUseCase( private val repositorio: ICategoriaRepositorio
         }else{
             nuevaImagePath=item.imagePath
         }
-
+        //Crear la nueva categoría actualizado
         var newCategory= item.copy(
             name=command.name,
             description = command.description,
             imagePath = nuevaImagePath,
             enabled = command.enabled
         )
+        //Guardamos los cambios
         repositorio.update(newCategory)
         //se devuelve con el path correcto
         return newCategory.toDTO(almacenDatos.getAppDataDir()+"/categorias/")

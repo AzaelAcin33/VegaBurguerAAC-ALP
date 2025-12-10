@@ -18,6 +18,8 @@ import java.util.logging.Logger;
 public class DependienteDao implements IDao<Dependiente> {
     private DataBaseConnection conn;
     private final String table_name = "dependientes";
+
+    //Definimos varias consultas SQL
     private final String selectall = "select * from " + table_name;
     private final String selectbyid = "select * from " + table_name + " where id=?";
     private final String findbyname = "select * from " + table_name + " where name=?";
@@ -34,11 +36,11 @@ public class DependienteDao implements IDao<Dependiente> {
     public DataBaseConnection getConn() {
         return this.conn;
     }
-
+    //Conectamos
     public void setConn(final DataBaseConnection conn) {
         this.conn = conn;
     }
-
+    //Buscar por id
     @Override
     public Dependiente getById(final String id) {
         Dependiente sp = null;// = new Dependiente();
@@ -59,7 +61,7 @@ public class DependienteDao implements IDao<Dependiente> {
         }
         return sp;
     }
-
+    //Buscar por nombre
     public Dependiente findByName(final String name) {
         Dependiente sp = null;// = new Dependiente();
         try {
@@ -80,6 +82,8 @@ public class DependienteDao implements IDao<Dependiente> {
         }
         return sp;
     }
+
+    //Obtenemos todos los dependientes
     @Override
     public List<Dependiente> getAll() {
         final ArrayList<Dependiente> scl = new ArrayList<>();
@@ -109,7 +113,7 @@ public class DependienteDao implements IDao<Dependiente> {
 
         return scl;
     }
-
+    //Actualizamos un dependiente
     @Override
     public void update(final Dependiente item) {
 
@@ -144,6 +148,7 @@ public class DependienteDao implements IDao<Dependiente> {
 
     }
 
+    //Borramos un dependiente
     @Override
     public void delete(final Dependiente item) {
         try {
@@ -160,7 +165,7 @@ public class DependienteDao implements IDao<Dependiente> {
                     null, ex);
         }
     }
-
+    //Insertamos un dependiente
     @Override
     public void insert(final Dependiente item) {
 
@@ -198,7 +203,7 @@ public class DependienteDao implements IDao<Dependiente> {
         }
     }
 
-    //pasar de registro a objeeto
+    //pasar de registro a objeto
     private Dependiente registerToObject(final ResultSet r) {
          Dependiente sc =null;
 
