@@ -55,20 +55,20 @@ class ClienteTPVViewModel(
     private val _dependienteSeleccionado = MutableStateFlow<DependienteDTO?>(null)
     val dependienteSeleccionado: StateFlow<DependienteDTO?> = _dependienteSeleccionado.asStateFlow()
 
-    // Lógica
+    //Lógica
     fun setNombreCliente(nombre: String) {
         _nombreCliente.value = nombre
     }
 
+    //Cargamos categoria
     fun loadCategorias() {
         viewModelScope.launch {
-            // 1. Obtenemos la ruta base
+            //Obtenemos la ruta base
             val rawPath = almacenDatos.getAppDataDir()+"/categorias/"
 
-            // 2. Aseguramos que termine en "/"
             val path = if (rawPath.endsWith("/")) rawPath else "$rawPath/"
 
-            // 3. Cargamos y mapeamos
+            //Cargamos y mapeamos
             val listaCategorias = getCategoriasUseCase.invoke().map { categoria ->
                 // Solo concatenamos si hay una imagen definida
                 val finalPath = if (categoria.imagePath.isNotEmpty()) {
@@ -77,18 +77,16 @@ class ClienteTPVViewModel(
                     ""
                 }
 
-                // LOG PARA DEPURAR (Míralo en Logcat)
-                //println("TPV DEBUG - Categoria: ${categoria.name} -> Ruta: $finalPath")
-
                 categoria.copy(imagePath = finalPath)
             }
             _categorias.value = listaCategorias
         }
     }
 
+    //Cargamos productos
     fun loadProductos(categoriaId: String) {
         viewModelScope.launch {
-            // 1. Obtenemos la ruta base asegurando la barra
+            //Obtenemos la ruta base asegurando la barra
             val rawPath = almacenDatos.getAppDataDir()+"/productos/"
             val path = if (rawPath.endsWith("/")) rawPath else "$rawPath/"
 
@@ -104,9 +102,6 @@ class ClienteTPVViewModel(
                         ""
                     }
 
-                    // LOG PARA DEPURAR
-                    //println("TPV DEBUG - Producto: ${producto.name} -> Ruta: $finalPath")
-
                     ProductoTPVDTO(
                         id = producto.id,
                         nombre = producto.name,
@@ -118,12 +113,14 @@ class ClienteTPVViewModel(
         }
     }
 
+    //Cargamos dependientes
     fun loadDependientes() {
         viewModelScope.launch {
             _dependientes.value = dependienteRepo.getAll().map { it.toDTO("") } // Ajustar mapper
         }
     }
 
+    //Función añadir al carrito
     fun addToCarrito(producto: ProductoTPVDTO) {
         _carrito.update { currentList ->
             val existing = currentList.find { it.producto.id == producto.id }
@@ -138,6 +135,7 @@ class ClienteTPVViewModel(
         recalculateTotal()
     }
 
+    //Eliminación del carrito
     fun removeFromCarrito(producto: ProductoTPVDTO) {
         _carrito.update { currentList ->
             val existing = currentList.find { it.producto.id == producto.id }
@@ -152,6 +150,7 @@ class ClienteTPVViewModel(
         recalculateTotal()
     }
 
+    //Funcion recalcular total
     private fun recalculateTotal() {
         _totalCarrito.value = _carrito.value.sumOf { it.total }
     }
@@ -160,6 +159,7 @@ class ClienteTPVViewModel(
         _dependienteSeleccionado.value = dependiente
     }
 
+    //Funcion finalizar pedido
     fun finalizarPedido(onSuccess: () -> Unit) {
         viewModelScope.launch {
             val pedido = PedidoTPVDTO(
@@ -179,6 +179,7 @@ class ClienteTPVViewModel(
         }
     }
 
+    //Funcion para resetear pedido, con el boton cancelar
     fun resetPedido() {
         _carrito.value = emptyList()
         _totalCarrito.value = 0.0

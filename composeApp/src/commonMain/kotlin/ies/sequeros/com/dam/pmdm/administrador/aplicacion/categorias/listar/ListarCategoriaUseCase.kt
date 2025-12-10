@@ -8,6 +8,7 @@ class ListarCategoriaUseCase( private val repositorio: ICategoriaRepositorio, pr
     suspend fun invoke( ): List<CategoriaDTO> {
         //this.validateUser(user)
         //si tiene imagen
+        //Obtenemos las categorias las convertimos en DTO y las devolvemos
         val items= repositorio.getAll().map { it.toDTO(if(it.imagePath.isEmpty()) "" else almacenDatos.getAppDataDir()+"/categorias/") }
         return items
     }

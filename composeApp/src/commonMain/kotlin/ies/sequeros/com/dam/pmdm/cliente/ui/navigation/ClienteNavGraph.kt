@@ -18,7 +18,7 @@ fun ClienteNavGraph(
         navController = navController,
         startDestination = ClienteRoutes.LOGIN
     ) {
-        // Pantalla LOGIN
+        // Pantalla login
         composable(ClienteRoutes.LOGIN) {
             LoginScreen(
                 viewModel = viewModel,
@@ -26,7 +26,7 @@ fun ClienteNavGraph(
             )
         }
 
-        // Pantalla CATEGORÍAS
+        // Pantalla categorias
         composable(ClienteRoutes.CATEGORIAS) {
             CategoriasScreen(
                 viewModel = viewModel,
@@ -41,11 +41,7 @@ fun ClienteNavGraph(
             )
         }
 
-
-        // Pantalla PRODUCTOS (Aquí estaba el error)
-        // Usamos la versión genérica composable<T> para navegación segura
         composable<ClienteRoutes.Productos> { backStackEntry ->
-            // [!CAMBIO!] 'toRoute' extrae los argumentos automáticamente sin usar getString
             val args = backStackEntry.toRoute<ClienteRoutes.Productos>()
 
             ProductosScreen(
@@ -57,7 +53,7 @@ fun ClienteNavGraph(
             )
         }
 
-        // Pantalla PAGO
+        // Pantalla Pago
         composable(ClienteRoutes.PAGO) {
             PagoScreen(
                 viewModel = viewModel,

@@ -10,6 +10,7 @@ class BorrarCategoriaUseCase( private val repositorio: ICategoriaRepositorio, pr
         val tempo=repositorio.getById(id)
         val elementos=repositorio.getAll();
         //this.validateUser(user)
+        //Comprobamos is existe id
         if (tempo==null) {
             throw IllegalArgumentException("El id no está registrado.")
         }

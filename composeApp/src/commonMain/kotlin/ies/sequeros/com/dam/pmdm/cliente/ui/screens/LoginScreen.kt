@@ -13,6 +13,7 @@ fun LoginScreen(
     viewModel: ClienteTPVViewModel,
     onNavigateNext: () -> Unit
 ) {
+    //Pantalla de login del principio
     var nombre by remember { mutableStateOf("") }
 
     Column(
